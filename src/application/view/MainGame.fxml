@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="900.0" minWidth="1600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane id="sidePane" layoutX="0.0" layoutY="0.0" prefHeight="900.0" prefWidth="309.0" style="-fx-background-color: #E0E0E0&#10;">
+      <children>
+        <Label id="turnCountLb" alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="49.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="Turn Count:" textAlignment="LEFT">
+          <font>
+            <Font size="16.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label id="notificationsLb" alignment="TOP_LEFT" font="$x1" layoutX="14.0" layoutY="72.0" prefHeight="249.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="Notifications" />
+        <AnchorPane id="allyPane" layoutX="14.0" layoutY="332.0" prefHeight="262.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
+        <AnchorPane id="enemyPane" layoutX="14.0" layoutY="605.0" prefHeight="280.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>
