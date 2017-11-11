@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="900.0" minWidth="1600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane minHeight="900.0" minWidth="1600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.MainController">
   <!-- TODO Add Nodes -->
   <children>
     <AnchorPane id="sidePane" layoutX="0.0" layoutY="0.0" prefHeight="900.0" prefWidth="309.0" style="-fx-background-color: #E0E0E0&#10;">
