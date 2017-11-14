@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <Pane prefHeight="500.0" prefWidth="400.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="280.0" layoutX="124.0" layoutY="211.0" stroke="BLACK" strokeType="INSIDE" width="146.0" />
+            <Text layoutX="26.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="161.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="165.0" layoutY="250.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EASY" />
+            <Button layoutX="165.0" layoutY="290.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="MEDIUM" />
+            <Button layoutX="165.0" layoutY="330.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="HARD" />
+            <Button layoutX="207.0" layoutY="424.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="LOAD" />
+            <Button layoutX="124.0" layoutY="424.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EXIT" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="26.0" layoutY="102.0" stroke="BLACK" strokeType="INSIDE" width="343.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="26.0" layoutY="53.0" stroke="BLACK" strokeType="INSIDE" width="343.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
