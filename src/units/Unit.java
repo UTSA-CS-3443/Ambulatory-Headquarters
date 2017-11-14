@@ -10,6 +10,7 @@ public abstract class Unit {
 	private ArrayList<Integer> iATKRNG;
 	private int iMobility;
 	private boolean bAlly;
+	private boolean bEnemy;
 	
 	// LEVEL METHODS
 	public int getiLevel() {
@@ -82,8 +83,15 @@ public abstract class Unit {
 	public boolean isbAlly() {
 		return bAlly;
 	}
-	public void setbAlly(boolean bAlly) {
-		this.bAlly = bAlly;
+	public void setbAlly(boolean b) {
+		this.bAlly = b;
 	}
-
+	
+	// ENEMY METHODS
+	public boolean isbEnemy() {
+		return bEnemy;
+	}
+	public void setbEnemy(boolean b) {
+		this.bEnemy = b;
+	}
 }

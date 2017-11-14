@@ -9,8 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
-public class MainController  implements EventHandler<ActionEvent>
-{
+public class MainController implements EventHandler<ActionEvent> {
 	@FXML
 	private Label turnCountLb;
 	private Label notificationsLb;
@@ -19,13 +18,14 @@ public class MainController  implements EventHandler<ActionEvent>
 	public boolean mediumDiff;
 	public boolean hardDiff;
 	
-	public MainController()
-	{
+	public MainController() {
 		super();
+		easyDiff =  false;
+		mediumDiff = true;
+		hardDiff = false;
 	}
 	@Override
-	public void handle(ActionEvent event) 
-	{
+	public void handle(ActionEvent event) {
 		Button b = (Button)event.getSource();
 		String text = b.getText();
 		
@@ -33,16 +33,22 @@ public class MainController  implements EventHandler<ActionEvent>
 		//choose difficulty by clicking buttons and altering booleans
 		if (text.equals("EASY")) {
 			easyDiff = true;
+			mediumDiff = false;
+			hardDiff = false;
 			System.out.println("EASY!!");
 		}
 		
 		if (text.equals("MEDIUM")) {
-			easyDiff = true;
+			mediumDiff = true;
+			easyDiff = false;
+			hardDiff = false;
 			System.out.println("MEDIUM!!");
 		}
 		
 		if (text.equals("HARD")) {
-			easyDiff = true;
+			hardDiff = true;
+			easyDiff = false;
+			mediumDiff = false;
 			System.out.println("HARD!!");
 		}
 		
@@ -53,7 +59,7 @@ public class MainController  implements EventHandler<ActionEvent>
 		}
 		
 		// loads MenuCharacterSelect.fxml only after user selects a difficulty and clicks load
-		if (text.equals("LOAD") && (easyDiff == true || mediumDiff == true || hardDiff == true)) {
+		if (text.equals("LOAD")) {
 			try {
 				// change over to a second view
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MenuCharacterSelect.fxml"));   // Load the FXML
