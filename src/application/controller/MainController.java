@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.beans.binding.*;
+import javafx.collections.*;
 
 public class MainController implements EventHandler<ActionEvent> {
 	@FXML
@@ -18,17 +20,20 @@ public class MainController implements EventHandler<ActionEvent> {
 	public boolean mediumDiff;
 	public boolean hardDiff;
 	
+	
+	
 	public MainController() {
 		super();
 		easyDiff =  false;
 		mediumDiff = true;
 		hardDiff = false;
 	}
+	
+	
 	@Override
 	public void handle(ActionEvent event) {
 		Button b = (Button)event.getSource();
 		String text = b.getText();
-		
 		
 		//choose difficulty by clicking buttons and altering booleans
 		if (text.equals("EASY")) {
@@ -98,5 +103,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
-
+	
+	
+	
 }
