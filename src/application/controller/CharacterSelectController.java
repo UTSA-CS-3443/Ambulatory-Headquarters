@@ -7,11 +7,40 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 public class CharacterSelectController implements EventHandler<ActionEvent> 
 {
+	@FXML
+	CheckBox alienCb;
+	@FXML
+	CheckBox angelCb;
+	@FXML
+	CheckBox babeDragonCb;
+	@FXML
+	CheckBox cakeCb;
+	@FXML
+	CheckBox catBurglarCb;
+	@FXML
+	CheckBox elfCb;
+	@FXML
+	CheckBox ghostCb;
+	@FXML
+	CheckBox knightCb;
+	@FXML
+	CheckBox lunarOctopusCb;
+	@FXML
+	CheckBox ninjaCb;
+	@FXML
+	CheckBox orcCb;
+	@FXML
+	CheckBox pirateCb;
+	@FXML
+	CheckBox spaceCowboyCb;
+	@FXML
+	CheckBox teddyBearCb;
+	@FXML
+	CheckBox undeadCb;
 	
 	public CharacterSelectController() 
 	{

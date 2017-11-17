@@ -44,4 +44,8 @@ public class UNinja extends Unit{
 	// Level 3: Kawarimi Jutsu				- Next attack attempted on Ninja, take no dmg
 	// Level 5: Assassination Contract		- Mark Enemy, Kill enemy next turn.
 
+	public String getName()
+	{
+		return "Ninja";
+	}
 }

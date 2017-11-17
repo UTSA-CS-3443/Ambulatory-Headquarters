@@ -43,4 +43,9 @@ public class UPirate extends Unit{
 	// Level 1: Pirate Pistol				- Single-Target Burst 2x ATK
 	// Level 3: X Marks the Spot			- Attack hits corners of 3x3 square
 	// Level 5: Ahoy!						- Mark Enemy, Kill enemy next turn.
+	
+	public String getName()
+	{
+		return "Pirate";
+	}
 }

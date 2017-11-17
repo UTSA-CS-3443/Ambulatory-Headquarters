@@ -40,4 +40,8 @@ public class UGhost extends Unit{
 	// Level 3: N/A
 	// Level 5: Haunt					- Makes enemy unit run away for 1 turn using mobility/2
 	
+	public String getName()
+	{
+		return "Ghost";
+	}
 }

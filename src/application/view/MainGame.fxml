@@ -11,20 +11,20 @@
   <children>
     <AnchorPane id="sidePane" layoutX="0.0" layoutY="0.0" prefHeight="900.0" prefWidth="309.0" style="-fx-background-color: #E0E0E0&#10;">
       <children>
-        <Label id="turnCountLb" alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="49.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="Turn Count:" textAlignment="LEFT">
+        <Label id="turnCountLb" fx:id="turnCountLb" alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="49.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="Turn Count:" textAlignment="LEFT">
           <font>
             <Font size="16.0" fx:id="x1" />
           </font>
         </Label>
-        <Label id="notificationsLb" alignment="TOP_LEFT" font="$x1" layoutX="14.0" layoutY="72.0" prefHeight="249.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="Notifications" />
-        <AnchorPane id="allyPane" layoutX="14.0" layoutY="332.0" prefHeight="262.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
-        <AnchorPane id="enemyPane" layoutX="14.0" layoutY="605.0" prefHeight="280.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
+        <Label id="notificationsLb" fx:id="notificationsLb" alignment="TOP_LEFT" font="$x1" layoutX="14.0" layoutY="72.0" prefHeight="249.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="Notifications" />
+        <AnchorPane id="allyPane" fx:id="allyPane" layoutX="14.0" layoutY="332.0" prefHeight="262.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
+        <AnchorPane id="enemyPane" fx:id="enemyPane" layoutX="14.0" layoutY="605.0" prefHeight="280.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
       </children>
     </AnchorPane>
-    <GridPane layoutX="326.0" layoutY="16.0" prefHeight="860.0" prefWidth="1250.0">
+    <GridPane fx:id="mapPane" layoutX="326.0" layoutY="16.0" prefHeight="860.0" prefWidth="1250.0">
       <children>
       	<!-- row 0 -->
-        <Button mnemonicParsing="false" prefHeight="78.125" prefWidth="78.125" text="0,0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button id="zero" fx:id="zero" mnemonicParsing="false" prefHeight="78.125" prefWidth="78.125" text="0,0" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#handle"/>
         <Button mnemonicParsing="false" prefHeight="78.125" prefWidth="78.125" text="0,1" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <Button mnemonicParsing="false" prefHeight="78.125" prefWidth="78.125" text="0,2" GridPane.columnIndex="2" GridPane.rowIndex="0" />
         <Button mnemonicParsing="false" prefHeight="78.125" prefWidth="78.125" text="0,3" GridPane.columnIndex="3" GridPane.rowIndex="0" />

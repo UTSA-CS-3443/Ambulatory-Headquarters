@@ -7,10 +7,12 @@ public abstract class Unit {
 	private int iHitPoints;
 	private int iAttack;
 	private int iDefense;
-	private ArrayList<Integer> iATKRNG;
+	private ArrayList<Integer> iATKRNG = new ArrayList<Integer>();;
 	private int iMobility;
 	private boolean bAlly;
 	private boolean bEnemy;
+	
+	public abstract String getName();
 	
 	// LEVEL METHODS
 	public int getiLevel() {

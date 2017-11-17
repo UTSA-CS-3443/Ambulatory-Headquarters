@@ -39,5 +39,9 @@ public class UAlien extends Unit{
 	// Level 1: N/A
 	// Level 3: Ray Gun					- Single Target DMG
 	// Level 5: Call Spaceship			- Single Target global DMG
-
+	
+	public String getName()
+	{
+		return "Alien";
+	}
 }

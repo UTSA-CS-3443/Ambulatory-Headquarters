@@ -45,4 +45,9 @@ public class UTeddybear extends Unit{
 	// Level 1: Hug					- Decrease enemy attack by 20
 	// Level 3: 100% Cotton			- Increase Max HP by 50
 	// Level 5: Sharing is Caring	- Increase ally HP by 50 decrease own HP by 100
+	
+	public String getName()
+	{
+		return "Teddy Bear";
+	}
 }

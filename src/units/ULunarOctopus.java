@@ -45,4 +45,9 @@ public class ULunarOctopus extends Unit{
 	// Level 1: High Tide					- Heal adjacent 2x2 
 	// Level 3: Ooze						- Destroy 1 wall
 	// Level 5: Moonbeam					- 1x3 AoE
+	
+	public String getName()
+	{
+		return "Lunar Octopus";
+	}
 }

@@ -46,4 +46,8 @@ public class USpaceCowboy extends Unit{
 	// Level 3: Hologram			- Create decoy. Can only survive 1 hit.
 	// Level 5: Wormhole			- Create wormhole anywhere on map; 3 uses. Only 1 wormhole can be opened at a time.
 
+	public String getName()
+	{
+		return "Space Cowboy";
+	}
 }

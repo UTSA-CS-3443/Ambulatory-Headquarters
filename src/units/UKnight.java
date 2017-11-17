@@ -43,5 +43,9 @@ public class UKnight extends Unit{
 	// Level 1: Knight's Honor				- Reduce dmg by 50%
 	// Level 3: Into the Fray				- Boost Adjacent Ally Mobility by 1
 	// Level 5: Excalibur					- AoE in cross in any of 4 directions
-
+	
+	public String getName()
+	{
+		return "Knight";
+	}
 }
