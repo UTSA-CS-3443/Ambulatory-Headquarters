@@ -12,6 +12,7 @@ public class UCatBurglar extends Unit{
 	private int iDefenseINC = 15;
 	
 	private int iSkillBase;
+	private String sSkillName = "What's Yours, Is Mine";
 	
 	public UCatBurglar() {
 		this.setiUnitID(4);
@@ -29,6 +30,7 @@ public class UCatBurglar extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -47,7 +49,7 @@ public class UCatBurglar extends Unit{
 		}
 	}
 	
-	// Level 1: What's Yours is Mine			- Steal 20 ATK, 20 DEF, 20HP from enemy
+	// Steal 20 ATK, 20 DEF, 20HP from enemy
 
 
 

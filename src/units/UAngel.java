@@ -12,7 +12,7 @@ public class UAngel extends Unit{
 	private int iDefenseINC = 25;
 	
 	private int iSkillBase;
-
+	private String sSkillName = "Song of Clarity";
 	
 	public UAngel() {
 		this.setiUnitID(1);
@@ -30,6 +30,7 @@ public class UAngel extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -48,5 +49,5 @@ public class UAngel extends Unit{
 		}
 	}
 	
-	// Level 3: Hymn of the Heavens				- Heal ally by DMG formula * 2
+	// - Heal ally by DMG formula * 2; range 1, 2, 3
 }

@@ -12,6 +12,7 @@ public class UBabyDragon extends Unit{
 	private int iDefenseINC = 30;
 	
 	private int iSkillBase;
+	private String sSkillName = "Land of Fire";
 
 	public UBabyDragon() {
 		this.setiUnitID(2);
@@ -30,6 +31,7 @@ public class UBabyDragon extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 
 	}
 
@@ -49,8 +51,8 @@ public class UBabyDragon extends Unit{
 		}
 	}
 	
-
-	// Level 3: Land of Fire				- Search map for all enemies and do Damage * .5 mod to all enemies
+	
+	// Search map for all enemies and do Damage * .5 mod to all enemies
 
 
 }

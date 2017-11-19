@@ -12,6 +12,7 @@ public class USpaceCowboy extends Unit{
 	private int iDefenseINC = 20;
 	
 	private int iSkillBase;
+	private String sSkillName = "Wormhole";
 	
 	private boolean wormholeOpen = false;
 	
@@ -32,6 +33,7 @@ public class USpaceCowboy extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -50,6 +52,6 @@ public class USpaceCowboy extends Unit{
 		}
 	}
 	
-	// Level 5: Wormhole			- Create wormhole anywhere on map. Only 1 wormhole can be opened at a time.
+	// Level 5: Global TP be opened at a time.
 
 }

@@ -15,6 +15,7 @@ public class UKnight extends Unit{
 	private int iDefenseINC = 25;
 	
 	private int iSkillBase;
+	private String sSkillName = "Brandish";
 	
 	public UKnight() {
 		this.setiUnitID(7);
@@ -31,6 +32,7 @@ public class UKnight extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override

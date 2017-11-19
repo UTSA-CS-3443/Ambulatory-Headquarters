@@ -12,6 +12,7 @@ public class ULunarOctopus extends Unit{
 	private int iDefenseINC = 15;
 	
 	private int iSkillBase;
+	private String sSkillName = "Lunar Tide";
 	
 	public ULunarOctopus() {
 		this.setiUnitID(8);
@@ -30,7 +31,7 @@ public class ULunarOctopus extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
-
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -49,6 +50,6 @@ public class ULunarOctopus extends Unit{
 		}
 	}
 	
-	// Level 3: Lunar Tide					- Heal all adjacent allies
+	//- Heal all adjacent allies
 	
 }

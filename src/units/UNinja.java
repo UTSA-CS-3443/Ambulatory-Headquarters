@@ -12,6 +12,7 @@ public class UNinja extends Unit{
 	private int iDefenseINC = 25;
 	
 	private int iSkillBase;
+	private String sSkillName = "Contract";
 	
 	public UNinja() {
 		this.setiUnitID(9);
@@ -28,6 +29,7 @@ public class UNinja extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -46,6 +48,6 @@ public class UNinja extends Unit{
 		}
 	}
 	
-	// Level 5: Assassination Contract		- Set enemy defense to 0
+	// Set enemy defense to 0
 
 }

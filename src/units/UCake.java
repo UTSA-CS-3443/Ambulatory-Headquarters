@@ -12,6 +12,7 @@ public class UCake extends Unit{
 	private int iDefenseINC = 10;
 	
 	private int iSkillBase;
+	private String sSkillName = "Takes the Cake";
 	
 	public UCake() {
 		this.setiUnitID(3);
@@ -28,6 +29,7 @@ public class UCake extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -42,8 +44,6 @@ public class UCake extends Unit{
 		}
 	}
 	
-	// Level 1: N/A
-	// Level 2: Excess Frosting				- Adjacent slow
-	// Level 3: Happy Birthday				- Adjacent heal
+	// Adjacent heal
 
 }

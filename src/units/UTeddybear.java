@@ -12,6 +12,7 @@ public class UTeddybear extends Unit{
 	private int iDefenseINC = 20;
 	
 	private int iSkillBase;
+	private String sSkillName = "100% Cotton";
 	
 	public UTeddybear() {
 		this.setiUnitID(13);
@@ -30,6 +31,7 @@ public class UTeddybear extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override

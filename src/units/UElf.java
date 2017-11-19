@@ -12,6 +12,7 @@ public class UElf extends Unit{
 	private int iDefenseINC = 5;
 	
 	private int iSkillBase = 2;
+	private String sSkillName = "Prayer to Alynn";
 	
 	public UElf() {
 		this.setiUnitID(5);
@@ -29,7 +30,7 @@ public class UElf extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
-
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override

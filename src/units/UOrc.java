@@ -12,6 +12,7 @@ public class UOrc extends Unit{
 	private int iDefenseINC = 30;
 	
 	private int iSkillBase;
+	private String sSkillName = "Bloodlust Ritual";
 	
 	public UOrc() {
 		this.setiUnitID(10);
@@ -28,6 +29,7 @@ public class UOrc extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -46,6 +48,6 @@ public class UOrc extends Unit{
 		}
 	}
 	
-	// Level 3: Bloodlust Ritual	- Increase Attack and decrease defense
+	// Increase Attack and decrease defense
 
 }

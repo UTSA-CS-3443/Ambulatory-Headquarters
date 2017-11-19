@@ -12,6 +12,7 @@ public class UGhost extends Unit{
 	private int iDefenseINC = 15;
 	
 	private int iSkillBase;
+	private String sSkillName = "Ethereal (Passive)";
 	
 	public UGhost() {
 		this.setiUnitID(6);
@@ -27,6 +28,7 @@ public class UGhost extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -40,7 +42,4 @@ public class UGhost extends Unit{
 			this.setiMobility(this.iMobilityBASE + 1);
 		}
 	}
-	
-	// Level 1: GhostLyfe (passive)				- Pass through walls, but NOT enemies
-	
 }

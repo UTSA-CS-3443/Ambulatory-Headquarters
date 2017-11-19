@@ -12,6 +12,7 @@ public class UPirate extends Unit{
 	private int iDefenseINC = 25;
 	
 	private int iSkillBase;
+	private String sSkillName = "Ahoy!";
 	
 	public UPirate() {
 		this.setiUnitID(11);
@@ -27,6 +28,7 @@ public class UPirate extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -45,5 +47,5 @@ public class UPirate extends Unit{
 		}
 	}
 	
-	// Level 3: Pirate Pistol				- Single-Target Burst 2x, Range 1-2
+	// Single-Target Burst 2x, Range 1-2
 }

@@ -12,6 +12,7 @@ public class UAlien extends Unit{
 	private int iDefenseINC = 20;
 	
 	private int iSkillBase = 2;
+	private String sSkillName = "Ray Gun";
 	
 	public UAlien() {
 		this.setiUnitID(0);
@@ -28,6 +29,7 @@ public class UAlien extends Unit{
 		this.setbAlly(true);
 		
 		this.setiSkillMod(iSkillBase);
+		this.setsSkillName(sSkillName);
 	}
 
 	@Override
@@ -42,5 +44,5 @@ public class UAlien extends Unit{
 		}
 	}
 	
-	// Level 3: Ray Gun					- Single Target 3x
+	// Level 3: Ray Gun					- Single Target 2x
 }

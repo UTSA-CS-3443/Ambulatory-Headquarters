@@ -6,7 +6,7 @@ public abstract class Unit {
 	private String[] allyList = {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"CatBUrglar",
 								"Elf",		"Ghost",	"Knight",		"Lunar Octopus",	"Ninja",
 								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead",
-								"Wall",	"Enemy 1",		"Enemy 2",		"Enemy 3",			"Enemy 4"};
+								"Wall",		"Enemy 1",	"Enemy 2",		"Enemy 3",			"Enemy 4"};
 	private int iUnitID;
 	private int iLevel = 1;
 	private int iHitPoints;
@@ -17,8 +17,9 @@ public abstract class Unit {
 	private boolean bAlly;
 	private boolean bEnemy;
 	
+	private String sSkillName;
 	private int iATKSlot = 0; // reg attack = 0, skills = 1
-	private int iSkillMod;
+	private int iSkillMod = 1;
 	
 	private boolean iAttackCounter = true;
 	private boolean iMoveCounter = true;
@@ -125,6 +126,10 @@ public abstract class Unit {
 	}
 	
 	// SKILL MOD METHODS
+	public void setsSkillName(String skillName) {
+		this.sSkillName = skillName;
+	}
+	
 	public int getiSkillMod() {
 		return this.iSkillMod;
 	}
