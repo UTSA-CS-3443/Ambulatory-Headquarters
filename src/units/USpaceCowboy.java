@@ -52,6 +52,6 @@ public class USpaceCowboy extends Unit{
 		}
 	}
 	
-	// Level 5: Global TP be opened at a time.
+	// Level 5: Global TP
 
 }
