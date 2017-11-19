@@ -89,13 +89,13 @@ public class Map
 		if(range >= 0)
 		{
 			mat[r][c] = true;
-			if((r+1)<mat.length && map[r+1][c] == null)
+			if((r+1)<mat.length && (map[r+1][c] == null || map[r+1][c].isbAlly()))
 				moveableRec(map,mat,r+1,c,range-1);
-			if((r-1)>=0 && map[r-1][c] == null)
+			if((r-1)>=0 && (map[r-1][c] == null || map[r-1][c].isbAlly()))
 				moveableRec(map,mat,r-1,c,range-1);
-			if((c+1)<mat.length && map[r][c+1] == null)
+			if((c+1)<mat.length && (map[r][c+1] == null || map[r][c+1].isbAlly()))
 				moveableRec(map,mat,r,c+1,range-1);
-			if((c-1)>=0 && map[r][c-1] == null)
+			if((c-1)>=0 && (map[r][c-1] == null || map[r][c-1].isbAlly()))
 				moveableRec(map,mat,r,c-1,range-1);
 		}
 		return mat;
