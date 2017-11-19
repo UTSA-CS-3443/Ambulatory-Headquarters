@@ -22,6 +22,15 @@ public class Map
 			return map[r][c];
 	}
 	
+	public boolean move(int r0, int c0, int r1, int c1)
+	{
+		if(r0 == r1 && c0 == c1)
+			return false;
+		map[r1][c1] = map[r0][c0];
+		map[r0][c0] = null;
+		return true;
+	}
+	
 	public int getRow()
 	{
 		return map.length;

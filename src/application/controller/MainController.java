@@ -7,7 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import map.Map;
+import map.*;
+import units.*;
 import javafx.beans.binding.*;
 import javafx.collections.*;
 
@@ -24,9 +25,12 @@ public class MainController implements EventHandler<ActionEvent>
 	@FXML
 	private GridPane mapPane;
 	@FXML
-	public Button zero;
+	public Button prevClicked;
 	
 	private Map map;
+	
+	Unit selected;
+	Location selectedLocation;
 	
 	public MainController() 
 	{
@@ -34,15 +38,39 @@ public class MainController implements EventHandler<ActionEvent>
 		map = new Map();
 		
 	}
+	public void handleReady(ActionEvent event)
+	{
+		processMap();
+	}
 	
 	@Override
 	public void handle(ActionEvent event) 
 	{
 		Button b = (Button)event.getSource();
+		System.out.println(mapPane.getRowIndex(b) + "," + mapPane.getColumnIndex(b));
 		String text = b.getText();
-		System.out.println(text);
 		processMap();
-		zero.setText("done");
+		
+		if(selected == null)
+		{
+			selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+			selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+			prevClicked = b;
+			System.out.println("prevClicked set");
+		}
+		else
+		{
+			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))
+			{
+				System.out.println(selected.getName() + " moved from " + 
+									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
+									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
+				selected = null;
+				processMap();
+				prevClicked.setText(",");
+				prevClicked = null;
+			}
+		}
 	}
 	
 	public void processMap()
