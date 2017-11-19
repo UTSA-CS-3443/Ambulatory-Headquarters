@@ -1,6 +1,9 @@
 package units;
+//import java.awt.Image;
 
 public class UKnight extends Unit{
+	
+	// private Image image = knighttest.jpg;
 	
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 30;
@@ -11,7 +14,13 @@ public class UKnight extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 25;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UKnight() {
+		this.setiUnitID(7);
+		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);
@@ -40,8 +49,8 @@ public class UKnight extends Unit{
 		}
 	}
 	
-	// Level 1: Knight's Honor				- Reduce dmg by 50%
-	// Level 3: Into the Fray				- Boost Adjacent Ally Mobility by 1
+	// Level 1: Knight's Honor				- Reduce next attack by 50%
+	// Level 3: Into the Fray				- Attack 2 adjacent units
 	// Level 5: Excalibur					- AoE in cross in any of 4 directions
 	
 	public String getName()

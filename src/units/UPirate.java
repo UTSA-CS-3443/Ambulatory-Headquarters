@@ -11,7 +11,12 @@ public class UPirate extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 25;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UPirate() {
+		this.setiUnitID(11);
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);

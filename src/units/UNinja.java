@@ -11,7 +11,13 @@ public class UNinja extends Unit{
 	private int iAttackINC = 30;
 	private int iDefenseINC = 25;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UNinja() {
+		this.setiUnitID(9);
+		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);

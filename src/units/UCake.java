@@ -11,7 +11,13 @@ public class UCake extends Unit{
 	private int iAttackINC = 10;
 	private int iDefenseINC = 10;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UCake() {
+		this.setiUnitID(3);
+		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);

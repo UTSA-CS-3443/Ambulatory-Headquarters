@@ -11,7 +11,13 @@ public class UUndead extends Unit{
 	private int iAttackINC = 30;
 	private int iDefenseINC = 20;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UUndead() {
+		this.setiUnitID(14);
+		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);

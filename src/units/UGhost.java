@@ -11,7 +11,12 @@ public class UGhost extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 15;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UGhost() {
+		this.setiUnitID(6);
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);

@@ -3,6 +3,10 @@ package units;
 import java.util.ArrayList;
 
 public abstract class Unit {
+	private String[] unitList= {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"CatBUrglar",
+								"Elf",		"Ghost",	"Knight",		"Lunar Octopus",	"Ninja",
+								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead"};
+	private int iUnitID;
 	private int iLevel = 1;
 	private int iHitPoints;
 	private int iAttack;
@@ -12,7 +16,21 @@ public abstract class Unit {
 	private boolean bAlly;
 	private boolean bEnemy;
 	
+	private int iATKSlot = 0; // reg attack = 0, skills = 1,2,3 respectively
+	private int iSkill1Mod;
+	private int iSkill2Mod;
+	private int iSkill3Mod;
+	
 	public abstract String getName();
+	
+	// UNIT ID METHOD
+	public String getUnitName() {	
+		return this.unitList[this.iUnitID];
+	}
+	
+	public void setiUnitID(int unitID) {
+		this.iUnitID = unitID;
+	}
 	
 	// LEVEL METHODS
 	public int getiLevel() {
@@ -95,5 +113,35 @@ public abstract class Unit {
 	}
 	public void setbEnemy(boolean b) {
 		this.bEnemy = b;
+	}
+	
+	// ATTACK SLOT METHOD
+	public int getiATKSlot() {
+		return this.iATKSlot;
+	}
+	
+	// SKILL MOD METHODS
+	public int getiSkill1Mod() {
+		return this.iSkill1Mod;
+	}
+	
+	public void setiSkill1Mod(int mod) {
+		this.iSkill1Mod = mod;
+	}
+	
+	public int getiSkill2Mod() {
+		return this.iSkill2Mod;
+	}
+	
+	public void setiSkill2Mod(int mod) {
+		this.iSkill2Mod = mod;
+	}
+	
+	public int getiSkill3Mod() {
+		return this.iSkill3Mod;
+	}
+	
+	public void setiSkill3Mod(int mod) {
+		this.iSkill3Mod = mod;
 	}
 }

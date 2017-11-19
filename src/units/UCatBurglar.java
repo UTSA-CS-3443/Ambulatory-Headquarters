@@ -11,7 +11,12 @@ public class UCatBurglar extends Unit{
 	private int iAttackINC = 15;
 	private int iDefenseINC = 15;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UCatBurglar() {
+		this.setiUnitID(4);
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);

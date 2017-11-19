@@ -11,7 +11,13 @@ public class UAngel extends Unit{
 	private int iAttackINC = 25;
 	private int iDefenseINC = 25;
 	
+	private int iSkill1Base;
+	private int iSkill2Base;
+	private int iSkill3Base;
+	
 	public UAngel() {
+		this.setiUnitID(1);
+		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
 		this.setiAttack(this.iAttackBASE);
