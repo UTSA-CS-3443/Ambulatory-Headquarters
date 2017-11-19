@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.CharacterSelectController">
   <children>
-    <GridPane gridLinesVisible="true" layoutX="557.0" layoutY="373.0" prefHeight="308.0" prefWidth="487.0">
+    <GridPane gridLinesVisible="true" layoutX="397.0" layoutY="213.0" prefHeight="308.0" prefWidth="487.0">
       <children>
         <CheckBox mnemonicParsing="false" text="Alien">
           <font>
@@ -45,11 +45,11 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Text layoutX="620.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM SELECT">
+    <Text layoutX="460.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM SELECT">
       <font>
         <Font size="60.0" />
       </font>
     </Text>
-    <Button layoutX="594.0" layoutY="707.0" mnemonicParsing="false" onAction="#handle" text="&lt;--Back" />
+    <Button layoutX="434.0" layoutY="547.0" mnemonicParsing="false" onAction="#handle" text="&lt;--Back" />
   </children>
 </AnchorPane>

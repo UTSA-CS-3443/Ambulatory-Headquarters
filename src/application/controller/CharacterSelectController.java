@@ -60,7 +60,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 			System.out.println("BACK!!");
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
-				Scene scene = new Scene(root,1600,900);
+				Scene scene = new Scene(root,1280,720);
 				//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				Main.stage.setScene(scene);
 				Main.stage.show();
@@ -75,7 +75,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 			System.out.println("START!!");
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MainGame.fxml"));
-				Scene scene = new Scene(root,1600,900);
+				Scene scene = new Scene(root,1280,720);
 				//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				Main.stage.setScene(scene);
 				Main.stage.show();

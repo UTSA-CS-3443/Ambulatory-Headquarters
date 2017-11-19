@@ -71,7 +71,7 @@ public class MainMenuController  implements EventHandler<ActionEvent>
 					try {
 						// change over to a second view
 						Parent root = FXMLLoader.load(getClass().getResource("../view/MenuCharacterSelect.fxml"));   // Load the FXML
-						Main.stage.setScene(new Scene(root, 1600, 900));							   // Add the scene to the stage
+						Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
 						Main.stage.show();														   // Show the stage to the user
 					}catch(Exception e) {
 						e.printStackTrace(); // TODO: app should do something more productive if errors occur...
