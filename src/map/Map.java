@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import application.controller.CharacterSelectController;
 import units.*;
 
 public class Map 
@@ -73,11 +74,11 @@ public class Map
 				if(i == 6 || i == 4)
 					map[i][j] = new UZEnemy0();
 				else if(j == 5 && i == 5)
-					map[i][j] = new UKnight();
+					map[i][j] = CharacterSelectController.charList.get(0);
 				else if(j == 6 && i == 5)
-					map[i][j] = new UElf();
+					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 7 && i == 5)
-					map[i][j] = new UNinja();
+					map[i][j] = CharacterSelectController.charList.get(2);
 			}
 		}
 		

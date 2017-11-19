@@ -61,6 +61,8 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 	@FXML
 	CheckBox undeadCb;
 	
+	public static ArrayList<Unit> charList = new ArrayList<Unit>();
+	
 	public CharacterSelectController() 
 	{
 		super();
@@ -77,7 +79,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		
 		int[] charS ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 		
-		ArrayList<Unit> charList = new ArrayList<Unit>();		
+		//ArrayList<Unit> charList = new ArrayList<Unit>();		
 		
 		// sends game back to MainMenu.fxml
 		if (text.equals("<--Back")) 
