@@ -28,6 +28,7 @@ public class MainController implements EventHandler<ActionEvent>
 	public Button prevClicked;
 	
 	private Map map;
+	private boolean ready;
 	
 	Unit selected;
 	Location selectedLocation;
@@ -35,17 +36,25 @@ public class MainController implements EventHandler<ActionEvent>
 	public MainController() 
 	{
 		super();
+		ready = false;
 		map = new Map();
 		
 	}
 	public void handleReady(ActionEvent event)
 	{
+		ready = true;
 		processMap();
 	}
 	
 	@Override
 	public void handle(ActionEvent event) 
 	{
+		if(!ready)
+		{
+			notification("Not ready");
+			return;
+		}
+			
 		Button b = (Button)event.getSource();
 		System.out.println(mapPane.getRowIndex(b) + "," + mapPane.getColumnIndex(b));
 		String text = b.getText();
