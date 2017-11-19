@@ -25,7 +25,7 @@
         </AnchorPane>
         <AnchorPane fx:id="enemyPane" layoutX="14.0" layoutY="466.0" prefHeight="241.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD">
           <children>
-            <Button layoutX="7.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleReady" text="Ready" />
+            <Button fx:id="readyBtn" layoutX="7.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleReady" text="Ready" visible="true" />
             <Label fx:id="enemyNameLb" layoutX="7.0" layoutY="4.0" text="Enemy" />
             <Label fx:id="enemyLb" alignment="TOP_LEFT" layoutX="7.0" layoutY="25.0" prefHeight="180.0" prefWidth="268.0" text="Stats" />
           </children>

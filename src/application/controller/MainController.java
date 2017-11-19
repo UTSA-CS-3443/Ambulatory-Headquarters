@@ -35,6 +35,8 @@ public class MainController implements EventHandler<ActionEvent>
 	private GridPane mapPane;
 	@FXML
 	public Button prevClicked;
+	@FXML
+	public Button readyBtn;
 	
 	private Map map;
 	private boolean ready;
@@ -53,6 +55,7 @@ public class MainController implements EventHandler<ActionEvent>
 	public void handleReady(ActionEvent event)
 	{
 		ready = true;
+		readyBtn.setVisible(false);
 		processMap();
 	}
 	
