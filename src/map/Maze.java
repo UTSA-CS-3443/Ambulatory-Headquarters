@@ -21,12 +21,12 @@ public class Maze {
 			in = new Scanner(new File("src/map/"+mazeNum));
 			while(in.hasNext()) {
 				String s = in.next();
-				for(int i=0; i<12; i++) {
-					if(i == 12)
+				for(int i=0; i<16; i++) {
+					if(i == 15)
 						str = s.substring(i);
 					else
 						str = s.substring(i, i+1);
-					maze[i][j] = Integer.parseInt(str);
+					maze[j][i] = Integer.parseInt(str);
 				}
 				j++;
 			}
