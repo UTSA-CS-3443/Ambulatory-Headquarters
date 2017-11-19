@@ -108,6 +108,18 @@ public class MainController implements EventHandler<ActionEvent>
 				{
 					notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
 				}
+				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
+				{
+					selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+					allyNameLb.setText(selected.getUnitName());
+					allyLb.setText("HP: " + selected.getiHitPoints() + "\n" + 
+									"Level: " + selected.getiLevel() + "\n" + 
+									"Mobility: " + selected.getiMobility() + "\n" + 
+									"Atk.: " + selected.getiAttack() + "\n" + 
+									"Def.: " + selected.getiDefense());
+					selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+					prevClicked = b;
+				}
 			}
 		}
 	}

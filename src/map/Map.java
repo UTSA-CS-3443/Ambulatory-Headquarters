@@ -64,6 +64,10 @@ public class Map
 					map[i][j] = new UZEnemy0();
 				else if(j == 5 && i == 5)
 					map[i][j] = new UKnight();
+				else if(j == 6 && i == 5)
+					map[i][j] = new UElf();
+				else if(j == 7 && i == 5)
+					map[i][j] = new UNinja();
 				else
 					map[i][j] = null;
 			}
