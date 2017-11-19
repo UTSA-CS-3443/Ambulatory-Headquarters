@@ -60,14 +60,23 @@ public class MainController implements EventHandler<ActionEvent>
 		}
 		else
 		{
-			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))
+			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 1)
 			{
-				System.out.println(selected.getName() + " moved from " + 
+				notification(selected.getUnitName() + " moved from " + 
+									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
+									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
+				System.out.println(selected.getUnitName() + " moved from " + 
 									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
 									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
 				selected = null;
 				processMap();
 				prevClicked.setText(",");
+				prevClicked = null;
+			}
+			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 3)
+			{
+				notification("Too far: "+selected.getUnitName() + " can only move " + selected.getiMobility() + " blocks");
+				selected = null;
 				prevClicked = null;
 			}
 		}
@@ -88,11 +97,16 @@ public class MainController implements EventHandler<ActionEvent>
 						 if(mapPane.getRowIndex(node) == i && mapPane.getColumnIndex(node) == j)
 						 {
 							 b = (Button)node;
-							 b.setText(map.get(i, j).getName());
+							 b.setText(map.get(i, j).getUnitName());
 						 }
 					}					
 				}
 			}
 		}
 	}
+	public void notification(String s)
+	{
+		notificationsLb.setText(s+"\n"+notificationsLb.getText());
+	}
+	
 }

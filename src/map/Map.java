@@ -22,13 +22,25 @@ public class Map
 			return map[r][c];
 	}
 	
-	public boolean move(int r0, int c0, int r1, int c1)
+	/**
+	 * 
+	 * @param r0 current row
+	 * @param c0 current column
+	 * @param r1 target row
+	 * @param c1 target column
+	 * @return 0 if current is same with target, 2 if target is an Unit, 1 if move was successful
+	 */
+	public int move(int r0, int c0, int r1, int c1)
 	{
 		if(r0 == r1 && c0 == c1)
-			return false;
+			return 0;
+		if(map[r1][c1] instanceof Unit)
+			return 2;
+		if((Math.abs(r0-r1) + Math.abs(c0-c1)) > map[r0][c0].getiMobility())
+			return 3;
 		map[r1][c1] = map[r0][c0];
 		map[r0][c0] = null;
-		return true;
+		return 1;
 	}
 	
 	public int getRow()
@@ -48,6 +60,8 @@ public class Map
 			for(int j = 0; j < map[0].length; j++)
 			{
 				if(j == 8 && i == 11)
+					map[i][j] = new UElf();
+				else if(j == 5 && i == 5)
 					map[i][j] = new UKnight();
 				else
 					map[i][j] = null;
