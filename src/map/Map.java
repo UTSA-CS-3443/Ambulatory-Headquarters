@@ -28,7 +28,7 @@ public class Map
 	 * @param c0 current column
 	 * @param r1 target row
 	 * @param c1 target column
-	 * @return 0 if current is same with target, 2 if target is an Unit, 1 if move was successful
+	 * @return 0 if current is same with target, 2 if target is an Unit, 1 if move was successful, 3 is too far
 	 */
 	public int move(int r0, int c0, int r1, int c1)
 	{

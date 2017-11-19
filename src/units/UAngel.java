@@ -51,7 +51,5 @@ public class UAngel extends Unit{
 		}
 	}
 	
-	// Level 1: Song of Serenity				- Increase ally Max HP by 20 
-	// Level 3: Hymn of the Heavens				- Increase ally Max DEF by 20
-	// Level 5: Mythical Harp					- AoE dmg 3x3, except for center
+	// Level 3: Hymn of the Heavens				- Heal ally by DMG formula * 2
 }

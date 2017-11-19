@@ -46,7 +46,5 @@ public class UAlien extends Unit{
 		}
 	}
 	
-	// Level 1: Tentacle Slap			- Single Target 2x
 	// Level 3: Ray Gun					- Single Target 3x
-	// Level 5: Call Spaceship			- Single Target global DMG 3x
 }
