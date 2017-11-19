@@ -7,7 +7,7 @@ public class Wall extends Unit{
 		
 		this.setiMobility(0);
 		
-		this.setbAlly(true);
+		this.setbAlly(false);
 	}
 	
 	@Override
