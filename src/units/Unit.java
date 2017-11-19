@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public abstract class Unit {
 	private String[] allyList = {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"CatBUrglar",
 								"Elf",		"Ghost",	"Knight",		"Lunar Octopus",	"Ninja",
-								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead"};
-	private String[] enemyList = {	"Enemy 1", "Enemy 2", "Enemy 3"}; 
+								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead",
+								"Enemy 1"};
 	private int iUnitID;
 	private int iLevel = 1;
 	private int iHitPoints;
@@ -22,13 +22,11 @@ public abstract class Unit {
 	private int iSkill2Mod;
 	private int iSkill3Mod;
 	
+	
+	
 	// UNIT ID METHOD
 	public String getUnitName() {	
 		return this.allyList[this.iUnitID];
-	}
-	
-	public String getEnemyName() {
-		return this.enemyList[this.iUnitID - 100];
 	}
 	
 	public void setiUnitID(int unitID) {

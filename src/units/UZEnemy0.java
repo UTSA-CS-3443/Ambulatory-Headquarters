@@ -15,7 +15,7 @@ public class UZEnemy0 extends Unit{
 	private int iSkill3Base = 1;
 	
 	public UZEnemy0() {
-		this.setiUnitID(100);
+		this.setiUnitID(15);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
