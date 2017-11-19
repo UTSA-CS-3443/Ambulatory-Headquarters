@@ -11,9 +11,7 @@ public class UElf extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 5;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase = 2;
 	
 	public UElf() {
 		this.setiUnitID(5);
@@ -30,9 +28,8 @@ public class UElf extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
+
 	}
 
 	@Override
@@ -52,8 +49,6 @@ public class UElf extends Unit{
 		
 	}
 	
-	// Level 1: Prayer to Alynn		- Single Target Heal
-	// Level 3: Petrify				- CC
-	// Levle 5: Wrath of Zaleria	- AoE Spell
+	// Level 1: Prayer to Alynn		- Single Target Heal Dmg * 2 mod
 	
 }

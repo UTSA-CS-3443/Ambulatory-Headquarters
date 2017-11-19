@@ -10,10 +10,8 @@ public class UZEnemy0 extends Unit{
 	private int iAttackINC = 15;
 	private int iDefenseINC = 15;
 	
-	private int iSkill1Base = 1;
-	private int iSkill2Base =1;
-	private int iSkill3Base = 1;
-	
+	private int iSkillBase = 1;
+
 	public UZEnemy0() {
 		this.setiUnitID(16);
 		
@@ -28,9 +26,7 @@ public class UZEnemy0 extends Unit{
 		
 		this.setbAlly(false);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 	
 	public void iLevelInc() {

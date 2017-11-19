@@ -11,9 +11,7 @@ public class UAlien extends Unit{
 	private int iAttackINC = 25;
 	private int iDefenseINC = 20;
 	
-	private int iSkill1Base = 2;
-	private int iSkill2Base = 3;
-	private int iSkill3Base = 3;
+	private int iSkillBase = 2;
 	
 	public UAlien() {
 		this.setiUnitID(0);
@@ -29,9 +27,7 @@ public class UAlien extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override

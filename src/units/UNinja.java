@@ -11,9 +11,7 @@ public class UNinja extends Unit{
 	private int iAttackINC = 30;
 	private int iDefenseINC = 25;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UNinja() {
 		this.setiUnitID(9);
@@ -29,9 +27,7 @@ public class UNinja extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -50,9 +46,6 @@ public class UNinja extends Unit{
 		}
 	}
 	
-	// Level 1: Rain of kunai				- Single-Target Burst
-	// Level 3: Kawarimi Jutsu				- Next attack attempted on Ninja, take no dmg
-	// Level 5: Assassination Contract		- Mark Enemy, Kill enemy next turn.
-
+	// Level 5: Assassination Contract		- Set enemy defense to 0
 
 }

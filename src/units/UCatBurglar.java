@@ -11,9 +11,7 @@ public class UCatBurglar extends Unit{
 	private int iAttackINC = 15;
 	private int iDefenseINC = 15;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UCatBurglar() {
 		this.setiUnitID(4);
@@ -30,9 +28,7 @@ public class UCatBurglar extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -52,8 +48,7 @@ public class UCatBurglar extends Unit{
 	}
 	
 	// Level 1: What's Yours is Mine			- Steal 20 ATK, 20 DEF, 20HP from enemy
-	// Level 3: What's in the Box?				- Throw present at enemy. Either heals or damages. 2x multiplier
-	// Level 5: What's Over There?				- Move to any enemy on map. Can't attack.
+
 
 
 }

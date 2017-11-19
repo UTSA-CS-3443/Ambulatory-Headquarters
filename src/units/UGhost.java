@@ -11,9 +11,7 @@ public class UGhost extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 15;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UGhost() {
 		this.setiUnitID(6);
@@ -28,9 +26,7 @@ public class UGhost extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -45,8 +41,6 @@ public class UGhost extends Unit{
 		}
 	}
 	
-	// Level 1: GhostLyfe				- Pass through wall
-	// Level 3: N/A
-	// Level 5: Haunt					- Makes enemy unit run away for 1 turn using mobility/2
+	// Level 1: GhostLyfe (passive)				- Pass through walls, but NOT enemies
 	
 }

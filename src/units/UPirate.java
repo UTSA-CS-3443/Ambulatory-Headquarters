@@ -11,9 +11,7 @@ public class UPirate extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 25;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UPirate() {
 		this.setiUnitID(11);
@@ -28,9 +26,7 @@ public class UPirate extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -49,7 +45,5 @@ public class UPirate extends Unit{
 		}
 	}
 	
-	// Level 1: Pirate Pistol				- Single-Target Burst 2x ATK
-	// Level 3: X Marks the Spot			- Attack hits corners of 3x3 square
-	// Level 5: Ahoy!						- Mark Enemy, Kill enemy next turn.
+	// Level 3: Pirate Pistol				- Single-Target Burst 2x, Range 1-2
 }

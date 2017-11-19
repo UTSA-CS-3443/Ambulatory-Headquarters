@@ -11,9 +11,7 @@ public class UTeddybear extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 20;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UTeddybear() {
 		this.setiUnitID(13);
@@ -31,9 +29,7 @@ public class UTeddybear extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -52,8 +48,6 @@ public class UTeddybear extends Unit{
 		}
 	}
 	
-	// Level 1: Hug					- Decrease enemy attack by 20
-	// Level 3: 100% Cotton			- Increase Max HP by 50
-	// Level 5: Sharing is Caring	- Increase ally HP by 50 decrease own HP by 100
+	// Level 3: 100% Cotton			- Increase Max HP by 50, and heal by 50
 	
 }

@@ -11,9 +11,7 @@ public class UUndead extends Unit{
 	private int iAttackINC = 30;
 	private int iDefenseINC = 20;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UUndead() {
 		this.setiUnitID(14);
@@ -29,9 +27,7 @@ public class UUndead extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -50,8 +46,6 @@ public class UUndead extends Unit{
 		}
 	}
 	
-	// Level 1: From the grave				- 3 Adjacent DMG
-	// Level 3: Scavenge					- Self-heal 50%
-	// Level 5: Army of the Undead			- 3x3 frontal attack
+	// Level 3: Scavenge					- Self-heal 50% of max HP
 	
 }

@@ -11,9 +11,7 @@ public class ULunarOctopus extends Unit{
 	private int iAttackINC = 30;
 	private int iDefenseINC = 15;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public ULunarOctopus() {
 		this.setiUnitID(8);
@@ -31,9 +29,8 @@ public class ULunarOctopus extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
+
 	}
 
 	@Override
@@ -52,8 +49,6 @@ public class ULunarOctopus extends Unit{
 		}
 	}
 	
-	// Level 1: High Tide					- Heal adjacent 2x2 
-	// Level 3: Ooze						- Destroy 1 wall
-	// Level 5: Moonbeam					- 1x3 AoE
+	// Level 3: Lunar Tide					- Heal all adjacent allies
 	
 }

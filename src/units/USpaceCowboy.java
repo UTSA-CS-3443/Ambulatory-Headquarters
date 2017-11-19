@@ -11,9 +11,9 @@ public class USpaceCowboy extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 20;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
+	
+	private boolean wormholeOpen = false;
 	
 	public USpaceCowboy() {
 		this.setiUnitID(12);
@@ -31,9 +31,7 @@ public class USpaceCowboy extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -52,8 +50,6 @@ public class USpaceCowboy extends Unit{
 		}
 	}
 	
-	// Level 1: Ion Pistol			- 1x5 beam hits only X's: XOXOX
-	// Level 3: Hologram			- Create decoy. Can only survive 1 hit.
-	// Level 5: Wormhole			- Create wormhole anywhere on map; 3 uses. Only 1 wormhole can be opened at a time.
+	// Level 5: Wormhole			- Create wormhole anywhere on map. Only 1 wormhole can be opened at a time.
 
 }

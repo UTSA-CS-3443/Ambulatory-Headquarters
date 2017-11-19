@@ -11,9 +11,7 @@ public class UOrc extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 30;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UOrc() {
 		this.setiUnitID(10);
@@ -29,9 +27,7 @@ public class UOrc extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -50,8 +46,6 @@ public class UOrc extends Unit{
 		}
 	}
 	
-	// Level 1: Pummel				- Single-Target Burst
 	// Level 3: Bloodlust Ritual	- Increase Attack and decrease defense
-	// Level 5: Warborn Pact		- Sacrifice 50% remaining HP to increase Attack for 5 turns
 
 }

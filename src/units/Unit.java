@@ -17,12 +17,11 @@ public abstract class Unit {
 	private boolean bAlly;
 	private boolean bEnemy;
 	
-	private int iATKSlot = 0; // reg attack = 0, skills = 1,2,3 respectively
-	private int iSkill1Mod;
-	private int iSkill2Mod;
-	private int iSkill3Mod;
+	private int iATKSlot = 0; // reg attack = 0, skills = 1
+	private int iSkillMod;
 	
-	
+	private int iAttackCounter = 1;
+	private int iMoveCounter = 1;
 	
 	// UNIT ID METHOD
 	public String getUnitName() {	
@@ -126,27 +125,26 @@ public abstract class Unit {
 	}
 	
 	// SKILL MOD METHODS
-	public int getiSkill1Mod() {
-		return this.iSkill1Mod;
+	public int getiSkillMod() {
+		return this.iSkillMod;
 	}
 	
-	public void setiSkill1Mod(int mod) {
-		this.iSkill1Mod = mod;
+	public void setiSkillMod(int mod) {
+		this.iSkillMod = mod;
 	}
 	
-	public int getiSkill2Mod() {
-		return this.iSkill2Mod;
+	// Attack and Move counter METHODS
+	public void resetCounters() {
+		this.iAttackCounter = 1;
+		this.iMoveCounter = 1;
 	}
 	
-	public void setiSkill2Mod(int mod) {
-		this.iSkill2Mod = mod;
+	public int getiAttackCounter() {
+		return this.iAttackCounter;
 	}
 	
-	public int getiSkill3Mod() {
-		return this.iSkill3Mod;
+	public int getiMoveCounter() {
+		return this.iMoveCounter;
 	}
-	
-	public void setiSkill3Mod(int mod) {
-		this.iSkill3Mod = mod;
-	}
+
 }

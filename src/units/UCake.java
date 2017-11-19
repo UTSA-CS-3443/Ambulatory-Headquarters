@@ -11,9 +11,7 @@ public class UCake extends Unit{
 	private int iAttackINC = 10;
 	private int iDefenseINC = 10;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UCake() {
 		this.setiUnitID(3);
@@ -29,9 +27,7 @@ public class UCake extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override

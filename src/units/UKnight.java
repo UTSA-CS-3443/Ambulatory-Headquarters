@@ -14,9 +14,7 @@ public class UKnight extends Unit{
 	private int iAttackINC = 20;
 	private int iDefenseINC = 25;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkillBase;
 	
 	public UKnight() {
 		this.setiUnitID(7);
@@ -32,9 +30,7 @@ public class UKnight extends Unit{
 		
 		this.setbAlly(true);
 		
-		this.setiSkill1Mod(iSkill1Base);
-		this.setiSkill2Mod(iSkill2Base);
-		this.setiSkill3Mod(iSkill3Base);
+		this.setiSkillMod(iSkillBase);
 	}
 
 	@Override
@@ -53,8 +49,6 @@ public class UKnight extends Unit{
 		}
 	}
 	
-	// Level 1: Knight's Honor				- Reduce next attack by 50%
-	// Level 3: Into the Fray				- Attack 2 adjacent units
-	// Level 5: Excalibur					- AoE in cross in any of 4 directions
+	// Level 3: Brandish				- Attack 4 adjacent units to NWSE
 	
 }
