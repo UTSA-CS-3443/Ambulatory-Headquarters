@@ -20,8 +20,8 @@ public abstract class Unit {
 	private int iATKSlot = 0; // reg attack = 0, skills = 1
 	private int iSkillMod;
 	
-	private int iAttackCounter = 1;
-	private int iMoveCounter = 1;
+	private boolean iAttackCounter = true;
+	private boolean iMoveCounter = true;
 	
 	// UNIT ID METHOD
 	public String getUnitName() {	
@@ -135,16 +135,24 @@ public abstract class Unit {
 	
 	// Attack and Move counter METHODS
 	public void resetCounters() {
-		this.iAttackCounter = 1;
-		this.iMoveCounter = 1;
+		this.iAttackCounter = true;
+		this.iMoveCounter = true;
 	}
 	
-	public int getiAttackCounter() {
+	public boolean getiAttackCounter() {
 		return this.iAttackCounter;
 	}
 	
-	public int getiMoveCounter() {
+	public boolean getiMoveCounter() {
 		return this.iMoveCounter;
+	}
+	
+	public void noMoreAttacks() {
+		this.iAttackCounter = false;
+	}
+	
+	public void noMoreMOves() {
+		this.iMoveCounter = false;
 	}
 
 }
