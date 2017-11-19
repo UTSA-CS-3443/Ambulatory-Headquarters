@@ -68,4 +68,35 @@ public class Map
 			}
 		}
 	}
+	
+	public boolean[][] moveable(Unit[][] map, int r, int c, int range)
+	{
+		boolean[][] mat = new boolean[map.length][map.length];
+		for(int i = 0; i < mat.length; i++)
+		{
+			for(int j = 0; j < mat.length; j++)
+			{
+				mat[i][j] = false;
+			}
+		}
+		
+		return mat;
+	}
+	
+	public boolean[][] moveableRec(Unit[][] map, boolean[][] mat, int r, int c, int range)
+	{
+		if(range > 0)
+		{
+			mat[r][c] = true;
+			if((r+1)<mat.length && map[r+1][c] == null)
+				moveableRec(map,mat,r+1,c,range-1);
+			if((r-1)>=0 && map[r+1][c] == null)
+				moveableRec(map,mat,r-1,c,range-1);
+			if((c+1)<mat.length && map[r][c+1] == null)
+				moveableRec(map,mat,r,c+1,range-1);
+			if((c-1)>=0 && map[r][c+1] == null)
+				moveableRec(map,mat,r,c-1,range-1);
+		}
+		return mat;
+	}
 }
