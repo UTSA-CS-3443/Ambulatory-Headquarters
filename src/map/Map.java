@@ -42,6 +42,11 @@ public class Map
 	 */
 	public int move(int r0, int c0, int r1, int c1)
 	{
+		if(r0 == r1 && c0 == c1)
+			return 0;
+		if(map[r1][c1] instanceof Unit)
+			return 2;
+		//if((Math.abs(r0-r1) + Math.abs(c0-c1)) > map[r0][c0].getiMobility())
 		if(map[r0][c0].getUnitName().equals("Ghost"))
 		{
 			if((Math.abs(r0-r1) + Math.abs(c0-c1)) <= map[r0][c0].getiMobility())
@@ -51,11 +56,6 @@ public class Map
 				return 1;
 			}
 		}
-		if(r0 == r1 && c0 == c1)
-			return 0;
-		if(map[r1][c1] instanceof Unit)
-			return 2;
-		//if((Math.abs(r0-r1) + Math.abs(c0-c1)) > map[r0][c0].getiMobility())
 		if(moveable(map,r0,c0,map[r0][c0].getiMobility())[r1][c1] == false)
 			return 3;
 		map[r1][c1] = map[r0][c0];
