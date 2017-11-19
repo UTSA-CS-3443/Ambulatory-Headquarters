@@ -3,7 +3,7 @@ package application.model;
 import units.Unit;
 
 public class Damage {
-	public int doDamage(Unit attacker, Unit defender) {
+	public static int doDamage(Unit attacker, Unit defender) {
 		int iModifier = 1;
 		if (attacker.getiATKSlot() == 0) {
 			iModifier = 1;

@@ -61,7 +61,7 @@ public class Map
 			for(int j = 0; j < map[0].length; j++)
 			{
 				if(i == 6 || i == 4)
-					map[i][j] = new UElf();
+					map[i][j] = new UZEnemy0();
 				else if(j == 5 && i == 5)
 					map[i][j] = new UKnight();
 				else

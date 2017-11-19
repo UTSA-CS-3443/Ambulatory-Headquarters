@@ -1,7 +1,6 @@
 package application.controller;
 
 import application.Main;
-import application.model.Player;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

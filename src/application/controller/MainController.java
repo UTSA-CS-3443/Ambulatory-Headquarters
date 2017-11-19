@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.Main;
+import application.model.Damage;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -88,8 +89,16 @@ public class MainController implements EventHandler<ActionEvent>
 				selected = null;
 				prevClicked = null;
 			}
+			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 2)
+			{
+				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
+				{
+					notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
+				}
+			}
 		}
 	}
+	
 	
 	public void processMap()
 	{
