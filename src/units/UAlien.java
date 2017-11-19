@@ -11,9 +11,9 @@ public class UAlien extends Unit{
 	private int iAttackINC = 25;
 	private int iDefenseINC = 20;
 	
-	private int iSkill1Base;
-	private int iSkill2Base;
-	private int iSkill3Base;
+	private int iSkill1Base = 2;
+	private int iSkill2Base = 3;
+	private int iSkill3Base = 3;
 	
 	public UAlien() {
 		this.setiUnitID(0);
@@ -28,6 +28,10 @@ public class UAlien extends Unit{
 		this.setiMobility(this.iMobilityBASE);
 		
 		this.setbAlly(true);
+		
+		this.setiSkill1Mod(iSkill1Base);
+		this.setiSkill2Mod(iSkill2Base);
+		this.setiSkill3Mod(iSkill3Base);
 	}
 
 	@Override
@@ -42,9 +46,9 @@ public class UAlien extends Unit{
 		}
 	}
 	
-	// Level 1: N/A
-	// Level 3: Ray Gun					- Single Target DMG
-	// Level 5: Call Spaceship			- Single Target global DMG
+	// Level 1: Tentacle Slap			- Single Target 2x
+	// Level 3: Ray Gun					- Single Target 3x
+	// Level 5: Call Spaceship			- Single Target global DMG 3x
 	
 	public String getName()
 	{
