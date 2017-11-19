@@ -6,7 +6,7 @@ public abstract class Unit {
 	private String[] allyList = {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"CatBUrglar",
 								"Elf",		"Ghost",	"Knight",		"Lunar Octopus",	"Ninja",
 								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead",
-								"Wall",	"Enemy 1",		"Enemy 2",		"Enemy 3",			"Enemy 4"};
+								"Wall",	"Enemy 1",		"Enemy 2",		"Enemy 3",			"Enemy 5"};
 	private int iUnitID;
 	private int iLevel = 1;
 	private int iHitPoints;
