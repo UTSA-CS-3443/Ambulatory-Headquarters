@@ -42,6 +42,15 @@ public class Map
 	 */
 	public int move(int r0, int c0, int r1, int c1)
 	{
+		if(map[r0][c0].getUnitName().equals("Ghost"))
+		{
+			if((Math.abs(r0-r1) + Math.abs(c0-c1)) <= map[r0][c0].getiMobility())
+			{
+				map[r1][c1] = map[r0][c0];
+				map[r0][c0] = null;
+				return 1;
+			}
+		}
 		if(r0 == r1 && c0 == c1)
 			return 0;
 		if(map[r1][c1] instanceof Unit)
