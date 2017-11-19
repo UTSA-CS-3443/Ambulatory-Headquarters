@@ -125,7 +125,7 @@ public class MainController implements EventHandler<ActionEvent>
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
 					notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
-					if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() == 0)
+					if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0)
 					{
 						notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
