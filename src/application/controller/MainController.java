@@ -127,16 +127,22 @@ public class MainController implements EventHandler<ActionEvent>
 			{
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
-					notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
-					if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0)
+					if((Math.abs(selectedLocation.getRow()-mapPane.getRowIndex(b)) + Math.abs(selectedLocation.getCol()-mapPane.getColumnIndex(b))) <= selected.getiATKRNG().get(0))
 					{
-						notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
-						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-						b.setText(",");
-						processMap();
+						notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
+						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0)
+						{
+							notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
+							map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+							b.setText(",");
+							processMap();
+						}
+						selected = null;
+						prevClicked = null;						
 					}
-					selected = null;
-					prevClicked = null;
+					else
+						notification("Too far cannot attack");
+
 				}
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
 				{
