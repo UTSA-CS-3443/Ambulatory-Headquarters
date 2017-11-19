@@ -17,7 +17,12 @@
           </font>
         </Label>
         <Label fx:id="notificationsLb" alignment="TOP_LEFT" font="$x1" layoutX="14.0" layoutY="50.0" prefHeight="156.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" text="" />
-        <AnchorPane fx:id="allyPane" layoutX="14.0" layoutY="213.0" prefHeight="245.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD" />
+        <AnchorPane fx:id="allyPane" layoutX="14.0" layoutY="213.0" prefHeight="245.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD">
+          <children>
+            <Label fx:id="allyNameLb" layoutX="6.0" layoutY="4.0" text="Ally" />
+            <Label fx:id="allyLb" alignment="TOP_LEFT" layoutX="2.0" layoutY="25.0" prefHeight="219.0" prefWidth="275.0" text="Stats" />
+          </children>
+        </AnchorPane>
         <AnchorPane fx:id="enemyPane" layoutX="14.0" layoutY="466.0" prefHeight="241.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD">
           <children>
             <Button layoutX="0.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleReady" text="Ready" />

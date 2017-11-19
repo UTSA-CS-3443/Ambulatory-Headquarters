@@ -20,6 +20,10 @@ public class MainController implements EventHandler<ActionEvent>
 	@FXML
 	private Label notificationsLb;
 	@FXML
+	private Label allyLb;
+	@FXML
+	private Label allyNameLb;
+	@FXML
 	private AnchorPane allyPane;
 	@FXML
 	private AnchorPane enemyPane;
@@ -63,10 +67,19 @@ public class MainController implements EventHandler<ActionEvent>
 		
 		if(selected == null)
 		{
-			selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-			selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-			prevClicked = b;
-			System.out.println("prevClicked set");
+			if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) instanceof Unit && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
+			{
+				selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+				allyNameLb.setText(selected.getUnitName());
+				allyLb.setText("HP: " + selected.getiHitPoints() + "\n" + 
+								"Level: " + selected.getiLevel() + "\n" + 
+								"Mobility: " + selected.getiMobility() + "\n" + 
+								"Atk.: " + selected.getiAttack() + "\n" + 
+								"Def.: " + selected.getiDefense());
+				selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+				prevClicked = b;
+				System.out.println("prevClicked set");
+			}
 		}
 		else
 		{
