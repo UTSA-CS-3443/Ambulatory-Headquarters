@@ -20,12 +20,14 @@
         <AnchorPane fx:id="allyPane" layoutX="14.0" layoutY="213.0" prefHeight="245.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD">
           <children>
             <Label fx:id="allyNameLb" layoutX="6.0" layoutY="4.0" text="Ally" />
-            <Label fx:id="allyLb" alignment="TOP_LEFT" layoutX="2.0" layoutY="25.0" prefHeight="219.0" prefWidth="275.0" text="Stats" />
+            <Label fx:id="allyLb" alignment="TOP_LEFT" layoutX="6.0" layoutY="25.0" prefHeight="219.0" prefWidth="268.0" text="Stats" />
           </children>
         </AnchorPane>
         <AnchorPane fx:id="enemyPane" layoutX="14.0" layoutY="466.0" prefHeight="241.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD">
           <children>
-            <Button layoutX="0.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleReady" text="Ready" />
+            <Button layoutX="7.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleReady" text="Ready" />
+            <Label fx:id="enemyNameLb" layoutX="7.0" layoutY="4.0" text="Enemy" />
+            <Label fx:id="enemyLb" alignment="TOP_LEFT" layoutX="7.0" layoutY="25.0" prefHeight="180.0" prefWidth="268.0" text="Stats" />
           </children>
         </AnchorPane>
       </children>

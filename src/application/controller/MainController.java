@@ -24,6 +24,10 @@ public class MainController implements EventHandler<ActionEvent>
 	@FXML
 	private Label allyNameLb;
 	@FXML
+	private Label enemyLb;
+	@FXML
+	private Label enemyNameLb;
+	@FXML
 	private AnchorPane allyPane;
 	@FXML
 	private AnchorPane enemyPane;
@@ -36,6 +40,7 @@ public class MainController implements EventHandler<ActionEvent>
 	private boolean ready;
 	
 	Unit selected;
+	Unit selectedEnemy;
 	Location selectedLocation;
 	
 	public MainController() 
@@ -67,7 +72,7 @@ public class MainController implements EventHandler<ActionEvent>
 		
 		if(selected == null)
 		{
-			if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) instanceof Unit && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
+			if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
 			{
 				selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				allyNameLb.setText(selected.getUnitName());
@@ -79,6 +84,19 @@ public class MainController implements EventHandler<ActionEvent>
 				selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				prevClicked = b;
 				System.out.println("prevClicked set");
+			}
+			if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
+			{
+				selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+				enemyNameLb.setText(selectedEnemy.getUnitName());
+				enemyLb.setText("HP: " + selectedEnemy.getiHitPoints() + "\n" + 
+								"Level: " + selectedEnemy.getiLevel() + "\n" + 
+								"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
+								"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
+								"Def.: " + selectedEnemy.getiDefense());
+				//selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+				//prevClicked = b;
+				//System.out.println("prevClicked set");
 			}
 		}
 		else
@@ -107,6 +125,8 @@ public class MainController implements EventHandler<ActionEvent>
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
 					notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
+					selected = null;
+					prevClicked = null;
 				}
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
 				{
@@ -119,6 +139,20 @@ public class MainController implements EventHandler<ActionEvent>
 									"Def.: " + selected.getiDefense());
 					selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					prevClicked = b;
+					
+				}
+				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
+				{
+					selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+					enemyNameLb.setText(selectedEnemy.getUnitName());
+					enemyLb.setText("HP: " + selectedEnemy.getiHitPoints() + "\n" + 
+									"Level: " + selectedEnemy.getiLevel() + "\n" + 
+									"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
+									"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
+									"Def.: " + selectedEnemy.getiDefense());
+					//selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+					//prevClicked = b;
+					//System.out.println("prevClicked set");
 				}
 			}
 		}
