@@ -54,8 +54,4 @@ public class UOrc extends Unit{
 	// Level 3: Bloodlust Ritual	- Increase Attack and decrease defense
 	// Level 5: Warborn Pact		- Sacrifice 50% remaining HP to increase Attack for 5 turns
 
-	public String getName()
-	{
-		return "Orc";
-	}
 }

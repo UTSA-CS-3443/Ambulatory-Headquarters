@@ -56,8 +56,4 @@ public class UElf extends Unit{
 	// Level 3: Petrify				- CC
 	// Levle 5: Wrath of Zaleria	- AoE Spell
 	
-	public String getName()
-	{
-		return "Elf";
-	}
 }

@@ -55,8 +55,5 @@ public class UCatBurglar extends Unit{
 	// Level 3: What's in the Box?				- Throw present at enemy. Either heals or damages. 2x multiplier
 	// Level 5: What's Over There?				- Move to any enemy on map. Can't attack.
 
-	public String getName()
-	{
-		return "Cat Burglar";
-	}
+
 }

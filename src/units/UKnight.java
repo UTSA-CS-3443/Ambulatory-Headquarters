@@ -57,8 +57,4 @@ public class UKnight extends Unit{
 	// Level 3: Into the Fray				- Attack 2 adjacent units
 	// Level 5: Excalibur					- AoE in cross in any of 4 directions
 	
-	public String getName()
-	{
-		return "Knight";
-	}
 }

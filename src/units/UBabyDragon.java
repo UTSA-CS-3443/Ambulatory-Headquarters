@@ -56,8 +56,4 @@ public class UBabyDragon extends Unit{
 	// Level 3: Ray Gun					- Single Target DMG
 	// Level 5: Whelp			- Single Target global DMG
 
-	public String getName()
-	{
-		return "Baby Dragon";
-	}
 }
