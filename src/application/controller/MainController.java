@@ -32,6 +32,7 @@ public class MainController implements EventHandler<ActionEvent>
 	{
 		super();
 		map = new Map();
+		
 	}
 	
 	@Override

@@ -12,7 +12,7 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.MainMenuController">
   <children>
-    <Pane prefHeight="900.0" prefWidth="1600.0">
+    <Pane prefHeight="720.0" prefWidth="1280.0">
       <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="280.0" layoutX="728.0" layoutY="351.0" stroke="BLACK" strokeType="INSIDE" width="146.0" />
         <Text layoutX="640.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
