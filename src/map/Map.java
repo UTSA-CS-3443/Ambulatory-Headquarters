@@ -14,7 +14,7 @@ public class Map
 	public Map()
 	{
 		map = new Unit[12][16];
-		loadMap();
+		loadMap(1);
 	}
 	
 	public Unit get(int r, int c)
@@ -73,9 +73,10 @@ public class Map
 		return map[0].length;
 	}
 	
-	public void loadMap()
+	public void loadMap(int level)
 	{
-		loadLevel1();
+		if(level == 1)
+			loadLevel1();
 		for(int i = 0; i < map.length; i++)
 		{
 			for(int j = 0; j < map[0].length; j++)
