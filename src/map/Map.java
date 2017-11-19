@@ -22,6 +22,11 @@ public class Map
 			return map[r][c];
 	}
 	
+	public void remove(int r, int c)
+	{
+		map[r][c] = null;
+	}
+	
 	/**
 	 * 
 	 * @param r0 current row
@@ -76,10 +81,10 @@ public class Map
 	
 	public boolean[][] moveable(Unit[][] map, int r, int c, int range)
 	{
-		boolean[][] mat = new boolean[map.length][map.length];
+		boolean[][] mat = new boolean[map.length][map[0].length];
 		for(int i = 0; i < mat.length; i++)
 		{
-			for(int j = 0; j < mat.length; j++)
+			for(int j = 0; j < mat[0].length; j++)
 			{
 				mat[i][j] = false;
 			}
