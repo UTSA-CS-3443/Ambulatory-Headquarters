@@ -60,7 +60,7 @@ public class Map
 		{
 			for(int j = 0; j < map[0].length; j++)
 			{
-				if(j == 8 && i == 11)
+				if(i == 6 || i == 4)
 					map[i][j] = new UElf();
 				else if(j == 5 && i == 5)
 					map[i][j] = new UKnight();
@@ -86,7 +86,7 @@ public class Map
 	
 	public boolean[][] moveableRec(Unit[][] map, boolean[][] mat, int r, int c, int range)
 	{
-		if(range > 0)
+		if(range >= 0)
 		{
 			mat[r][c] = true;
 			if((r+1)<mat.length && map[r+1][c] == null)
