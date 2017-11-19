@@ -1,5 +1,7 @@
 package application.controller;
 
+import java.util.ArrayList;
+
 import application.Main;
 
 import javafx.event.ActionEvent;
@@ -10,6 +12,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import units.UAlien;
+import units.UAngel;
+import units.UBabyDragon;
+import units.UCake;
+import units.UCatBurglar;
+import units.UElf;
+import units.UGhost;
+import units.UKnight;
+import units.ULunarOctopus;
+import units.UNinja;
+import units.UOrc;
+import units.UPirate;
+import units.USpaceCowboy;
+import units.UTeddybear;
+import units.UUndead;
+import units.Unit;
 
 public class CharacterSelectController implements EventHandler<ActionEvent> 
 {
@@ -60,6 +77,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		
 		int[] charS ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 		
+		ArrayList<Unit> charList = new ArrayList<Unit>();		
 		
 		// sends game back to MainMenu.fxml
 		if (text.equals("<--Back")) 
@@ -227,10 +245,73 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		
 		// starts game by loading MainGame.fxml
 		if (text.equals("START!") && unitCount ==3) {
+			//This is probably super inefficient but idc. It reads through charS and determines what characters
+			//need to be created and added to arrayList of player selected characters
 			for (int i=0; i<15; i++) {
+				if(charS[0] == 1) {
+					UAlien alien = new UAlien();
+					charList.add(alien);
+				}
+				if(charS[1] == 1) {
+					UAngel angel = new UAngel();
+					charList.add(angel);
+				}
+				if(charS[2] == 1) {
+					UBabyDragon babyDragon = new UBabyDragon();
+					charList.add(babyDragon);
+				}
+				if(charS[3] == 1) {
+					UCake cake = new UCake();
+					charList.add(cake);
+				}
+				if(charS[4] == 1) {
+					UCatBurglar catBurglar = new UCatBurglar();
+					charList.add(catBurglar);
+				}
+				if(charS[5] == 1) {
+					UElf elf = new UElf();
+					charList.add(elf);
+				}
+				if(charS[6] == 1) {
+					UGhost ghost = new UGhost();
+					charList.add(ghost);
+				}
+				if(charS[7] == 1) {
+					UKnight knight = new UKnight();
+					charList.add(knight);
+				}
+				if(charS[8] == 1) {
+					ULunarOctopus lunarOctopus = new ULunarOctopus();
+					charList.add(lunarOctopus);
+				}
+				if(charS[9] == 1) {
+					UNinja ninja = new UNinja();
+					charList.add(ninja);
+				}
+				if(charS[10] == 1) {
+					UOrc orc = new UOrc();
+					charList.add(orc);
+				}
+				if(charS[11] == 1) {
+					UPirate pirate= new UPirate();
+					charList.add(pirate);
+				}
+				if(charS[12] == 1) {
+					USpaceCowboy spaceCowboy = new USpaceCowboy();
+					charList.add(spaceCowboy);
+				}
+				if(charS[13] == 1) {
+					UTeddybear teddyBear= new UTeddybear();
+					charList.add(teddyBear);
+				}
+				if(charS[14] == 1) {
+					UUndead undead = new UUndead();
+					charList.add(undead);
+				}
 				System.out.printf("%d", charS[i]);
 			}
 			System.out.println("\nSTART!!");
+			System.out.println(charList);
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MainGame.fxml"));
 				Scene scene = new Scene(root,1280,720);
