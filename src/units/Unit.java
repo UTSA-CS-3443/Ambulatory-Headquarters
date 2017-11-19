@@ -56,6 +56,10 @@ public abstract class Unit {
 		this.iHitPoints += addHitPoints;
 	}
 	
+	public void iHitPointsDown(int minusHitPoints) {
+		this.iHitPoints -= minusHitPoints;
+	}
+	
 	// ATTACK METHODS
 	public int getiAttack() {
 		return iAttack;

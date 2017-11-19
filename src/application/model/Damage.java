@@ -12,7 +12,10 @@ public class Damage {
 		int iLevelBonus = 2 * attacker.getiLevel() / 5 + 2;
 		int defaultPower = 10;
 		int ratioAD = attacker.getiAttack() / defender.getiDefense();
-		return ((iLevelBonus * defaultPower) + 2) * ratioAD * iModifier;
+		int iDamageDone = ((iLevelBonus * defaultPower) + 2) * ratioAD * iModifier;
+		attacker.iHitPointsDown(iDamageDone);
+		return iDamageDone;
+		
 	}
 	
 	public void showAttackRange(Unit attacker) {
