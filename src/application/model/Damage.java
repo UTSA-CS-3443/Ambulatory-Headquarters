@@ -13,7 +13,7 @@ public class Damage {
 		int defaultPower = 10;
 		int ratioAD = attacker.getiAttack() / defender.getiDefense();
 		int iDamageDone = ((iLevelBonus * defaultPower) + 2) * ratioAD * iModifier;
-		attacker.iHitPointsDown(iDamageDone);
+		defender.iHitPointsDown(iDamageDone);
 		return iDamageDone;
 		
 	}
