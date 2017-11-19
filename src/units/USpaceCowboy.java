@@ -30,6 +30,10 @@ public class USpaceCowboy extends Unit{
 		this.setiMobility(this.iMobilityBASE);
 		
 		this.setbAlly(true);
+		
+		this.setiSkill1Mod(iSkill1Base);
+		this.setiSkill2Mod(iSkill2Base);
+		this.setiSkill3Mod(iSkill3Base);
 	}
 
 	@Override
