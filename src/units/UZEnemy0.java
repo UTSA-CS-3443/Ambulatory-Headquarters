@@ -26,7 +26,7 @@ public class UZEnemy0 extends Unit{
 		
 		this.setiMobility(this.iMobilityBASE);
 		
-		this.setbAlly(true);
+		this.setbAlly(false);
 		
 		this.setiSkill1Mod(iSkill1Base);
 		this.setiSkill2Mod(iSkill2Base);
