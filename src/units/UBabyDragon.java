@@ -52,8 +52,8 @@ public class UBabyDragon extends Unit{
 		}
 	}
 	
-	// Level 1: Fireball				- 3 Adjacent DMG
-	// Level 3: Ray Gun					- Single Target DMG
-	// Level 5: Whelp			- Single Target global DMG
+
+	// Level 3: Land of Fire				- Search map for all enemies and do Damage * .5 mod to all enemies
+
 
 }
