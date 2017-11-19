@@ -36,7 +36,8 @@ public class Map
 			return 0;
 		if(map[r1][c1] instanceof Unit)
 			return 2;
-		if((Math.abs(r0-r1) + Math.abs(c0-c1)) > map[r0][c0].getiMobility())
+		//if((Math.abs(r0-r1) + Math.abs(c0-c1)) > map[r0][c0].getiMobility())
+		if(moveable(map,r0,c0,map[r0][c0].getiMobility())[r1][c1] == false)
 			return 3;
 		map[r1][c1] = map[r0][c0];
 		map[r0][c0] = null;
@@ -79,7 +80,7 @@ public class Map
 				mat[i][j] = false;
 			}
 		}
-		
+		moveableRec(map, mat, r, c, range);
 		return mat;
 	}
 	
@@ -90,11 +91,11 @@ public class Map
 			mat[r][c] = true;
 			if((r+1)<mat.length && map[r+1][c] == null)
 				moveableRec(map,mat,r+1,c,range-1);
-			if((r-1)>=0 && map[r+1][c] == null)
+			if((r-1)>=0 && map[r-1][c] == null)
 				moveableRec(map,mat,r-1,c,range-1);
 			if((c+1)<mat.length && map[r][c+1] == null)
 				moveableRec(map,mat,r,c+1,range-1);
-			if((c-1)>=0 && map[r][c+1] == null)
+			if((c-1)>=0 && map[r][c-1] == null)
 				moveableRec(map,mat,r,c-1,range-1);
 		}
 		return mat;
