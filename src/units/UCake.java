@@ -50,8 +50,4 @@ public class UCake extends Unit{
 	// Level 2: Excess Frosting				- Adjacent slow
 	// Level 3: Happy Birthday				- Adjacent heal
 
-	public String getName()
-	{
-		return "Cake";
-	}
 }

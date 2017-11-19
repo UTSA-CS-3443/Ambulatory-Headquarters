@@ -54,8 +54,4 @@ public class UUndead extends Unit{
 	// Level 3: Scavenge					- Self-heal 50%
 	// Level 5: Army of the Undead			- 3x3 frontal attack
 	
-	public String getName()
-	{
-		return "Undead";
-	}
 }
