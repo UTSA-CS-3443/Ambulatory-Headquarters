@@ -1,5 +1,9 @@
 package map;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 import units.*;
 
 public class Map 
@@ -61,6 +65,7 @@ public class Map
 	
 	public void loadMap()
 	{
+		loadLevel1();
 		for(int i = 0; i < map.length; i++)
 		{
 			for(int j = 0; j < map[0].length; j++)
@@ -73,10 +78,32 @@ public class Map
 					map[i][j] = new UElf();
 				else if(j == 7 && i == 5)
 					map[i][j] = new UNinja();
-				else
-					map[i][j] = null;
 			}
 		}
+		
+	}
+	
+	public void loadLevel1()
+	{
+		int r=0;
+		String line;
+		Scanner s;
+		try {
+			s = new Scanner(new File("maze1"));
+			while(s.hasNextLine())
+			{
+				line = s.nextLine();
+				for(int i = 0; i < 16; i++)
+				{
+					if(line.charAt(i) == '1')
+						map[r][i] = new Wall();
+				}
+				r++;
+			}			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	public boolean[][] moveable(Unit[][] map, int r, int c, int range)
