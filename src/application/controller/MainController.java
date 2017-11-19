@@ -129,6 +129,8 @@ public class MainController implements EventHandler<ActionEvent>
 					{
 						notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						b.setText(",");
+						processMap();
 					}
 					selected = null;
 					prevClicked = null;
