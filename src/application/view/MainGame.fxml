@@ -21,6 +21,7 @@
           <children>
             <Label fx:id="allyNameLb" layoutX="6.0" layoutY="4.0" text="Ally" />
             <Label fx:id="allyLb" alignment="TOP_LEFT" layoutX="6.0" layoutY="25.0" prefHeight="219.0" prefWidth="268.0" text="Stats" />
+            <Button fx:id="skillBtn" layoutX="170.0" layoutY="4.0" mnemonicParsing="false" text="Skill" onAction="#skillHandler" />
           </children>
         </AnchorPane>
         <AnchorPane fx:id="enemyPane" layoutX="14.0" layoutY="466.0" prefHeight="241.0" prefWidth="281.0" style="-fx-background-color: #BDBDBD">
