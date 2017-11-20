@@ -100,7 +100,7 @@ public class Map
 		String line;
 		Scanner s;
 		try {
-			s = new Scanner(new File("maze1"));
+			s = new Scanner(new File("maze1.txt"));
 			while(s.hasNextLine())
 			{
 				line = s.nextLine();
