@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UBabyDragon extends Unit{
 	
 	private int iHitPointsBASE = 25;
@@ -49,6 +51,12 @@ public class UBabyDragon extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 4);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

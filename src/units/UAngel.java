@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UAngel extends Unit{
 
 	private int iHitPointsBASE = 75;
@@ -47,6 +49,12 @@ public class UAngel extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 2);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// - Heal ally by DMG formula * 2; range 1, 2, 3

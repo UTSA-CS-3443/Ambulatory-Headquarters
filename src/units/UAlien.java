@@ -1,5 +1,9 @@
 package units;
 
+import map.*;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+
 public class UAlien extends Unit{
 	
 	private int iHitPointsBASE = 50;
@@ -44,5 +48,11 @@ public class UAlien extends Unit{
 		}
 	}
 	
-	// Level 3: Ray Gun					- Single Target 2x
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		if(map.get(row, col).isbAlly() == false) {
+			// 2x mod
+		}
+		
+	}
 }

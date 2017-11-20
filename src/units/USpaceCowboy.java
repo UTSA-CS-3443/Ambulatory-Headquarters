@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class USpaceCowboy extends Unit{
 	
 	private int iHitPointsBASE = 100;
@@ -50,6 +52,12 @@ public class USpaceCowboy extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 2);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Level 5: Global TP

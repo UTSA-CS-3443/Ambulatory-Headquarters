@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UTeddybear extends Unit{
 
 	private int iHitPointsBASE = 100;
@@ -48,6 +50,12 @@ public class UTeddybear extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 2);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Level 3: 100% Cotton			- Increase Max HP by 50, and heal by 50

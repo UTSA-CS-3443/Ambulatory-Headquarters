@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UPirate extends Unit{
 	
 	private int iHitPointsBASE = 75;
@@ -45,6 +47,12 @@ public class UPirate extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 4);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Single-Target Burst 2x, Range 1-2
