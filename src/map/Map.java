@@ -81,7 +81,10 @@ public class Map
 			loadLevel2();
 		if(level == 3)
 			loadLevel3();
-		
+		if(level == 4)
+			loadLevel4();
+		if(level == 5)
+			loadLevel5();
 	}
 	
 	public void loadLevel1()
@@ -165,6 +168,78 @@ public class Map
 		Scanner s;
 		try {
 			s = new Scanner(new File("maze3.txt"));
+			while(s.hasNextLine())
+			{
+				line = s.nextLine();
+				for(int i = 0; i < 16; i++)
+				{
+					if(line.charAt(i) == '1')
+						map[r][i] = new Wall();
+				}
+				r++;
+			}			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		for(int i = 0; i < map.length; i++)
+		{
+			for(int j = 0; j < map[0].length; j++)
+			{
+				if(i == 6 || i == 4)
+					map[i][j] = new UZEnemy0();
+				if(j == 0 && i == 10)
+					map[i][j] = CharacterSelectController.charList.get(0);
+				else if(j == 0 && i == 11)
+					map[i][j] = CharacterSelectController.charList.get(1);
+				else if(j == 1 && i == 11)
+					map[i][j] = CharacterSelectController.charList.get(2);
+			}
+		}
+
+	}
+	public void loadLevel4()
+	{
+		int r=0;
+		String line;
+		Scanner s;
+		try {
+			s = new Scanner(new File("maze4.txt"));
+			while(s.hasNextLine())
+			{
+				line = s.nextLine();
+				for(int i = 0; i < 16; i++)
+				{
+					if(line.charAt(i) == '1')
+						map[r][i] = new Wall();
+				}
+				r++;
+			}			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		for(int i = 0; i < map.length; i++)
+		{
+			for(int j = 0; j < map[0].length; j++)
+			{
+				if(i == 6 || i == 4)
+					map[i][j] = new UZEnemy0();
+				if(j == 0 && i == 10)
+					map[i][j] = CharacterSelectController.charList.get(0);
+				else if(j == 0 && i == 11)
+					map[i][j] = CharacterSelectController.charList.get(1);
+				else if(j == 1 && i == 11)
+					map[i][j] = CharacterSelectController.charList.get(2);
+			}
+		}
+
+	}
+	public void loadLevel5()
+	{
+		int r=0;
+		String line;
+		Scanner s;
+		try {
+			s = new Scanner(new File("maze5.txt"));
 			while(s.hasNextLine())
 			{
 				line = s.nextLine();
