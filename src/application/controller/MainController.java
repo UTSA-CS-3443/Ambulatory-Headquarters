@@ -45,6 +45,8 @@ public class MainController implements EventHandler<ActionEvent>
 	Unit selectedEnemy;
 	Location selectedLocation;
 	
+	public int winning=0;
+	
 	public MainController() 
 	{
 		super();
@@ -62,6 +64,7 @@ public class MainController implements EventHandler<ActionEvent>
 	@Override
 	public void handle(ActionEvent event) 
 	{
+		
 		if(!ready)
 		{
 			notification("Not ready");
@@ -116,6 +119,12 @@ public class MainController implements EventHandler<ActionEvent>
 				processMap();
 				prevClicked.setText(",");
 				prevClicked = null;
+				
+				if(mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) {
+					System.out.println("YOU WIN");
+					winning++;
+					isWon(winning);
+				}
 			}
 			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 3)
 			{
@@ -200,6 +209,11 @@ public class MainController implements EventHandler<ActionEvent>
 	public void notification(String s)
 	{
 		notificationsLb.setText(s+"\n"+notificationsLb.getText());
+	}
+	
+	public void isWon(int winning) {
+		if (winning == 3)
+			System.out.println("YOU WON THE GAME BOI");
 	}
 	
 }
