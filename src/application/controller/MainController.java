@@ -133,6 +133,16 @@ public class MainController implements EventHandler<ActionEvent>
 						isWon(winning);
 					}
 				}
+				
+				if (currentLevel == 2) {
+					if((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14) 
+							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14))  {
+						System.out.println("YOU Entered a win space");
+						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						winning++;
+						isWon(winning);
+					}
+				}
 			}
 			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 3)
 			{
