@@ -90,6 +90,7 @@ public class Map
 	public void loadLevel1()
 	{
 		int r=0;
+		int enemyCount = 0;
 		String line;
 		Scanner s;
 		try {
@@ -119,6 +120,15 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 2 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(2);
+				else if(enemyCount <= 10 && map[i][j] == null)
+				{
+					if(Math.random() <= 0.1)
+					{
+						map[i][j] = new UZEnemy0();
+						enemyCount++;
+					}
+					
+				}
 			}
 		}
 
@@ -127,6 +137,7 @@ public class Map
 	public void loadLevel2()
 	{
 		int r=0;
+		int enemyCount = 0;
 		String line;
 		Scanner s;
 		try {
@@ -156,6 +167,15 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
+				else if(enemyCount <= 10 && map[i][j] == null)
+				{
+					if(Math.random() <= 0.1)
+					{
+						map[i][j] = new UZEnemy0();
+						enemyCount++;
+					}
+					
+				}
 			}
 		}
 
@@ -164,6 +184,7 @@ public class Map
 	public void loadLevel3()
 	{
 		int r=0;
+		int enemyCount = 0;
 		String line;
 		Scanner s;
 		try {
@@ -193,6 +214,15 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
+				else if(enemyCount <= 10 && map[i][j] == null)
+				{
+					if(Math.random() <= 0.1)
+					{
+						map[i][j] = new UZEnemy0();
+						enemyCount++;
+					}
+					
+				}
 			}
 		}
 
@@ -200,6 +230,7 @@ public class Map
 	public void loadLevel4()
 	{
 		int r=0;
+		int enemyCount = 0;
 		String line;
 		Scanner s;
 		try {
@@ -229,6 +260,15 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
+				else if(enemyCount <= 10 && map[i][j] == null)
+				{
+					if(Math.random() <= 0.1)
+					{
+						map[i][j] = new UZEnemy0();
+						enemyCount++;
+					}
+					
+				}
 			}
 		}
 
@@ -236,6 +276,7 @@ public class Map
 	public void loadLevel5()
 	{
 		int r=0;
+		int enemyCount = 0;
 		String line;
 		Scanner s;
 		try {
@@ -265,6 +306,15 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
+				else if(enemyCount <= 10 && map[i][j] == null)
+				{
+					if(Math.random() <= 0.1)
+					{
+						map[i][j] = new UZEnemy0();
+						enemyCount++;
+					}
+					
+				}
 			}
 		}
 
