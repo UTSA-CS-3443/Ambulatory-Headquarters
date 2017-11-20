@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UZEnemy0 extends Unit{
-	private Image image = new Image("file:Enemy.PNG");
+	private Image image = new Image("file:Enemy1.PNG");
 	
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 20;
