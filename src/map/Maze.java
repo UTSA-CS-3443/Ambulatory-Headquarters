@@ -18,7 +18,7 @@ public class Maze {
 		try {
 			String str;
 			int j = 0;
-			in = new Scanner(new File("src/"+mazeNum));
+			in = new Scanner(new File(mazeNum));
 			while(in.hasNext()) {
 				String s = in.next();
 				for(int i=0; i<16; i++) {
