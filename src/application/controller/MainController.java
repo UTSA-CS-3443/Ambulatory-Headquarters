@@ -130,7 +130,7 @@ public class MainController implements EventHandler<ActionEvent>
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
-						isWon(winning);
+						isWon();
 					}
 				}
 				
@@ -140,7 +140,7 @@ public class MainController implements EventHandler<ActionEvent>
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
-						isWon(winning);
+						isWon();
 					}
 				}
 			}
@@ -255,7 +255,7 @@ public class MainController implements EventHandler<ActionEvent>
 		notificationsLb.setText(s+"\n"+notificationsLb.getText());
 	}
 	
-	public void isWon(int winning) {
+	public void isWon() {
 		if (winning == 3) {
 			System.out.println("YOU WON THE GAME BOI");
 			map.reset();
