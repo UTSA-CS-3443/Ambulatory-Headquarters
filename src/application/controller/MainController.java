@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import map.*;
 import units.*;
@@ -212,7 +214,15 @@ public class MainController implements EventHandler<ActionEvent>
 						 if(mapPane.getRowIndex(node) == i && mapPane.getColumnIndex(node) == j)
 						 {
 							 b = (Button)node;
-							 b.setText(",");
+							 b.setText("");
+							 Image image = new Image("file:GrassTile.png");
+							 ImageView iv = new ImageView(image);
+							 iv.setLayoutX(0.0);
+							 iv.setLayoutY(0.0);
+							 iv.setFitHeight(45.0);
+							 iv.setFitWidth(45.0);
+							 b.setGraphicTextGap(0.0);
+							 b.setGraphic(iv);
 						 }
 					}	
 				}
