@@ -1,5 +1,8 @@
 package application.controller;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import application.Main;
 import application.model.Damage;
 import javafx.event.*;
@@ -118,9 +121,10 @@ public class MainController implements EventHandler<ActionEvent>
 				System.out.println(selected.getUnitName() + " moved from " + 
 									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
 									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
-				selected = null;
 				processMap();
-				prevClicked.setText(",");
+				ememyTurn();
+				selected = null;
+				prevClicked.setText("");
 				prevClicked = null;
 				
 				// Counting units to confirm a win
@@ -264,6 +268,50 @@ public class MainController implements EventHandler<ActionEvent>
 			processMap();
 			winning=0;
 		}
+	}
+	
+	public void ememyTurn()
+	{
+		for(int r = 0; r < map.getRow(); r++)
+		{
+			for(int c = 0; c < map.getCol(); c++)
+			{
+				boolean attacked = false;
+				if(map.get(r, c) != null && map.get(r, c).getUnitName().contains("Enemy"))
+				{
+					boolean[][] moveable = map.moveable(map.getMatrix(), r, c, map.get(r, c).getiMobility());
+					ArrayList<Location> list = new ArrayList<Location>();
+					for(int i = 0; i < moveable.length; i++)
+					{
+						for(int j = 0; j < moveable[0].length; j++)
+						{
+							if(moveable[i][j])
+								list.add(new Location(map,i,j));
+						}
+					}
+					for(int x = 0; x < list.size(); x++)
+					{
+						if(map.get(list.get(x).getRow(), list.get(x).getCol()) != null && map.get(list.get(x).getRow(), list.get(x).getCol()).isbAlly())
+						{
+							notification(map.get(r, c).getUnitName()+" attacks "+map.get(list.get(x).getRow(), list.get(x).getCol()).getUnitName()+" dealing " + Damage.doDamage(map.get(r, c), (map.get(list.get(x).getRow(), list.get(x).getCol())))+" damage");
+							attacked = true;
+							break;
+						}
+					}
+					if(list.size() > 0)
+					{
+						Random rand = new Random();
+						int random = rand.nextInt(list.size());
+						if(!attacked)
+						{
+							map.move(r, c, list.get(random).getRow(), list.get(random).getCol());
+							notification("Enemy moved from "+r+","+c+" to "+list.get(random).getRow()+","+list.get(random).getCol());
+						}
+					}
+				}
+			}
+		}
+		processMap();
 	}
 	
 }

@@ -10,11 +10,17 @@ import units.*;
 public class Map 
 {
 	private Unit[][] map;
+	private int maxEnemies = 10;
 	
 	public Map()
 	{
 		map = new Unit[12][16];
 		loadMap(1);
+	}
+	
+	public Unit[][] getMatrix()
+	{
+		return map;
 	}
 	
 	public Unit get(int r, int c)
@@ -120,7 +126,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 2 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(2);
-				else if(enemyCount <= 10 && map[i][j] == null)
+				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.1)
 					{
@@ -167,7 +173,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
-				else if(enemyCount <= 10 && map[i][j] == null)
+				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.1)
 					{
@@ -214,7 +220,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
-				else if(enemyCount <= 10 && map[i][j] == null)
+				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.1)
 					{
@@ -260,7 +266,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
-				else if(enemyCount <= 10 && map[i][j] == null)
+				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.1)
 					{
@@ -306,7 +312,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(1);
 				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
-				else if(enemyCount <= 10 && map[i][j] == null)
+				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.1)
 					{
@@ -331,6 +337,7 @@ public class Map
 			}
 		}
 		moveableRec(map, mat, r, c, range);
+		mat[r][c]=false;
 		return mat;
 	}
 	
