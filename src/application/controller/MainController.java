@@ -205,7 +205,14 @@ public class MainController implements EventHandler<ActionEvent>
 						 if(mapPane.getRowIndex(node) == i && mapPane.getColumnIndex(node) == j)
 						 {
 							 b = (Button)node;
-							 b.setText(map.get(i, j).getUnitName());
+							 b.setText("");
+							 ImageView iv = new ImageView(map.get(i, j).getImage());
+							 iv.setLayoutX(0.0);
+							 iv.setLayoutY(0.0);
+							 iv.setFitHeight(45.0);
+							 iv.setFitWidth(45.0);
+							 b.setGraphicTextGap(0.0);
+							 b.setGraphic(iv);
 						 }
 					}					
 				}
