@@ -13,12 +13,12 @@ public class Maze {
 	}
 	
 	public int[][] getLevel(int level) {
-		String mazeNum = "maze" + level;
+		String mazeNum = "maze" + level + ".txt";
 		Scanner in = null;
 		try {
 			String str;
 			int j = 0;
-			in = new Scanner(new File("src/map/"+mazeNum));
+			in = new Scanner(new File("src/"+mazeNum));
 			while(in.hasNext()) {
 				String s = in.next();
 				for(int i=0; i<16; i++) {
