@@ -47,7 +47,7 @@ public class Map
 		if(map[r1][c1] instanceof Unit)
 			return 2;
 		//if((Math.abs(r0-r1) + Math.abs(c0-c1)) > map[r0][c0].getiMobility())
-		if(map[r0][c0].getUnitName().equals("Ghost"))
+		if(map[r0][c0] != null && map[r0][c0].getUnitName().equals("Ghost"))
 		{
 			if((Math.abs(r0-r1) + Math.abs(c0-c1)) <= map[r0][c0].getiMobility())
 			{
