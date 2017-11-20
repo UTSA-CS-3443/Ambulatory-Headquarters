@@ -5,9 +5,12 @@ import units.Unit;
 public class Damage {
 	public static int doDamage(Unit attacker, Unit defender) {
 		int iModifier = 1;	
-		int iLevelBonus = 2 * attacker.getiLevel() / 5 + 2;
-		int defaultPower = 10;
-		int ratioAD = attacker.getiAttack() / defender.getiDefense();
+		int iLevelBonus = 10 * (attacker.getiLevel() - defender.getiLevel());
+		int defaultPower = attacker.getiAttack() - defender.getiAttack();
+		if (defaultPower < 0) {
+			defaultPower = 10;
+		}
+		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 3);
 		int iDamageDone = ((iLevelBonus * defaultPower) + 2) * ratioAD * iModifier;
 		
 		if (iDamageDone <= 0) {
