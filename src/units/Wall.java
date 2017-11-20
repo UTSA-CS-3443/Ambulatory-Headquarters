@@ -1,11 +1,15 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class Wall extends Unit{
+	
+	private Image image = new Image("file:Wall.PNG");
 
 	public Wall(){
 		this.setiUnitID(15);
+		this.setUImage(image);
 		
 		this.setiMobility(0);
 		
