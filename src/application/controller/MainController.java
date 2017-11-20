@@ -120,7 +120,9 @@ public class MainController implements EventHandler<ActionEvent>
 				prevClicked.setText(",");
 				prevClicked = null;
 				
-				if(mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) {
+				// Counting units to confirm a win
+				if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15) 
+					|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15))  {
 					System.out.println("YOU WIN");
 					winning++;
 					isWon(winning);
