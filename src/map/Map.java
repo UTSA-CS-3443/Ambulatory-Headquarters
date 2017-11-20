@@ -106,13 +106,13 @@ public class Map
 		{
 			for(int j = 0; j < map[0].length; j++)
 			{
-				if(i == 6 || i == 4)
-					map[i][j] = new UZEnemy0();
-				else if(j == 5 && i == 5)
+				//if(i == 6 || i == 4)
+					//map[i][j] = new UZEnemy0();
+				if(j == 0 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 6 && i == 5)
+				else if(j == 1 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 7 && i == 5)
+				else if(j == 2 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(2);
 			}
 		}
@@ -125,7 +125,7 @@ public class Map
 		String line;
 		Scanner s;
 		try {
-			s = new Scanner(new File("maze5.txt"));
+			s = new Scanner(new File("maze2.txt"));
 			while(s.hasNextLine())
 			{
 				line = s.nextLine();
@@ -143,13 +143,13 @@ public class Map
 		{
 			for(int j = 0; j < map[0].length; j++)
 			{
-				if(i == 6 || i == 4)
-					map[i][j] = new UZEnemy0();
-				else if(j == 5 && i == 5)
+				//if(i == 6 || i == 4)
+					//map[i][j] = new UZEnemy0();
+				if(j == 0 && i == 10)
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 6 && i == 5)
+				else if(j == 0 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 7 && i == 5)
+				else if(j == 1 && i == 11)
 					map[i][j] = CharacterSelectController.charList.get(2);
 			}
 		}
