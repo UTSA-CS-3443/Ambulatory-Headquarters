@@ -124,12 +124,14 @@ public class MainController implements EventHandler<ActionEvent>
 				prevClicked = null;
 				
 				// Counting units to confirm a win
-				if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15) 
-					|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15))  {
-					System.out.println("YOU WIN");
-					map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-					winning++;
-					isWon(winning);
+				if (currentLevel == 1) {
+					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15) 
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15))  {
+						System.out.println("YOU Entered a win space");
+						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						winning++;
+						isWon(winning);
+					}
 				}
 			}
 			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 3)
