@@ -77,20 +77,8 @@ public class Map
 	{
 		if(level == 1)
 			loadLevel1();
-		for(int i = 0; i < map.length; i++)
-		{
-			for(int j = 0; j < map[0].length; j++)
-			{
-				if(i == 6 || i == 4)
-					map[i][j] = new UZEnemy0();
-				else if(j == 5 && i == 5)
-					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 6 && i == 5)
-					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 7 && i == 5)
-					map[i][j] = CharacterSelectController.charList.get(2);
-			}
-		}
+		if(level == 2)
+			loadLevel2();
 		
 	}
 	
@@ -113,6 +101,57 @@ public class Map
 			}			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		}
+		for(int i = 0; i < map.length; i++)
+		{
+			for(int j = 0; j < map[0].length; j++)
+			{
+				if(i == 6 || i == 4)
+					map[i][j] = new UZEnemy0();
+				else if(j == 5 && i == 5)
+					map[i][j] = CharacterSelectController.charList.get(0);
+				else if(j == 6 && i == 5)
+					map[i][j] = CharacterSelectController.charList.get(1);
+				else if(j == 7 && i == 5)
+					map[i][j] = CharacterSelectController.charList.get(2);
+			}
+		}
+
+	}
+	
+	public void loadLevel2()
+	{
+		int r=0;
+		String line;
+		Scanner s;
+		try {
+			s = new Scanner(new File("maze5.txt"));
+			while(s.hasNextLine())
+			{
+				line = s.nextLine();
+				for(int i = 0; i < 16; i++)
+				{
+					if(line.charAt(i) == '1')
+						map[r][i] = new Wall();
+				}
+				r++;
+			}			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		for(int i = 0; i < map.length; i++)
+		{
+			for(int j = 0; j < map[0].length; j++)
+			{
+				if(i == 6 || i == 4)
+					map[i][j] = new UZEnemy0();
+				else if(j == 5 && i == 5)
+					map[i][j] = CharacterSelectController.charList.get(0);
+				else if(j == 6 && i == 5)
+					map[i][j] = CharacterSelectController.charList.get(1);
+				else if(j == 7 && i == 5)
+					map[i][j] = CharacterSelectController.charList.get(2);
+			}
 		}
 
 	}
@@ -146,5 +185,13 @@ public class Map
 				moveableRec(map,mat,r,c-1,range-1);
 		}
 		return mat;
+	}
+	
+	public void reset() {
+		for(int i = 0; i < map.length; i++) {
+			for(int j = 0; j < map[0].length; j++) {
+				map[i][j] = null;
+			}
+		}
 	}
 }

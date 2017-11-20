@@ -214,8 +214,12 @@ public class MainController implements EventHandler<ActionEvent>
 	}
 	
 	public void isWon(int winning) {
-		if (winning == 3)
+		if (winning == 3) {
 			System.out.println("YOU WON THE GAME BOI");
+			map.reset();
+			map.loadMap(2);
+			winning=0;
+		}
 	}
 	
 }
