@@ -1,8 +1,11 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UZEnemy0 extends Unit{
+	private Image image = new Image("file:Enemy.PNG");
+	
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 20;
 	private int iDefenseBASE = 20;
@@ -16,6 +19,7 @@ public class UZEnemy0 extends Unit{
 
 	public UZEnemy0() {
 		this.setiUnitID(16);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
