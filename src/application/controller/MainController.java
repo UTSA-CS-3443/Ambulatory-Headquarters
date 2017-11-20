@@ -48,6 +48,7 @@ public class MainController implements EventHandler<ActionEvent>
 	Location selectedLocation;
 	
 	public int winning=0;
+	public int currentLevel = 1;
 	
 	public MainController() 
 	{
@@ -238,7 +239,8 @@ public class MainController implements EventHandler<ActionEvent>
 		if (winning == 3) {
 			System.out.println("YOU WON THE GAME BOI");
 			map.reset();
-			map.loadMap(2);
+			currentLevel++;
+			map.loadMap(currentLevel);
 			processMap();
 			winning=0;
 		}
