@@ -127,6 +127,7 @@ public class MainController implements EventHandler<ActionEvent>
 				if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15) 
 					|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15))  {
 					System.out.println("YOU WIN");
+					map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					winning++;
 					isWon(winning);
 				}
