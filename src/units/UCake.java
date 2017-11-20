@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UCake extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 10;
@@ -18,6 +20,7 @@ public class UCake extends Unit{
 	
 	public UCake() {
 		this.setiUnitID(3);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

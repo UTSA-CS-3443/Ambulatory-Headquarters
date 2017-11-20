@@ -4,10 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UKnight extends Unit{
-	
-	// private Image image = knighttest.jpg;
-	
-	Image image = new Image("knighttest.jpg");
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 30;
@@ -23,6 +20,7 @@ public class UKnight extends Unit{
 	
 	public UKnight() {
 		this.setiUnitID(7);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UTeddybear extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 30;
@@ -18,6 +20,7 @@ public class UTeddybear extends Unit{
 	
 	public UTeddybear() {
 		this.setiUnitID(13);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

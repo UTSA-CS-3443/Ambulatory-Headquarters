@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UCatBurglar extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 30;
 	private int iAttackBASE = 30;
@@ -18,8 +20,9 @@ public class UCatBurglar extends Unit{
 	
 	public UCatBurglar() {
 		this.setiUnitID(4);
-		this.setiHitPoints(this.iHitPointsBASE);
+		this.setUImage(image);
 		
+		this.setiHitPoints(this.iHitPointsBASE);
 		this.setiAttack(this.iAttackBASE);
 		this.setiDefense(this.iDefenseBASE);
 		

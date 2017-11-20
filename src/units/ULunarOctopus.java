@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class ULunarOctopus extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 50;
@@ -18,6 +20,7 @@ public class ULunarOctopus extends Unit{
 	
 	public ULunarOctopus() {
 		this.setiUnitID(8);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

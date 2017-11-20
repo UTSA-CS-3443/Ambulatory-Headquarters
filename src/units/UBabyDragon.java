@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UBabyDragon extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 25;
 	private int iAttackBASE = 30;
@@ -18,6 +20,7 @@ public class UBabyDragon extends Unit{
 
 	public UBabyDragon() {
 		this.setiUnitID(2);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

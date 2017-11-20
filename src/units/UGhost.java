@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UGhost extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 75;
 	private int iAttackBASE = 20;
@@ -18,8 +20,9 @@ public class UGhost extends Unit{
 	
 	public UGhost() {
 		this.setiUnitID(6);
-		this.setiHitPoints(this.iHitPointsBASE);
+		this.setUImage(image);
 		
+		this.setiHitPoints(this.iHitPointsBASE);
 		this.setiAttack(this.iAttackBASE);
 		this.setiDefense(this.iDefenseBASE);
 		

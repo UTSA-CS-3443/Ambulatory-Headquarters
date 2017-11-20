@@ -11,6 +11,8 @@ public abstract class Unit {
 								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead",
 								"Wall",		"Enemy 1",	"Enemy 2",		"Enemy 3",			"Enemy 4"};
 	private int iUnitID;
+	private Image image;
+	
 	private int iLevel = 1;
 	private int iHitPoints;
 	private int iAttack;
@@ -34,6 +36,15 @@ public abstract class Unit {
 	
 	public void setiUnitID(int unitID) {
 		this.iUnitID = unitID;
+	}
+	
+	// UNIT IMAGE
+	public Image getImage() {
+		return this.image;
+	}
+	
+	public void setUImage(Image uImage) {
+		this.image = uImage;
 	}
 	
 	// LEVEL METHODS
@@ -164,6 +175,5 @@ public abstract class Unit {
 	public void noMoreMoves() {
 		this.iMoveCounter = false;
 	}
-
 
 }

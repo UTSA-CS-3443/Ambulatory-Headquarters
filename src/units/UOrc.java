@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UOrc extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 80;
 	private int iAttackBASE = 80;
@@ -18,6 +20,7 @@ public class UOrc extends Unit{
 	
 	public UOrc() {
 		this.setiUnitID(10);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

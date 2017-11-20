@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class USpaceCowboy extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 30;
@@ -20,6 +22,7 @@ public class USpaceCowboy extends Unit{
 	
 	public USpaceCowboy() {
 		this.setiUnitID(12);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

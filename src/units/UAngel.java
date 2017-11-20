@@ -1,9 +1,11 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UAngel extends Unit{
-
+	private Image image = new Image("file:knighttest.jpg");
+	
 	private int iHitPointsBASE = 75;
 	private int iAttackBASE = 20;
 	private int iDefenseBASE = 25;
@@ -18,6 +20,7 @@ public class UAngel extends Unit{
 	
 	public UAngel() {
 		this.setiUnitID(1);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

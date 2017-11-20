@@ -1,8 +1,10 @@
 package units;
 
+import javafx.scene.image.Image;
 import map.Map;
 
 public class UUndead extends Unit{
+	private Image image = new Image("file:knighttest.jpg");
 
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 30;
@@ -18,6 +20,7 @@ public class UUndead extends Unit{
 	
 	public UUndead() {
 		this.setiUnitID(14);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		

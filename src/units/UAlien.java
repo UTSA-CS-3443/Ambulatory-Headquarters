@@ -2,9 +2,12 @@ package units;
 
 import map.*;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
 public class UAlien extends Unit{
+	
+	private Image image = new Image("file:knighttest.jpg");
 	
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 30;
@@ -20,6 +23,7 @@ public class UAlien extends Unit{
 	
 	public UAlien() {
 		this.setiUnitID(0);
+		this.setUImage(image);
 		
 		this.setiHitPoints(this.iHitPointsBASE);
 		
