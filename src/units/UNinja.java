@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UNinja extends Unit{
 	
 	private int iHitPointsBASE = 50;
@@ -46,6 +48,12 @@ public class UNinja extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 4);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Set enemy defense to 0

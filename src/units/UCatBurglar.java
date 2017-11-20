@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UCatBurglar extends Unit{
 	
 	private int iHitPointsBASE = 30;
@@ -47,6 +49,12 @@ public class UCatBurglar extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 4);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Steal 20 ATK, 20 DEF, 20HP from enemy

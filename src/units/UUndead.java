@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UUndead extends Unit{
 
 	private int iHitPointsBASE = 50;
@@ -46,6 +48,12 @@ public class UUndead extends Unit{
 		if (this.getiLevel() == 5) {
 			this.setiMobility(this.iMobilityBASE + 4);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Level 3: Scavenge					- Self-heal 50% of max HP

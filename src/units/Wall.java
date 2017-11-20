@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class Wall extends Unit{
 
 	public Wall(){
@@ -12,6 +14,12 @@ public class Wall extends Unit{
 	
 	@Override
 	public void iLevelInc() {
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

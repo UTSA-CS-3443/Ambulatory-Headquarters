@@ -1,5 +1,7 @@
 package units;
 
+import map.Map;
+
 public class UCake extends Unit{
 	
 	private int iHitPointsBASE = 100;
@@ -42,6 +44,12 @@ public class UCake extends Unit{
 		if (this.getiLevel() == 3) {
 			this.setiMobility(this.iMobilityBASE + 1);
 		}
+	}
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	// Adjacent heal

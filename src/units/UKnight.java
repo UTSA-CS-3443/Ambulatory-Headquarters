@@ -1,9 +1,13 @@
 package units;
-//import java.awt.Image;
+
+import javafx.scene.image.Image;
+import map.Map;
 
 public class UKnight extends Unit{
 	
 	// private Image image = knighttest.jpg;
+	
+	Image image = new Image("knighttest.jpg");
 	
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 30;
@@ -15,7 +19,7 @@ public class UKnight extends Unit{
 	private int iDefenseINC = 25;
 	
 	private int iSkillBase;
-	private String sSkillName = "Brandish";
+	private String sSkillName = "Brandish"; // lvl 3: Attack 4 adjacent units to NWSE
 	
 	public UKnight() {
 		this.setiUnitID(7);
@@ -50,7 +54,11 @@ public class UKnight extends Unit{
 			this.setiMobility(this.iMobilityBASE + 2);
 		}
 	}
-	
-	// Level 3: Brandish				- Attack 4 adjacent units to NWSE
+
+	@Override
+	public void useSkill(Map map, int row, int col) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

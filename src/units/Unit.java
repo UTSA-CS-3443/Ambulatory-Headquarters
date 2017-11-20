@@ -2,6 +2,9 @@ package units;
 
 import java.util.ArrayList;
 
+import javafx.scene.image.Image;
+import map.Map;
+
 public abstract class Unit {
 	private String[] allyList = {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"CatBUrglar",
 								"Elf",		"Ghost",	"Knight",		"Lunar Octopus",	"Ninja",
@@ -138,6 +141,8 @@ public abstract class Unit {
 		this.iSkillMod = mod;
 	}
 	
+	public abstract void useSkill(Map map, int row, int col);
+	
 	// Attack and Move counter METHODS
 	public void resetCounters() {
 		this.iAttackCounter = true;
@@ -156,8 +161,9 @@ public abstract class Unit {
 		this.iAttackCounter = false;
 	}
 	
-	public void noMoreMOves() {
+	public void noMoreMoves() {
 		this.iMoveCounter = false;
 	}
+
 
 }
