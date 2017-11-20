@@ -205,6 +205,17 @@ public class MainController implements EventHandler<ActionEvent>
 						 }
 					}					
 				}
+				else
+				{
+					for(Node node : children)
+					{
+						 if(mapPane.getRowIndex(node) == i && mapPane.getColumnIndex(node) == j)
+						 {
+							 b = (Button)node;
+							 b.setText(",");
+						 }
+					}	
+				}
 			}
 		}
 	}
@@ -218,6 +229,7 @@ public class MainController implements EventHandler<ActionEvent>
 			System.out.println("YOU WON THE GAME BOI");
 			map.reset();
 			map.loadMap(2);
+			processMap();
 			winning=0;
 		}
 	}
