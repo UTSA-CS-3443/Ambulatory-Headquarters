@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UElf extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:Elf.png");
 	
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 20;
