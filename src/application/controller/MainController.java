@@ -254,11 +254,8 @@ public class MainController implements EventHandler<ActionEvent>
 							 b = (Button)node;
 							 b.setText("");
 							 ImageView iv = new ImageView(map.get(i, j).getImage());
-							 iv.setLayoutX(0.0);
-							 iv.setLayoutY(0.0);
 							 iv.setFitHeight(45.0);
 							 iv.setFitWidth(45.0);
-							 b.setGraphicTextGap(0.0);
 							 b.setGraphic(iv);
 						 }
 					}					
@@ -273,11 +270,8 @@ public class MainController implements EventHandler<ActionEvent>
 							 b.setText("");
 							 Image image = new Image("file:GrassTile.png");
 							 ImageView iv = new ImageView(image);
-							 iv.setLayoutX(0.0);
-							 iv.setLayoutY(0.0);
 							 iv.setFitHeight(45.0);
 							 iv.setFitWidth(45.0);
-							 b.setGraphicTextGap(0.0);
 							 b.setGraphic(iv);
 						 }
 					}	
@@ -341,15 +335,12 @@ public class MainController implements EventHandler<ActionEvent>
 							break;
 						}
 					}
-					if(list.size() > 0)
+					if(!attacked && list.size() > 0)
 					{
 						Random rand = new Random();
 						int random = rand.nextInt(list.size());
-						if(!attacked)
-						{
-							map.move(r, c, list.get(random).getRow(), list.get(random).getCol());
-							notification("Enemy moved from "+r+","+c+" to "+list.get(random).getRow()+","+list.get(random).getCol());
-						}
+						map.move(r, c, list.get(random).getRow(), list.get(random).getCol());
+						notification("Enemy moved from "+r+","+c+" to "+list.get(random).getRow()+","+list.get(random).getCol());
 					}
 				}
 			}
