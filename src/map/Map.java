@@ -62,7 +62,7 @@ public class Map
 				return 1;
 			}
 		}
-		if(moveable(map,r0,c0,map[r0][c0].getiMobility())[r1][c1] == false)
+		if(map[r0][c0] != null && moveable(map,r0,c0,map[r0][c0].getiMobility())[r1][c1] == false)
 			return 3;
 		map[r1][c1] = map[r0][c0];
 		map[r0][c0] = null;
