@@ -212,13 +212,13 @@ public class Map
 		{
 			for(int j = 0; j < map[0].length; j++)
 			{
-				if(i == 6 || i == 4)
-					map[i][j] = new UZEnemy0();
-				if(j == 0 && i == 10)
+				//if(i == 6 || i == 4)
+					//map[i][j] = new UZEnemy0();
+				if(j == 0 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 0 && i == 11)
+				else if(j == 1 && i == 0)
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 1 && i == 11)
+				else if(j == 0 && i == 1)
 					map[i][j] = CharacterSelectController.charList.get(2);
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
@@ -258,8 +258,8 @@ public class Map
 		{
 			for(int j = 0; j < map[0].length; j++)
 			{
-				if(i == 6 || i == 4)
-					map[i][j] = new UZEnemy0();
+				//if(i == 6 || i == 4)
+					//map[i][j] = new UZEnemy0();
 				if(j == 0 && i == 10)
 					map[i][j] = CharacterSelectController.charList.get(0);
 				else if(j == 0 && i == 11)
@@ -304,8 +304,8 @@ public class Map
 		{
 			for(int j = 0; j < map[0].length; j++)
 			{
-				if(i == 6 || i == 4)
-					map[i][j] = new UZEnemy0();
+				//if(i == 6 || i == 4)
+					//map[i][j] = new UZEnemy0();
 				if(j == 0 && i == 10)
 					map[i][j] = CharacterSelectController.charList.get(0);
 				else if(j == 0 && i == 11)

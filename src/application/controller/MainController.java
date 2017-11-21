@@ -128,6 +128,7 @@ public class MainController implements EventHandler<ActionEvent>
 				prevClicked = null;
 				
 				// Counting units to confirm a win
+				// Denoting spaces to confirm a win for each level
 				if (currentLevel == 1) {
 					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15) 
 							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15))  {
@@ -141,6 +142,36 @@ public class MainController implements EventHandler<ActionEvent>
 				if (currentLevel == 2) {
 					if((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14) 
 							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14))  {
+						System.out.println("YOU Entered a win space");
+						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						winning++;
+						isWon();
+					}
+				}
+				
+				if (currentLevel == 3) {
+					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) 
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15))  {
+						System.out.println("YOU Entered a win space");
+						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						winning++;
+						isWon();
+					}
+				}
+				
+				if (currentLevel == 4) {
+					if((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14) 
+							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14))  {
+						System.out.println("YOU Entered a win space");
+						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						winning++;
+						isWon();
+					}
+				}
+				
+				if (currentLevel == 5) {
+					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) 
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15))  {
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
@@ -264,9 +295,21 @@ public class MainController implements EventHandler<ActionEvent>
 			System.out.println("YOU WON THE GAME BOI");
 			map.reset();
 			currentLevel++;
-			map.loadMap(currentLevel);
-			processMap();
-			winning=0;
+			if (currentLevel >= 6) {
+				try {
+					// change over to a second view
+					Parent root = FXMLLoader.load(getClass().getResource("../view/endGame.fxml"));   // Load the FXML
+					Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
+					Main.stage.show();														   // Show the stage to the user
+				}catch(Exception e) {
+					e.printStackTrace(); // TODO: app should do something more productive if errors occur...
+				}
+			}
+			else {
+				map.loadMap(currentLevel);
+				processMap();
+				winning=0;
+			}
 		}
 	}
 	
