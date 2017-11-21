@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane;
 
 public class UAlien extends Unit{
 	
-	private Image image = new Image("file:knighttest.jpg");
+	private Image image = new Image("file:knighttest.png");
 	
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 30;

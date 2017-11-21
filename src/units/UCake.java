@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UCake extends Unit{
-	private Image image = new Image("file:knighttest.jpg");
+	private Image image = new Image("file:knighttest.png");
 	
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 10;
