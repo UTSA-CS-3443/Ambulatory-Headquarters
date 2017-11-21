@@ -5,16 +5,17 @@ import units.Unit;
 public class Damage {
 	public static int doDamage(Unit attacker, Unit defender) {
 		int iModifier = 1;	
-		int iLevelBonus = 10 * (attacker.getiLevel() - defender.getiLevel());
+		int iLevelBonus = 5 * (attacker.getiLevel() - defender.getiLevel());
 		int defaultPower = attacker.getiAttack() - defender.getiAttack();
 		if (defaultPower < 0) {
 			defaultPower = 10;
 		}
-		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 3);
-		int iDamageDone = ((iLevelBonus * defaultPower) + 2) * ratioAD * iModifier;
+		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 5);
+		int iDamageDone = ((iLevelBonus + defaultPower)) * ratioAD * iModifier;
+		int iMinDamage = 10 * iLevelBonus;
 		
 		if (iDamageDone <= 0) {
-			defender.iHitPointsDown(1);
+			defender.iHitPointsDown(iMinDamage);
 			if (defender.getiHitPoints() < 0) {
 				defender.setiHitPoints(0);
 			}

@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UBabyDragon extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:BabyDragon.png");
 	
 	private int iHitPointsBASE = 25;
 	private int iAttackBASE = 30;

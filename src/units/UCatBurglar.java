@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UCatBurglar extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:CatBurglar.png");
 	
 	private int iHitPointsBASE = 30;
 	private int iAttackBASE = 30;
