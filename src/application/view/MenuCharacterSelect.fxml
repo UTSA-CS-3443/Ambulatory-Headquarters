@@ -19,7 +19,7 @@
         <CheckBox fx:id="babyDragonCb" font="$x1" mnemonicParsing="false" text="Baby Dragon" GridPane.columnIndex="2" />
         <CheckBox fx:id="cakeCb" font="$x1" mnemonicParsing="false" text="Cake" GridPane.columnIndex="3" />
         <CheckBox fx:id="alienCb" font="$x1" mnemonicParsing="false" text="Alien" />
-        <CheckBox fx:id="catBurglarCb" font="$x1" mnemonicParsing="false" text="Cat Burdglar" GridPane.rowIndex="1" />
+        <CheckBox fx:id="catBurglarCb" font="$x1" mnemonicParsing="false" text="Cat Burglar" GridPane.rowIndex="1" />
         <CheckBox fx:id="elfCb" font="$x1" mnemonicParsing="false" text="Elf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <CheckBox fx:id="ghostCb" font="$x1" mnemonicParsing="false" text="Ghost" GridPane.columnIndex="2" GridPane.rowIndex="1" />
         <CheckBox fx:id="knightCb" font="$x1" mnemonicParsing="false" text="Knight" GridPane.columnIndex="3" GridPane.rowIndex="1" />
