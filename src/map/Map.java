@@ -312,7 +312,7 @@ public class Map
 						if (MainMenuController.hardDiff == true) {
 							map[i][j].iHitPointsUp(30);
 							map[i][j].iAttackUp(30);
-							map[i][j].iDefenseUp(30);
+							map[i][j].iDefenseUp(30);//
 						}
 					}
 					

@@ -16,7 +16,7 @@ public class MainMenuController  implements EventHandler<ActionEvent>
 	@FXML
 	private Label turnCountLb;
 	private Label notificationsLb;
-	
+	//
 	public static boolean easyDiff;
 	public static boolean mediumDiff;
 	public static boolean hardDiff;

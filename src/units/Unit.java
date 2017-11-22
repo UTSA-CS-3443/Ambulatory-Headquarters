@@ -115,7 +115,7 @@ public abstract class Unit {
 		this.iMobility = iMobility;
 	}
 	public void iMobilityUp(int addMOVPoints) {
-		this.iMobility += addMOVPoints;
+		this.iMobility += addMOVPoints;//
 	}
 	
 	// ALLY METHODS
