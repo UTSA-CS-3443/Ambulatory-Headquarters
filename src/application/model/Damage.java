@@ -7,7 +7,7 @@ public class Damage {
 		int iModifier = 1;	
 		int iLevelBonus = 5 * (attacker.getiLevel() - defender.getiLevel());
 		int defaultPower = attacker.getiAttack() - defender.getiAttack();
-		if (defaultPower < 0) {
+		if (defaultPower <= 0) {
 			defaultPower = 10;
 		}
 		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 3);
