@@ -186,7 +186,7 @@ public class MainController implements EventHandler<ActionEvent>
 			{
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
-					if((Math.abs(selectedLocation.getRow()-mapPane.getRowIndex(b)) + Math.abs(selectedLocation.getCol()-mapPane.getColumnIndex(b))) <= selected.getiATKRNG().get(0))
+					if(selectedLocation != null && (Math.abs(selectedLocation.getRow()-mapPane.getRowIndex(b)) + Math.abs(selectedLocation.getCol()-mapPane.getColumnIndex(b))) <= selected.getiATKRNG().get(0))
 					{
 						notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
 						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0)
