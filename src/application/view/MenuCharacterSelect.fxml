@@ -19,16 +19,16 @@
         <CheckBox fx:id="babyDragonCb" font="$x1" mnemonicParsing="false" text="Baby Dragon" GridPane.columnIndex="2" />
         <CheckBox fx:id="cakeCb" font="$x1" mnemonicParsing="false" text="Cake" GridPane.columnIndex="3" />
         <CheckBox fx:id="alienCb" font="$x1" mnemonicParsing="false" text="Alien" />
-        <CheckBox fx:id="catBurglarCb" font="$x1" mnemonicParsing="false" text="Cat Burdglar" GridPane.rowIndex="1" />
+        <CheckBox fx:id="catBurglarCb" font="$x1" mnemonicParsing="false" text="Cat Burglar" GridPane.rowIndex="1" />
         <CheckBox fx:id="elfCb" font="$x1" mnemonicParsing="false" text="Elf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <CheckBox fx:id="ghostCb" font="$x1" mnemonicParsing="false" text="Ghost" GridPane.columnIndex="2" GridPane.rowIndex="1" />
         <CheckBox fx:id="knightCb" font="$x1" mnemonicParsing="false" text="Knight" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-        <CheckBox fx:id="lunarOctopusCb" font="$x1" mnemonicParsing="false" text="LunarOctopus" GridPane.rowIndex="2" />
+        <CheckBox fx:id="lunarOctopusCb" font="$x1" mnemonicParsing="false" text="Lunar Octopus" GridPane.rowIndex="2" />
         <CheckBox fx:id="ninjaCb" font="$x1" mnemonicParsing="false" text="Ninja" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <CheckBox fx:id="orcCb" font="$x1" mnemonicParsing="false" text="Orc" GridPane.columnIndex="2" GridPane.rowIndex="2" />
         <CheckBox fx:id="pirateCb" font="$x1" mnemonicParsing="false" text="Pirate" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-        <CheckBox fx:id="spaceCowboyCb" font="$x1" mnemonicParsing="false" text="SpaceCowboy" GridPane.rowIndex="3" />
-        <CheckBox fx:id="teddyBearCb" font="$x1" mnemonicParsing="false" text="Teddy Bear" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <CheckBox fx:id="spaceCowboyCb" font="$x1" mnemonicParsing="false" text="Space Cowboy" GridPane.rowIndex="3" />
+        <CheckBox fx:id="teddyBearCb" font="$x1" mnemonicParsing="false" text="Teddybear" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         <CheckBox fx:id="undeadCb" font="$x1" mnemonicParsing="false" text="Undead" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handle" text="START!" GridPane.columnIndex="3" GridPane.rowIndex="3" />
       </children>
