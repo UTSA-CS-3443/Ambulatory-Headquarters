@@ -318,9 +318,9 @@ public class MainController implements EventHandler<ActionEvent>
 				{
 					boolean[][] moveable = map.moveable(map.getMatrix(), r, c, map.get(r, c).getiMobility());
 					ArrayList<Location> list = new ArrayList<Location>();
-					for(int i = 0; i < moveable.length; i++)
+					for(int i = map.firstTrue.getRow(); i <= map.lastTrue.getRow(); i++)
 					{
-						for(int j = 0; j < moveable[0].length; j++)
+						for(int j = map.firstTrue.getCol(); j <= map.lastTrue.getCol(); j++)
 						{
 							if(moveable[i][j])
 								list.add(new Location(map,i,j));
@@ -330,9 +330,13 @@ public class MainController implements EventHandler<ActionEvent>
 					{
 						if(map.get(list.get(x).getRow(), list.get(x).getCol()) != null && map.get(list.get(x).getRow(), list.get(x).getCol()).isbAlly())
 						{
-							notification(map.get(r, c).getUnitName()+" attacks "+map.get(list.get(x).getRow(), list.get(x).getCol()).getUnitName()+" dealing " + Damage.doDamage(map.get(r, c), (map.get(list.get(x).getRow(), list.get(x).getCol())))+" damage");
-							attacked = true;
-							break;
+							int range = (Math.abs(r-list.get(x).getRow())+Math.abs(c-list.get(x).getCol()));
+							if(range <= map.get(r,c).getiATKRNG().get(0))
+							{
+								notification(map.get(r, c).getUnitName()+" attacks "+map.get(list.get(x).getRow(), list.get(x).getCol()).getUnitName()+" dealing " + Damage.doDamage(map.get(r, c), (map.get(list.get(x).getRow(), list.get(x).getCol())))+" damage");
+								attacked = true;
+								break;
+							}
 						}
 					}
 					if(!attacked && list.size() > 0)
@@ -340,7 +344,7 @@ public class MainController implements EventHandler<ActionEvent>
 						Random rand = new Random();
 						int random = rand.nextInt(list.size());
 						map.move(r, c, list.get(random).getRow(), list.get(random).getCol());
-						notification("Enemy moved from "+r+","+c+" to "+list.get(random).getRow()+","+list.get(random).getCol());
+						//notification("Enemy moved from "+r+","+c+" to "+list.get(random).getRow()+","+list.get(random).getCol());
 					}
 				}
 			}

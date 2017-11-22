@@ -11,6 +11,8 @@ public class Map
 {
 	private Unit[][] map;
 	private int maxEnemies = 10;
+	public Location firstTrue;
+	public Location lastTrue;
 	
 	public Map()
 	{
@@ -329,6 +331,8 @@ public class Map
 	public boolean[][] moveable(Unit[][] map, int r, int c, int range)
 	{
 		boolean[][] mat = new boolean[map.length][map[0].length];
+		firstTrue = null;
+		lastTrue = null;
 		for(int i = 0; i < mat.length; i++)
 		{
 			for(int j = 0; j < mat[0].length; j++)
@@ -345,6 +349,14 @@ public class Map
 	{
 		if(range >= 0)
 		{
+			if(firstTrue == null)
+				firstTrue = new Location(this,r,c);
+			else if(firstTrue.getRow() >= r || firstTrue.getCol() >= c)
+				firstTrue = new Location(this,Math.min(firstTrue.getRow(), r),Math.min(firstTrue.getCol(), c));
+			if(lastTrue == null)
+				lastTrue = new Location(this,r,c);
+			else if(lastTrue.getRow() <= r || lastTrue.getCol() <= c)
+				lastTrue = new Location(this,Math.max(lastTrue.getRow(), r),Math.max(lastTrue.getCol(), c));
 			mat[r][c] = true;
 			if((r+1)<mat.length && (map[r+1][c] == null || map[r+1][c].isbAlly()))
 				moveableRec(map,mat,r+1,c,range-1);
