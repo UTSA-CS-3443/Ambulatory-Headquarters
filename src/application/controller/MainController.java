@@ -78,9 +78,7 @@ public class MainController implements EventHandler<ActionEvent>
 		}
 			
 		Button b = (Button)event.getSource();
-		System.out.println(mapPane.getRowIndex(b) + "," + mapPane.getColumnIndex(b));
 		String text = b.getText();
-		processMap();
 		
 		if(selected == null)
 		{
@@ -121,7 +119,6 @@ public class MainController implements EventHandler<ActionEvent>
 				System.out.println(selected.getUnitName() + " moved from " + 
 									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
 									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
-				processMap();
 				ememyTurn();
 				selected = null;
 				prevClicked.setText("");
@@ -196,7 +193,6 @@ public class MainController implements EventHandler<ActionEvent>
 						{
 							notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
 							map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-							b.setText(",");
 							processMap();
 						}
 						selected = null;
@@ -239,6 +235,7 @@ public class MainController implements EventHandler<ActionEvent>
 	
 	public void processMap()
 	{
+		int count = 0;
 		ObservableList<Node> children = mapPane.getChildren();
 		Button b;
 		for(int i = 0; i < map.getRow(); i++)
@@ -257,7 +254,9 @@ public class MainController implements EventHandler<ActionEvent>
 							 iv.setFitHeight(45.0);
 							 iv.setFitWidth(45.0);
 							 b.setGraphic(iv);
+							 break;
 						 }
+						 count++;
 					}					
 				}
 				else
@@ -273,11 +272,14 @@ public class MainController implements EventHandler<ActionEvent>
 							 iv.setFitHeight(45.0);
 							 iv.setFitWidth(45.0);
 							 b.setGraphic(iv);
+							 break;
 						 }
+						 count++;
 					}	
 				}
 			}
 		}
+		System.out.println("processMap runtime-------------------------"+count);
 	}
 	public void notification(String s)
 	{
