@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import application.controller.CharacterSelectController;
+import application.controller.MainMenuController;
 import units.*;
 
 public class Map 
@@ -134,8 +135,17 @@ public class Map
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
+						if (MainMenuController.mediumDiff == true) {
+							map[i][j].iHitPointsUp(15);
+							map[i][j].iAttackUp(15);
+							map[i][j].iDefenseUp(15);
+						}
+						if (MainMenuController.hardDiff == true) {
+							map[i][j].iHitPointsUp(30);
+							map[i][j].iAttackUp(30);
+							map[i][j].iDefenseUp(30);
+						}
 					}
-					
 				}
 			}
 		}
@@ -181,6 +191,16 @@ public class Map
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
+						if (MainMenuController.mediumDiff == true) {
+							map[i][j].iHitPointsUp(15);
+							map[i][j].iAttackUp(15);
+							map[i][j].iDefenseUp(15);
+						}
+						if (MainMenuController.hardDiff == true) {
+							map[i][j].iHitPointsUp(30);
+							map[i][j].iAttackUp(30);
+							map[i][j].iDefenseUp(30);
+						}
 					}
 					
 				}
@@ -228,6 +248,16 @@ public class Map
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
+						if (MainMenuController.mediumDiff == true) {
+							map[i][j].iHitPointsUp(15);
+							map[i][j].iAttackUp(15);
+							map[i][j].iDefenseUp(15);
+						}
+						if (MainMenuController.hardDiff == true) {
+							map[i][j].iHitPointsUp(30);
+							map[i][j].iAttackUp(30);
+							map[i][j].iDefenseUp(30);
+						}
 					}
 					
 				}
@@ -274,6 +304,16 @@ public class Map
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
+						if (MainMenuController.mediumDiff == true) {
+							map[i][j].iHitPointsUp(15);
+							map[i][j].iAttackUp(15);
+							map[i][j].iDefenseUp(15);
+						}
+						if (MainMenuController.hardDiff == true) {
+							map[i][j].iHitPointsUp(30);
+							map[i][j].iAttackUp(30);
+							map[i][j].iDefenseUp(30);
+						}
 					}
 					
 				}
@@ -320,6 +360,16 @@ public class Map
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
+						if (MainMenuController.mediumDiff == true) {
+							map[i][j].iHitPointsUp(15);
+							map[i][j].iAttackUp(15);
+							map[i][j].iDefenseUp(15);
+						}
+						if (MainMenuController.hardDiff == true) {
+							map[i][j].iHitPointsUp(30);
+							map[i][j].iAttackUp(30);
+							map[i][j].iDefenseUp(30);
+						}
 					}
 					
 				}

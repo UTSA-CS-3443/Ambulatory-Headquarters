@@ -82,7 +82,7 @@ public abstract class Unit {
 		this.iAttack = iAttack;
 	}
 	public void iAttackUp(int addATKPoints) {
-		this.iHitPoints += addATKPoints;
+		this.iAttack += addATKPoints;
 	}
 	
 	// DEFENSE METHODS
@@ -93,7 +93,7 @@ public abstract class Unit {
 		this.iDefense = iDefense;
 	}
 	public void iDefenseUp(int addDEFPoints) {
-		this.iHitPoints += addDEFPoints;
+		this.iDefense += addDEFPoints;
 	}
 	
 	// ATTACK RANGE METHODS
@@ -115,7 +115,7 @@ public abstract class Unit {
 		this.iMobility = iMobility;
 	}
 	public void iMobilityUp(int addMOVPoints) {
-		this.iHitPoints += addMOVPoints;
+		this.iMobility += addMOVPoints;
 	}
 	
 	// ALLY METHODS

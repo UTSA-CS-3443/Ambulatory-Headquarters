@@ -17,9 +17,9 @@ public class MainMenuController  implements EventHandler<ActionEvent>
 	private Label turnCountLb;
 	private Label notificationsLb;
 	
-	public boolean easyDiff;
-	public boolean mediumDiff;
-	public boolean hardDiff;
+	public static boolean easyDiff;
+	public static boolean mediumDiff;
+	public static boolean hardDiff;
 	
 	
 	
