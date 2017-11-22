@@ -237,43 +237,29 @@ public class MainController implements EventHandler<ActionEvent>
 	{
 		ObservableList<Node> children = mapPane.getChildren();
 		Button b;
+		int currentIndex = 0;
 		for(int i = 0; i < map.getRow(); i++)
 		{
 			for(int j = 0; j < map.getCol(); j++)
 			{
+				b = (Button)children.get(currentIndex);
+				b.setText("");
 				if(map.get(i, j) != null)
 				{
-					for(Node node : children)
-					{
-						 if(mapPane.getRowIndex(node) == i && mapPane.getColumnIndex(node) == j)
-						 {
-							 b = (Button)node;
-							 b.setText("");
-							 ImageView iv = new ImageView(map.get(i, j).getImage());
-							 iv.setFitHeight(45.0);
-							 iv.setFitWidth(45.0);
-							 b.setGraphic(iv);
-							 break;
-						 }
-					}					
+					ImageView iv = new ImageView(map.get(i, j).getImage());
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);	
 				}
 				else
 				{
-					for(Node node : children)
-					{
-						 if(mapPane.getRowIndex(node) == i && mapPane.getColumnIndex(node) == j)
-						 {
-							 b = (Button)node;
-							 b.setText("");
-							 Image image = new Image("file:GrassTile.png");
-							 ImageView iv = new ImageView(image);
-							 iv.setFitHeight(45.0);
-							 iv.setFitWidth(45.0);
-							 b.setGraphic(iv);
-							 break;
-						 }
-					}	
+					Image image = new Image("file:GrassTile.png");
+					ImageView iv = new ImageView(image);
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);
 				}
+				currentIndex++;
 			}
 		}
 	}
