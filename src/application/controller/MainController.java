@@ -184,7 +184,7 @@ public class MainController implements EventHandler<ActionEvent>
 			}
 			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 2)
 			{
-				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
+				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
 					if(selectedLocation != null && (Math.abs(selectedLocation.getRow()-mapPane.getRowIndex(b)) + Math.abs(selectedLocation.getCol()-mapPane.getColumnIndex(b))) <= selected.getiATKRNG().get(0))
 					{
@@ -202,7 +202,7 @@ public class MainController implements EventHandler<ActionEvent>
 						notification("Too far cannot attack");
 
 				}
-				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
+				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
 				{
 					selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					allyNameLb.setText(selected.getUnitName());
