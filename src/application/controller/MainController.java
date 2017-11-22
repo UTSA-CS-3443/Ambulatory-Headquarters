@@ -235,7 +235,6 @@ public class MainController implements EventHandler<ActionEvent>
 	
 	public void processMap()
 	{
-		int count = 0;
 		ObservableList<Node> children = mapPane.getChildren();
 		Button b;
 		for(int i = 0; i < map.getRow(); i++)
@@ -256,7 +255,6 @@ public class MainController implements EventHandler<ActionEvent>
 							 b.setGraphic(iv);
 							 break;
 						 }
-						 count++;
 					}					
 				}
 				else
@@ -274,12 +272,10 @@ public class MainController implements EventHandler<ActionEvent>
 							 b.setGraphic(iv);
 							 break;
 						 }
-						 count++;
 					}	
 				}
 			}
 		}
-		System.out.println("processMap runtime-------------------------"+count);
 	}
 	public void notification(String s)
 	{
