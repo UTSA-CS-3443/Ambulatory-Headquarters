@@ -119,7 +119,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		if (babyDragonCb.isSelected()) {
 			unitCount++;
 			charS[2]=1;
-			System.out.println("BABEDRAGON"+unitCount);
+			System.out.println("BABYDRAGON"+unitCount);
 		}
 		else if (!babyDragonCb.isSelected()) {
 			charS[2] = 0;
