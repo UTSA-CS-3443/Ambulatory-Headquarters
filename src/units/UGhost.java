@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UGhost extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:Ghost.png");
 	
 	private int iHitPointsBASE = 75;
 	private int iAttackBASE = 20;

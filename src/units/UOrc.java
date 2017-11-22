@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UOrc extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:Orc.png");
 	
 	private int iHitPointsBASE = 80;
 	private int iAttackBASE = 80;

@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class UTeddybear extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:Teddybear.png");
 
 	private int iHitPointsBASE = 100;
 	private int iAttackBASE = 30;
