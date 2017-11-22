@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public class ULunarOctopus extends Unit{
-	private Image image = new Image("file:knighttest.png");
+	private Image image = new Image("file:LunarOctopus.png");
 
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 50;
