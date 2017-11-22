@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import map.Map;
 
 public abstract class Unit {
-	private String[] allyList = {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"CatBUrglar",
+	private String[] allyList = {"Alien",	"Angel",	"Baby Dragon",	"Cake",				"Cat Burglar",
 								"Elf",		"Ghost",	"Knight",		"Lunar Octopus",	"Ninja",
 								"Orc",		"Pirate",	"Space Cowboy",	"Teddybear",		"Undead",
 								"Wall",		"Enemy 1",	"Enemy 2",		"Enemy 3",			"Enemy 4"};

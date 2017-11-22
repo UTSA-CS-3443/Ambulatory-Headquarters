@@ -10,7 +10,7 @@ public class Damage {
 		if (defaultPower < 0) {
 			defaultPower = 10;
 		}
-		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 5);
+		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 3);
 		int iDamageDone = ((iLevelBonus + defaultPower)) * ratioAD * iModifier;
 		int iMinDamage = 10 * iLevelBonus;
 		
@@ -19,7 +19,7 @@ public class Damage {
 			if (defender.getiHitPoints() < 0) {
 				defender.setiHitPoints(0);
 			}
-			return 1;
+			return iMinDamage;
 		}
 		else {
 			defender.iHitPointsDown(iDamageDone);
