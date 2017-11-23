@@ -52,6 +52,7 @@ public class MainController implements EventHandler<ActionEvent>
 	
 	public int winning=0;
 	public int currentLevel = 1;
+	public int turnCount = 0;
 	
 	public MainController() 
 	{
@@ -113,6 +114,8 @@ public class MainController implements EventHandler<ActionEvent>
 		{
 			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 1)
 			{
+				turnCount++;
+				turnCountLb.setText("Turn Count: " + turnCount);
 				notification(selected.getUnitName() + " moved from " + 
 									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
 									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
@@ -188,15 +191,25 @@ public class MainController implements EventHandler<ActionEvent>
 				{
 					if(selectedLocation != null && (Math.abs(selectedLocation.getRow()-mapPane.getRowIndex(b)) + Math.abs(selectedLocation.getCol()-mapPane.getColumnIndex(b))) <= selected.getiATKRNG().get(0))
 					{
-						notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
-						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0)
+						turnCount++;
+						turnCountLb.setText("Turn Count: " + turnCount);
+						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName().equals("Wall"))
 						{
-							notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
-							map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-							processMap();
+							notification("Can't attack a wall");
 						}
-						selected = null;
-						prevClicked = null;						
+						else
+						{
+							notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
+							if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0)
+							{
+								notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
+								map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+								processMap();
+							}
+							selected = null;
+							prevClicked = null;								
+						}
+					
 					}
 					else
 						notification("Too far cannot attack");
@@ -215,7 +228,7 @@ public class MainController implements EventHandler<ActionEvent>
 					prevClicked = b;
 					
 				}
-				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
+				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
 					selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					enemyNameLb.setText(selectedEnemy.getUnitName());
@@ -287,6 +300,8 @@ public class MainController implements EventHandler<ActionEvent>
 				map.loadMap(currentLevel);
 				processMap();
 				winning=0;
+				turnCount = 0;
+				turnCountLb.setText("Turn Count: " + turnCount);
 			}
 		}
 	}
