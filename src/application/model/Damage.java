@@ -10,8 +10,8 @@ public class Damage {
 		if (defaultPower <= 0) {
 			defaultPower = 10;
 		}
-		int ratioAD = (2 * attacker.getiAttack()) / (defender.getiDefense() * 3);
-		int iDamageDone = ((iLevelBonus + defaultPower)) * ratioAD * iModifier;
+		//int ratioAD = (3 * attacker.getiAttack()) / (defender.getiDefense() * 4);
+		int iDamageDone = ((iLevelBonus + defaultPower)) * iModifier;
 		int iMinDamage = 10 * iLevelBonus;
 		
 		if (iDamageDone <= 0) {
