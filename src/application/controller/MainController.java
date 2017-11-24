@@ -312,7 +312,7 @@ public class MainController implements EventHandler<ActionEvent>
 				turnCountLb.setText("Turn Count: " + turnCount);
 			}
 		}
-		else if (winning != 3 && turnCount <= 100) {
+		else if (winning != 3 && turnCount >= 100) {
 			System.out.println("Game Over");
 			try {
 				// change over to a second view
