@@ -193,6 +193,7 @@ public class MainController implements EventHandler<ActionEvent>
 					{
 						turnCount++;
 						turnCountLb.setText("Turn Count: " + turnCount);
+						isWon();
 						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName().equals("Wall"))
 						{
 							notification("Can't attack a wall");
@@ -309,6 +310,17 @@ public class MainController implements EventHandler<ActionEvent>
 				winning=0;
 				turnCount = 0;
 				turnCountLb.setText("Turn Count: " + turnCount);
+			}
+		}
+		else if (winning != 3 && turnCount <= 100) {
+			System.out.println("Game Over");
+			try {
+				// change over to a second view
+				Parent root = FXMLLoader.load(getClass().getResource("../view/GameOver.fxml"));   // Load the FXML
+				Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
+				Main.stage.show();														   // Show the stage to the user
+			}catch(Exception e) {
+				e.printStackTrace(); // TODO: app should do something more productive if errors occur...
 			}
 		}
 	}
