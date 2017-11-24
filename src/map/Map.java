@@ -11,7 +11,7 @@ import units.*;
 public class Map 
 {
 	private Unit[][] map;
-	private int maxEnemies = 10;
+	private int maxEnemies = 15;
 	public Location firstTrue;
 	public Location lastTrue;
 	
@@ -131,7 +131,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(2);
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
-					if(Math.random() <= 0.1)
+					if(Math.random() <= 0.15)
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
@@ -187,7 +187,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(2);
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
-					if(Math.random() <= 0.1)
+					if(Math.random() <= 0.15)
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
@@ -244,7 +244,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(2);
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
-					if(Math.random() <= 0.1)
+					if(Math.random() <= 0.15)
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
@@ -300,7 +300,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(2);
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
-					if(Math.random() <= 0.1)
+					if(Math.random() <= 0.15)
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
@@ -356,7 +356,7 @@ public class Map
 					map[i][j] = CharacterSelectController.charList.get(2);
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
-					if(Math.random() <= 0.1)
+					if(Math.random() <= 0.15)
 					{
 						map[i][j] = new UZEnemy0();
 						enemyCount++;
