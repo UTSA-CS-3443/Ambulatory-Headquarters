@@ -227,6 +227,13 @@ public class MainController implements EventHandler<ActionEvent>
 					selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					prevClicked = b;
 					
+					if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiHitPoints() <= 0) {
+						System.out.println("Ally Died");
+						String s = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName();
+						notification(s+" Died");
+						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+						processMap();
+					}
 				}
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
 				{
