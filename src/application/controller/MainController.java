@@ -272,6 +272,46 @@ public class MainController implements EventHandler<ActionEvent>
 					iv.setFitWidth(45.0);
 					b.setGraphic(iv);	
 				}
+				else if(currentLevel == 1 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
+				{
+					Image image = new Image("file:WinTile.png");
+					ImageView iv = new ImageView(image);
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);
+				}
+				else if(currentLevel == 2 && ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15)))
+				{
+					Image image = new Image("file:WinTile.png");
+					ImageView iv = new ImageView(image);
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);
+				}
+				else if(currentLevel == 3 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
+				{
+					Image image = new Image("file:WinTile.png");
+					ImageView iv = new ImageView(image);
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);
+				}
+				else if(currentLevel == 4 && ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15)))
+				{
+					Image image = new Image("file:WinTile.png");
+					ImageView iv = new ImageView(image);
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);
+				}
+				else if(currentLevel == 5 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
+				{
+					Image image = new Image("file:WinTile.png");
+					ImageView iv = new ImageView(image);
+					iv.setFitHeight(45.0);
+					iv.setFitWidth(45.0);
+					b.setGraphic(iv);
+				}
 				else
 				{
 					Image image = new Image("file:GrassTile.png");
