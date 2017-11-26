@@ -116,6 +116,7 @@ public class MainController implements EventHandler<ActionEvent>
 			{
 				turnCount++;
 				turnCountLb.setText("Turn Count: " + turnCount);
+				isWon();
 				notification(selected.getUnitName() + " moved from " + 
 									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
 									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
@@ -194,6 +195,7 @@ public class MainController implements EventHandler<ActionEvent>
 						turnCount++;
 						turnCountLb.setText("Turn Count: " + turnCount);
 						isWon();
+						
 						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName().equals("Wall"))
 						{
 							notification("Can't attack a wall");
