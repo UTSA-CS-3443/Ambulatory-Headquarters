@@ -236,6 +236,10 @@ public class MainController implements EventHandler<ActionEvent>
 						notification(s+" Died");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						processMap();
+						allyGameOver();
+						//
+						//
+						//
 					}
 				}
 				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
@@ -332,8 +336,20 @@ public class MainController implements EventHandler<ActionEvent>
 	}
 	
 	public void isWon() {
-		if (winning == 3) {
-			System.out.println("YOU WON THE GAME BOI");
+		int numberDead=0;
+		int numToWin=0;
+		for (int i=0; i<3; i++) {
+			if (CharacterSelectController.charList.get(i).getiHitPoints() == 0)
+				numberDead++;
+		}
+		if (numberDead == 0)
+			numToWin = 3;
+		else if (numberDead == 1)
+			numToWin = 2;
+		else if (numberDead == 2)
+			numToWin = 1;
+		if (winning == numToWin) {
+			System.out.println("YOU WON THE LEVEL winning:" +winning+" numToWin: "+numToWin);
 			map.reset();
 			currentLevel++;
 			if (currentLevel >= 6) {
@@ -354,7 +370,7 @@ public class MainController implements EventHandler<ActionEvent>
 				turnCountLb.setText("Turn Count: " + turnCount);
 			}
 		}
-		else if (winning != 3 && turnCount >= 100) {
+		else if (winning != numToWin && turnCount >= 100) {
 			System.out.println("Game Over");
 			try {
 				// change over to a second view
@@ -412,4 +428,22 @@ public class MainController implements EventHandler<ActionEvent>
 		processMap();
 	}
 	
+	public void allyGameOver() {
+		int numberDead=0;
+		for (int i=0; i<3; i++) {
+			if (CharacterSelectController.charList.get(i).getiHitPoints() == 0)
+				numberDead++;
+		}
+		if (numberDead >=3) {
+			System.out.println("Game Over via ally death " + numberDead);
+			try {
+				// change over to a second view
+				Parent root = FXMLLoader.load(getClass().getResource("../view/GameOver.fxml"));   // Load the FXML
+				Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
+				Main.stage.show();														   // Show the stage to the user
+			}catch(Exception e) {
+				e.printStackTrace(); // TODO: app should do something more productive if errors occur...
+			}
+		}
+	}
 }
