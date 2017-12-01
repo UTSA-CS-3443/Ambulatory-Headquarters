@@ -335,6 +335,11 @@ public class MainController implements EventHandler<ActionEvent>
 		notificationsLb.setText(s+"\n"+notificationsLb.getText());
 	}
 	
+	/**
+	 * Checks to see if the player has won the game. It keeps track of how many players have entered
+	 * a win zone. It is dependent on how many players are still alive. If player wins level, it proceeds to next level.
+	 * If player wins final level, it ends game. If player reaches 100 turns it results in game over
+	 */
 	public void isWon() {
 		int numberDead=0;
 		int numToWin=0;
@@ -428,6 +433,9 @@ public class MainController implements EventHandler<ActionEvent>
 		processMap();
 	}
 	
+	/**
+	 * Checks to see how many allys are alive. If all 3 are dead, it results in game over
+	 */
 	public void allyGameOver() {
 		int numberDead=0;
 		for (int i=0; i<3; i++) {
