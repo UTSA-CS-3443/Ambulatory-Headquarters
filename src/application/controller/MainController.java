@@ -18,6 +18,11 @@ import units.*;
 import javafx.beans.binding.*;
 import javafx.collections.*;
 
+/**
+ * 
+ * @author Classic Cannon
+ *
+ */
 public class MainController implements EventHandler<ActionEvent> 
 {
 	@FXML
@@ -54,6 +59,9 @@ public class MainController implements EventHandler<ActionEvent>
 	public int currentLevel = 1;
 	public int turnCount = 0;
 	
+	/**
+	 * constructor
+	 */
 	public MainController() 
 	{
 		super();
@@ -61,6 +69,11 @@ public class MainController implements EventHandler<ActionEvent>
 		map = new Map();
 		
 	}
+	
+	/**
+	 * Sets ready to true when the ready button is clicked. Game is only playable when ready.
+	 * @param event
+	 */
 	public void handleReady(ActionEvent event)
 	{
 		ready = true;
@@ -68,6 +81,9 @@ public class MainController implements EventHandler<ActionEvent>
 		processMap();
 	}
 	
+	/**
+	 * handles clicks and updates the views accordingly
+	 */
 	@Override
 	public void handle(ActionEvent event) 
 	{
@@ -259,7 +275,9 @@ public class MainController implements EventHandler<ActionEvent>
 		}
 	}
 	
-	
+	/**
+	 * updates the map graphics
+	 */
 	public void processMap()
 	{
 		ObservableList<Node> children = mapPane.getChildren();
@@ -388,6 +406,9 @@ public class MainController implements EventHandler<ActionEvent>
 		}
 	}
 	
+	/**
+	 * Traverse through all the enemies. Enemies attack allies if possible, move otherwise
+	 */
 	public void ememyTurn()
 	{
 		for(int r = 0; r < map.getRow(); r++)
@@ -434,7 +455,7 @@ public class MainController implements EventHandler<ActionEvent>
 	}
 	
 	/**
-	 * Checks to see how many allys are alive. If all 3 are dead, it results in game over
+	 * Checks to see how many allies are alive. If all 3 are dead, it results in game over
 	 */
 	public void allyGameOver() {
 		int numberDead=0;

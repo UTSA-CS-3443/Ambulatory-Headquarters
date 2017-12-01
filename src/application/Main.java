@@ -8,11 +8,17 @@ import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 
+/**
+ * 
+ * @author Classic Cannon
+ *
+ */
 public class Main extends Application {
-	//@Override
 	public static Stage stage;
 
-	
+	/**
+	 * loads the main menu
+	 */
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("view/MainMenu.fxml"));
@@ -30,6 +36,10 @@ public class Main extends Application {
 
 	}
 	
+	/**
+	 * starts the game
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

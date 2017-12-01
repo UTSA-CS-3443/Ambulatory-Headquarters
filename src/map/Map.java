@@ -8,6 +8,11 @@ import application.controller.CharacterSelectController;
 import application.controller.MainMenuController;
 import units.*;
 
+/**
+ * 
+ * @author Classic Cannon
+ *
+ */
 public class Map 
 {
 	private Unit[][] map;
