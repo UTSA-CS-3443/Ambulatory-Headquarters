@@ -92,7 +92,7 @@ public abstract class Unit {
 		this.iCurrHitPoints -= minusHitPoints;
 	}
 	
-	public void fullHealChar() {
+	public void fullHeal() {
 		this.iCurrHitPoints = this.iMaxHitPoints;
 	}
 	
