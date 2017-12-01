@@ -323,6 +323,7 @@ public class Map
 	}
 	public void loadLevel5()
 	{
+		//
 		int r=0;
 		int enemyCount = 0;
 		String line;
