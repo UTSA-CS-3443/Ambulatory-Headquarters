@@ -22,7 +22,9 @@ public class UPirate extends Unit{
 		this.setiUnitID(11);
 		this.setUImage(image);
 		
-		this.setiHitPoints(this.iHitPointsBASE);
+		this.setiMaxHitPoints(this.iHitPointsBASE);
+		this.setiCurrHitPoints(this.getiMaxHitPoints());
+		
 		this.setiAttack(this.iAttackBASE);
 		this.setiDefense(this.iDefenseBASE);
 		
@@ -39,7 +41,7 @@ public class UPirate extends Unit{
 	@Override
 	public void iLevelInc() {
 		this.iLevelUp();
-		this.iHitPointsUp(iHitPointsINC);
+		this.iCurrHitPointsUp(iHitPointsINC);
 		this.iAttackUp(this.iAttackINC);
 		this.iDefenseUp(this.iDefenseINC);
 		

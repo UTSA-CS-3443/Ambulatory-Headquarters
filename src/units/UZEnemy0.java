@@ -21,7 +21,8 @@ public class UZEnemy0 extends Unit{
 		this.setiUnitID(16);
 		this.setUImage(image);
 		
-		this.setiHitPoints(this.iHitPointsBASE);
+		this.setiMaxHitPoints(this.iHitPointsBASE);
+		this.setiCurrHitPoints(this.getiMaxHitPoints());
 		
 		this.setiAttack(this.iAttackBASE);
 		this.setiDefense(this.iDefenseBASE);
@@ -37,7 +38,7 @@ public class UZEnemy0 extends Unit{
 	
 	public void iLevelInc() {
 		this.iLevelUp();
-		this.iHitPointsUp(0);
+		this.iCurrHitPointsUp(0);
 		this.iAttackUp(0);
 		this.iDefenseUp(0);
 		

@@ -15,16 +15,16 @@ public class Damage {
 		int iMinDamage = 10 * iLevelBonus;
 		
 		if (iDamageDone <= 0) {
-			defender.iHitPointsDown(iMinDamage);
-			if (defender.getiHitPoints() < 0) {
-				defender.setiHitPoints(0);
+			defender.iCurrHitPointsDown(iMinDamage);
+			if (defender.getiMaxHitPoints() < 0) {
+				defender.setiMaxHitPoints(0);
 			}
 			return iMinDamage;
 		}
 		else {
-			defender.iHitPointsDown(iDamageDone);
-			if (defender.getiHitPoints() < 0) {
-				defender.setiHitPoints(0);
+			defender.iCurrHitPointsDown(iDamageDone);
+			if (defender.getiMaxHitPoints() < 0) {
+				defender.setiMaxHitPoints(0);
 			}
 			return iDamageDone;
 		}

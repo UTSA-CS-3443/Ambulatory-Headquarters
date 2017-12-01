@@ -14,7 +14,8 @@ public abstract class Unit {
 	private Image image;
 	
 	private int iLevel = 1;
-	private int iHitPoints;
+	private int iMaxHitPoints;
+	private int iCurrHitPoints;
 	private int iAttack;
 	private int iDefense;
 	private ArrayList<Integer> iATKRNG = new ArrayList<Integer>();;
@@ -59,19 +60,40 @@ public abstract class Unit {
 	}
 	
 	// HP METHODS
-	public int getiHitPoints() {
-		return iHitPoints;
-	}
-	public void setiHitPoints(int iHitPoints) {
-		this.iHitPoints = iHitPoints;
+	public int getiMaxHitPoints() {
+		return iMaxHitPoints;
 	}
 	
-	public void iHitPointsUp(int addHitPoints) {
-		this.iHitPoints += addHitPoints;
+	public int getiCurrHitPoints() {
+		return iCurrHitPoints;
 	}
 	
-	public void iHitPointsDown(int minusHitPoints) {
-		this.iHitPoints -= minusHitPoints;
+	public void setiMaxHitPoints(int iHitPoints) {
+		this.iMaxHitPoints = iHitPoints;
+	}
+	
+	public void setiCurrHitPoints(int iHitPoints) {
+		this.iCurrHitPoints = iHitPoints;
+	}
+	
+	public void iMaxHitPointsUp(int addHitPoints) {
+		this.iMaxHitPoints += addHitPoints;
+	}
+	
+	public void iCurrHitPointsUp(int addHitPoints) {
+		this.iCurrHitPoints += addHitPoints;
+	}
+	
+	public void iMaxHitPointsDown(int minusHitPoints) {
+		this.iMaxHitPoints -= minusHitPoints;
+	}
+	
+	public void iCurrHitPointsDown(int minusHitPoints) {
+		this.iCurrHitPoints -= minusHitPoints;
+	}
+	
+	public void fullHeal() {
+		this.iCurrHitPoints = this.iMaxHitPoints;
 	}
 	
 	// ATTACK METHODS
