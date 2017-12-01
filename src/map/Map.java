@@ -15,17 +15,30 @@ public class Map
 	public Location firstTrue;
 	public Location lastTrue;
 	
+	/**
+	 * Map constructor
+	 */
 	public Map()
 	{
 		map = new Unit[12][16];
 		loadMap(1);
 	}
 	
+	/**
+	 * 
+	 * @return the map matrix of Units
+	 */
 	public Unit[][] getMatrix()
 	{
 		return map;
 	}
 	
+	/**
+	 * 
+	 * @param r row
+	 * @param c column
+	 * @return the Unit at (r,c)
+	 */
 	public Unit get(int r, int c)
 	{
 		if(r < 0 || c < 0)
@@ -36,6 +49,11 @@ public class Map
 			return map[r][c];
 	}
 	
+	/**
+	 * removes the Unit at (r,c)
+	 * @param r row
+	 * @param c column
+	 */
 	public void remove(int r, int c)
 	{
 		map[r][c] = null;
@@ -72,16 +90,28 @@ public class Map
 		return 1;
 	}
 	
+	/**
+	 * 
+	 * @return number of rows
+	 */
 	public int getRow()
 	{
 		return map.length;
 	}
 	
+	/**
+	 * 
+	 * @return number of columns
+	 */
 	public int getCol()
 	{
 		return map[0].length;
 	}
 	
+	/**
+	 * load level
+	 * @param level the level to load
+	 */
 	public void loadMap(int level)
 	{
 		if(level == 1)
@@ -96,6 +126,9 @@ public class Map
 			loadLevel5();
 	}
 	
+	/**
+	 * load level 1
+	 */
 	public void loadLevel1()
 	{
 		int r=0;
@@ -152,6 +185,9 @@ public class Map
 
 	}
 	
+	/**
+	 * load level 2
+	 */
 	public void loadLevel2()
 	{
 		int r=0;
@@ -209,6 +245,9 @@ public class Map
 
 	}
 	
+	/**
+	 * load level 3
+	 */
 	public void loadLevel3()
 	{
 		int r=0;
@@ -265,6 +304,10 @@ public class Map
 		}
 
 	}
+	
+	/**
+	 * load level 4
+	 */
 	public void loadLevel4()
 	{
 		int r=0;
@@ -321,6 +364,10 @@ public class Map
 		}
 
 	}
+	
+	/**
+	 * load level 5
+	 */
 	public void loadLevel5()
 	{
 		//
@@ -379,6 +426,14 @@ public class Map
 
 	}
 	
+	/**
+	 * creates a boolean matrix, true if the unit can move to that cell
+	 * @param map map matrix
+	 * @param r row
+	 * @param c column
+	 * @param range movement range of the Unit
+	 * @return a boolean matrix, true if the unit can move to that cell
+	 */
 	public boolean[][] moveable(Unit[][] map, int r, int c, int range)
 	{
 		boolean[][] mat = new boolean[map.length][map[0].length];
@@ -396,6 +451,15 @@ public class Map
 		return mat;
 	}
 	
+	/**
+	 * recursive function for movable
+	 * @param map map matrix
+	 * @param mat boolean matrix
+	 * @param r row
+	 * @param c column
+	 * @param range movement range of the Unit
+	 * @return boolean matrix, true if the unit can move to that cell
+	 */
 	public boolean[][] moveableRec(Unit[][] map, boolean[][] mat, int r, int c, int range)
 	{
 		if(range >= 0)
@@ -421,6 +485,9 @@ public class Map
 		return mat;
 	}
 	
+	/**
+	 * resets the map too all null
+	 */
 	public void reset() {
 		map = new Unit[12][16];
 	}
