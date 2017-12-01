@@ -273,58 +273,58 @@ public class MainController implements EventHandler<ActionEvent>
 				b.setText("");
 				if(map.get(i, j) != null)
 				{
-					ImageView iv = new ImageView(map.get(i, j).getImage());
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);	
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(map.get(i, j).getImage(), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				else if(currentLevel == 1 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
 				{
 					Image image = new Image("file:WinTile.png");
-					ImageView iv = new ImageView(image);
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				else if(currentLevel == 2 && ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15)))
 				{
 					Image image = new Image("file:WinTile.png");
-					ImageView iv = new ImageView(image);
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				else if(currentLevel == 3 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
 				{
 					Image image = new Image("file:WinTile.png");
-					ImageView iv = new ImageView(image);
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				else if(currentLevel == 4 && ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15)))
 				{
 					Image image = new Image("file:WinTile.png");
-					ImageView iv = new ImageView(image);
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				else if(currentLevel == 5 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
 				{
 					Image image = new Image("file:WinTile.png");
-					ImageView iv = new ImageView(image);
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				else
 				{
 					Image image = new Image("file:GrassTile.png");
-					ImageView iv = new ImageView(image);
-					iv.setFitHeight(45.0);
-					iv.setFitWidth(45.0);
-					b.setGraphic(iv);
+					b.setStyle("-fx-focus-color: transparent;");
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					b.setFocusTraversable(false);
+					b.setBackground(new Background(backgroundImage));
 				}
 				currentIndex++;
 			}

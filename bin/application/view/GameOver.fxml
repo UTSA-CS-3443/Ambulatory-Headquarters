@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="393.0" prefWidth="409.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.EndController">
+   <children>
+      <Pane layoutX="-85.0" layoutY="-82.0" prefHeight="393.0" prefWidth="409.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="89.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
+            <Button layoutX="170.0" layoutY="245.0" mnemonicParsing="false" onAction="#handle" prefHeight="61.0" prefWidth="70.0" text="Quit" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

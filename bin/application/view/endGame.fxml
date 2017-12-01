@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controller.EndController">
+   <children>
+      <Pane layoutX="-67.0" layoutY="-39.0" prefHeight="516.0" prefWidth="526.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="94.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONRATULATIONS!">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text layoutX="210.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOU WON!">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="145.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thanks for playing our game!" wrappingWidth="263.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="183.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created by:  Alec Chou" wrappingWidth="187.13671875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="277.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Christopher Otten">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="277.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ryan Chen">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="277.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huy Mai">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button layoutX="240.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle" prefHeight="41.0" prefWidth="60.0" text="Quit" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
