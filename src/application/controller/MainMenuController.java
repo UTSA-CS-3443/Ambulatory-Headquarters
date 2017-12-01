@@ -27,7 +27,7 @@ public class MainMenuController  implements EventHandler<ActionEvent>
 	{
 		super();
 		easyDiff =  false;
-		mediumDiff = true;
+		mediumDiff = false;
 		hardDiff = false;
 	}
 	
@@ -67,7 +67,7 @@ public class MainMenuController  implements EventHandler<ActionEvent>
 				}
 				
 				// loads MenuCharacterSelect.fxml only after user selects a difficulty and clicks load
-				if (text.equals("LOAD")) {
+				if (text.equals("LOAD") && (easyDiff == true || mediumDiff == true || hardDiff == true)) {
 					try {
 						// change over to a second view
 						Parent root = FXMLLoader.load(getClass().getResource("../view/MenuCharacterSelect.fxml"));   // Load the FXML
