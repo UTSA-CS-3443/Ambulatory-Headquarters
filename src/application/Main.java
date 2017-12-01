@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 public class Main extends Application {
 	//@Override
 	public static Stage stage;
-	public boolean easyD;
 
 	
 	public void start(Stage primaryStage) {
