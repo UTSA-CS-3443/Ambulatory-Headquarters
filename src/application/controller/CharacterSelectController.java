@@ -28,6 +28,13 @@ import units.UTeddybear;
 import units.UUndead;
 import units.Unit;
 
+/**
+ * This class handles the character selection view. It allows for the player
+ * to select characters to use in the game. It can also let the player
+ * return to the first view.
+ * @author Classic Cannon
+ *
+ */
 public class CharacterSelectController implements EventHandler<ActionEvent> 
 {
 	@FXML
@@ -61,8 +68,14 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 	@FXML
 	CheckBox undeadCb;
 	
+	/**
+	 * ArrayList to hold player selected units
+	 */
 	public static ArrayList<Unit> charList = new ArrayList<Unit>();
 	
+	/** 
+	 * Constructor
+	 */
 	public CharacterSelectController() 
 	{
 		super();
@@ -70,6 +83,11 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 	
 	
 	@Override
+	/**
+	 * Handles all buttons and check box selections in the view.
+	 * This includes the load and back buttons as well as character selection
+	 * @param event
+	 */
 	public void handle(ActionEvent event) 
 	{
 		Button b = (Button)event.getSource();
@@ -77,9 +95,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		
 		int unitCount = 0;
 		
-		int[] charS ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-		
-		//ArrayList<Unit> charList = new ArrayList<Unit>();		
+		int[] charS ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};	
 		
 		// sends game back to MainMenu.fxml
 		if (text.equals("<--Back")) 
@@ -247,7 +263,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		
 		// starts game by loading MainGame.fxml
 		if (text.equals("START!") && unitCount ==3) {
-			//This is probably super inefficient but idc. It reads through charS and determines what characters
+			//This is probably super inefficient but idk. It reads through charS and determines what characters
 			//need to be created and added to arrayList of player selected characters
 			for (int i=0; i<15; i++) {
 				if(charS[0] == 1) {
@@ -314,6 +330,8 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 			}
 			System.out.println("\nSTART!!");
 			System.out.println(charList);
+			
+			//Loads main game
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MainGame.fxml"));
 				Scene scene = new Scene(root,1280,720);
@@ -324,6 +342,8 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 				e.printStackTrace();
 			}
 		}
+		
+		// Wont allow player to proceed unless 3 characters are selected
 		else if (text.equals("START!") && (unitCount < 3 || unitCount > 3)) {
 			System.out.println("ONLY SELECT 3 UNITS");
 		}
