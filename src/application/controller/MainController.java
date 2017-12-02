@@ -103,7 +103,7 @@ public class MainController implements EventHandler<ActionEvent>
 			{
 				selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				allyNameLb.setText(selected.getUnitName());
-				allyLb.setText("HP: " + selected.getiMaxHitPoints() + "\n" + 
+				allyLb.setText("HP: " + selected.getiCurrHitPoints() + "\n" + 
 								"Level: " + selected.getiLevel() + "\n" + 
 								"Mobility: " + selected.getiMobility() + "\n" + 
 								"Atk.: " + selected.getiAttack() + "\n" + 
@@ -116,7 +116,7 @@ public class MainController implements EventHandler<ActionEvent>
 			{
 				selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				enemyNameLb.setText(selectedEnemy.getUnitName());
-				enemyLb.setText("HP: " + selectedEnemy.getiMaxHitPoints() + "\n" + 
+				enemyLb.setText("HP: " + selectedEnemy.getiCurrHitPoints() + "\n" + 
 								"Level: " + selectedEnemy.getiLevel() + "\n" + 
 								"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
 								"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
@@ -219,7 +219,7 @@ public class MainController implements EventHandler<ActionEvent>
 						else
 						{
 							notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
-							if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiMaxHitPoints() <= 0)
+							if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiCurrHitPoints() <= 0)
 							{
 								notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
 								map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
@@ -238,7 +238,7 @@ public class MainController implements EventHandler<ActionEvent>
 				{
 					selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					allyNameLb.setText(selected.getUnitName());
-					allyLb.setText("HP: " + selected.getiMaxHitPoints() + "\n" + 
+					allyLb.setText("HP: " + selected.getiCurrHitPoints() + "\n" + 
 									"Level: " + selected.getiLevel() + "\n" + 
 									"Mobility: " + selected.getiMobility() + "\n" + 
 									"Atk.: " + selected.getiAttack() + "\n" + 
@@ -246,7 +246,7 @@ public class MainController implements EventHandler<ActionEvent>
 					selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					prevClicked = b;
 					
-					if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiMaxHitPoints() <= 0) {
+					if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiCurrHitPoints() <= 0) {
 						System.out.println("Ally Died");
 						String s = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName();
 						notification(s+" Died");
@@ -262,7 +262,7 @@ public class MainController implements EventHandler<ActionEvent>
 				{
 					selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					enemyNameLb.setText(selectedEnemy.getUnitName());
-					enemyLb.setText("HP: " + selectedEnemy.getiMaxHitPoints() + "\n" + 
+					enemyLb.setText("HP: " + selectedEnemy.getiCurrHitPoints() + "\n" + 
 									"Level: " + selectedEnemy.getiLevel() + "\n" + 
 									"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
 									"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
@@ -362,7 +362,7 @@ public class MainController implements EventHandler<ActionEvent>
 		int numberDead=0;
 		int numToWin=0;
 		for (int i=0; i<3; i++) {
-			if (CharacterSelectController.charList.get(i).getiMaxHitPoints() == 0)
+			if (CharacterSelectController.charList.get(i).getiCurrHitPoints() == 0)
 				numberDead++;
 		}
 		if (numberDead == 0)
@@ -460,7 +460,7 @@ public class MainController implements EventHandler<ActionEvent>
 	public void allyGameOver() {
 		int numberDead=0;
 		for (int i=0; i<3; i++) {
-			if (CharacterSelectController.charList.get(i).getiMaxHitPoints() == 0)
+			if (CharacterSelectController.charList.get(i).getiCurrHitPoints() == 0)
 				numberDead++;
 		}
 		if (numberDead >=3) {
