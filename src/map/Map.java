@@ -161,12 +161,19 @@ public class Map
 			{
 				//if(i == 6 || i == 4)
 					//map[i][j] = new UZEnemy0();
-				if(j == 0 && i == 0 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0))
+				if(j == 0 && i == 0 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 1 && i == 0 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(0).fullHeal();
+				}
+				else if(j == 1 && i == 0 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 2 && i == 0 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(1).fullHeal();
+
+				}
+				else if(j == 2 && i == 0 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(2);
+					CharacterSelectController.charList.get(2).fullHeal();
+				}
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.15)
@@ -220,12 +227,18 @@ public class Map
 			{
 				//if(i == 6 || i == 4)
 					//map[i][j] = new UZEnemy0();
-				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0))
+				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(0).fullHeal();
+				}
+				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(1).fullHeal();
+				}
+				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(2);
+					CharacterSelectController.charList.get(2).fullHeal();
+				}
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.15)
@@ -280,12 +293,18 @@ public class Map
 			{
 				//if(i == 6 || i == 4)
 					//map[i][j] = new UZEnemy0();
-				if(j == 0 && i == 0 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0))
+				if(j == 0 && i == 0 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 1 && i == 0 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(0).fullHeal();
+				}
+				else if(j == 1 && i == 0 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 0 && i == 1 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(1).fullHeal();
+				}
+				else if(j == 0 && i == 1 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(2);
+					CharacterSelectController.charList.get(2).fullHeal();
+				}
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.15)
@@ -340,12 +359,18 @@ public class Map
 			{
 				//if(i == 6 || i == 4)
 					//map[i][j] = new UZEnemy0();
-				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0))
+				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(0).fullHeal();
+				}
+				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(1).fullHeal();
+				}
+				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(2);
+					CharacterSelectController.charList.get(2).fullHeal();
+				}
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.15)
@@ -401,12 +426,18 @@ public class Map
 			{
 				//if(i == 6 || i == 4)
 					//map[i][j] = new UZEnemy0();
-				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0))
+				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(0);
-				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(0).fullHeal();
+				}
+				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(1);
-				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0))
+					CharacterSelectController.charList.get(1).fullHeal();
+				}
+				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(2);
+					CharacterSelectController.charList.get(2).fullHeal();
+				}
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
 					if(Math.random() <= 0.15)
