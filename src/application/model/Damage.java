@@ -6,6 +6,9 @@ public class Damage {
 	public static int doDamage(Unit attacker, Unit defender) {
 		int iModifier = 1;	
 		int iLevelBonus = 5 * (attacker.getiLevel() - defender.getiLevel());
+		if (iLevelBonus < 0){
+			iLevelBonus = 0;
+		}
 		int defaultPower = attacker.getiAttack() - defender.getiDefense();
 		if (defaultPower <= 0) {
 			defaultPower = 10;
