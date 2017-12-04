@@ -186,9 +186,9 @@ public class Map
 							map[i][j].iDefenseUp(15);
 						}
 						if (MainMenuController.hardDiff == true) {
-							map[i][j].iCurrHitPointsUp(30);
-							map[i][j].iAttackUp(30);
-							map[i][j].iDefenseUp(30);
+							map[i][j].iCurrHitPointsUp(20);
+							map[i][j].iAttackUp(20);
+							map[i][j].iDefenseUp(20);
 						}
 					}
 				}
@@ -230,14 +230,17 @@ public class Map
 				if(j == 0 && i == 10 && (CharacterSelectController.charList.get(0).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(0);
 					CharacterSelectController.charList.get(0).fullHeal();
+					CharacterSelectController.charList.get(0).iLevelUp();
 				}
 				else if(j == 0 && i == 11 && (CharacterSelectController.charList.get(1).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(1);
 					CharacterSelectController.charList.get(1).fullHeal();
+					CharacterSelectController.charList.get(1).iLevelUp();
 				}
 				else if(j == 1 && i == 11 && (CharacterSelectController.charList.get(2).getiCurrHitPoints() > 0)) {
 					map[i][j] = CharacterSelectController.charList.get(2);
 					CharacterSelectController.charList.get(2).fullHeal();
+					CharacterSelectController.charList.get(2).iLevelUp();
 				}
 				else if(enemyCount <= maxEnemies && map[i][j] == null)
 				{
@@ -251,9 +254,9 @@ public class Map
 							map[i][j].iDefenseUp(15);
 						}
 						if (MainMenuController.hardDiff == true) {
-							map[i][j].iCurrHitPointsUp(30);
-							map[i][j].iAttackUp(30);
-							map[i][j].iDefenseUp(30);
+							map[i][j].iCurrHitPointsUp(20);
+							map[i][j].iAttackUp(20);
+							map[i][j].iDefenseUp(20);
 						}
 					}
 					
@@ -317,9 +320,9 @@ public class Map
 							map[i][j].iDefenseUp(15);
 						}
 						if (MainMenuController.hardDiff == true) {
-							map[i][j].iCurrHitPointsUp(30);
-							map[i][j].iAttackUp(30);
-							map[i][j].iDefenseUp(30);
+							map[i][j].iCurrHitPointsUp(20);
+							map[i][j].iAttackUp(20);
+							map[i][j].iDefenseUp(20);
 						}
 					}
 					
@@ -383,9 +386,9 @@ public class Map
 							map[i][j].iDefenseUp(15);
 						}
 						if (MainMenuController.hardDiff == true) {
-							map[i][j].iCurrHitPointsUp(30);
-							map[i][j].iAttackUp(30);
-							map[i][j].iDefenseUp(30);//
+							map[i][j].iCurrHitPointsUp(20);
+							map[i][j].iAttackUp(20);
+							map[i][j].iDefenseUp(20);//
 						}
 					}
 					
@@ -450,9 +453,9 @@ public class Map
 							map[i][j].iDefenseUp(15);
 						}
 						if (MainMenuController.hardDiff == true) {
-							map[i][j].iCurrHitPointsUp(30);
-							map[i][j].iAttackUp(30);
-							map[i][j].iDefenseUp(30);
+							map[i][j].iCurrHitPointsUp(20);
+							map[i][j].iAttackUp(20);
+							map[i][j].iDefenseUp(20);
 						}
 					}
 					
