@@ -15,32 +15,32 @@
   <children>
     <Pane prefHeight="720.0" prefWidth="1280.0">
       <children>
-        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ffcc" height="304.0" layoutX="552.0" layoutY="276.0" smooth="true" stroke="BLACK" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeType="INSIDE" width="176.0" />
-        <Text layoutX="431.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ffcc" height="304.0" layoutX="541.0" layoutY="276.0" smooth="true" stroke="BLACK" strokeLineCap="SQUARE" strokeLineJoin="MITER" strokeType="INSIDE" width="176.0" />
+        <Text layoutX="436.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
           <font>
             <Font name="Agency FB" size="50.0" />
           </font>
         </Text>
-        <Text layoutX="605.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty">
+        <Text layoutX="594.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty">
           <font>
             <Font name="Agency FB" size="25.0" />
           </font>
         </Text>
-        <Button layoutX="609.0" layoutY="329.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EASY">
+        <Button layoutX="598.0" layoutY="329.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EASY">
           <font>
             <Font name="System Bold" size="11.0" fx:id="x1" />
           </font>
         </Button>
-        <Button font="$x1" layoutX="609.0" layoutY="379.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="MEDIUM" />
-        <Button font="$x1" layoutX="609.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="HARD" />
-        <Button font="$x1" layoutX="651.0" layoutY="513.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="LOAD" />
-        <Button font="$x1" layoutX="568.0" layoutY="513.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EXIT" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="406.0" layoutY="166.0" stroke="BLACK" strokeType="INSIDE" width="458.0">
+        <Button font="$x1" layoutX="598.0" layoutY="379.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="MEDIUM" />
+        <Button font="$x1" layoutX="598.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="HARD" />
+        <Button font="$x1" layoutX="640.0" layoutY="513.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="LOAD" />
+        <Button font="$x1" layoutX="557.0" layoutY="513.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EXIT" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="411.0" layoutY="166.0" stroke="BLACK" strokeType="INSIDE" width="458.0">
           <fill>
             <Color blue="1.000" green="0.576" opacity="0.898" red="0.122" fx:id="x2" />
           </fill>
         </Rectangle>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x2" height="18.0" layoutX="406.0" layoutY="76.0" smooth="true" stroke="BLACK" strokeType="INSIDE" width="458.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x2" height="18.0" layoutX="411.0" layoutY="76.0" smooth="true" stroke="BLACK" strokeType="INSIDE" width="458.0" />
       </children>
     </Pane>
   </children>
