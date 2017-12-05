@@ -5,15 +5,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.CharacterSelectController">
   <children>
-    <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="324.0" layoutY="213.0" prefHeight="308.0" prefWidth="633.0">
+    <Rectangle arcHeight="0.0" arcWidth="0.0" fill="DODGERBLUE" height="348.0" layoutX="303.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="673.0" />
+    <Rectangle arcHeight="0.0" arcWidth="0.0" blendMode="SCREEN" depthTest="INHERIT" fill="WHITE" height="308.0" layoutX="324.0" layoutY="230.0" pickOnBounds="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="633.0" />
+    <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="324.0" layoutY="230.0" prefHeight="308.0" prefWidth="633.0">
       <children>
         <CheckBox fx:id="angelCb" alignment="CENTER_LEFT" contentDisplay="LEFT" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Angel" wrapText="true" GridPane.columnIndex="1">
           <font>
-            <Font size="15.0" fx:id="x1" />
+            <Font name="Agency FB" size="20.0" fx:id="x1" />
           </font>
           <GridPane.margin>
             <Insets left="10.0" fx:id="x2" />
@@ -47,12 +51,22 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Text layoutX="456.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM SELECT">
+    <Text layoutX="537.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Select">
       <font>
-        <Font size="60.0" />
+        <Font name="Agency FB" size="50.0" />
       </font>
     </Text>
-    <Button layoutX="434.0" layoutY="547.0" mnemonicParsing="false" onAction="#handle" prefHeight="37.0" text="&lt;--Back" />
-    <Button fx:id="startBtn" layoutX="791.0" layoutY="547.0" mnemonicParsing="false" onAction="#handle" prefHeight="37.0" text="START!" />
+    <Button layoutX="400.0" layoutY="578.0" mnemonicParsing="false" onAction="#handle" prefHeight="37.0" text="BACK">
+      <font>
+        <Font name="Agency FB" size="25.0" fx:id="x3" />
+      </font>
+    </Button>
+    <Button fx:id="startBtn" font="$x3" layoutX="787.0" layoutY="578.0" mnemonicParsing="false" onAction="#handle" prefHeight="37.0" text="START" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" height="18.0" layoutX="406.0" layoutY="166.0" stroke="BLACK" strokeType="INSIDE" width="458.0">
+      <fill>
+        <Color blue="1.000" green="0.565" opacity="0.898" red="0.118" fx:id="x4" />
+      </fill>
+    </Rectangle>
+    <Rectangle arcHeight="0.0" arcWidth="0.0" fill="$x4" height="18.0" layoutX="406.0" layoutY="76.0" smooth="true" stroke="BLACK" strokeType="INSIDE" width="458.0" />
   </children>
 </AnchorPane>

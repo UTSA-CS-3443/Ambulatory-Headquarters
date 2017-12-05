@@ -98,7 +98,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		int[] charS ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};	
 		
 		// sends game back to MainMenu.fxml
-		if (text.equals("<--Back")) 
+		if (text.equals("BACK")) 
 		{
 			System.out.println("BACK!!");
 			try {
@@ -262,7 +262,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		
 		
 		// starts game by loading MainGame.fxml
-		if (text.equals("START!") && unitCount ==3) {
+		if (text.equals("START") && unitCount ==3) {
 			//This is probably super inefficient but idk. It reads through charS and determines what characters
 			//need to be created and added to arrayList of player selected characters
 			for (int i=0; i<15; i++) {
@@ -344,7 +344,7 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 		}
 		
 		// Wont allow player to proceed unless 3 characters are selected
-		else if (text.equals("START!") && (unitCount < 3 || unitCount > 3)) {
+		else if (text.equals("START") && (unitCount < 3 || unitCount > 3)) {
 			System.out.println("ONLY SELECT 3 UNITS");
 		}
 	}
