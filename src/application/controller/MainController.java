@@ -47,6 +47,10 @@ public class MainController implements EventHandler<ActionEvent>
 	public Button prevClicked;
 	@FXML
 	public Button readyBtn;
+	@FXML
+	public ImageView allyImage;
+	@FXML
+	public ImageView enemyImage;
 	
 	private Map map;
 	private boolean ready;
@@ -108,6 +112,7 @@ public class MainController implements EventHandler<ActionEvent>
 								"Mobility: " + selected.getiMobility() + "\n" + 
 								"Atk.: " + selected.getiAttack() + "\n" + 
 								"Def.: " + selected.getiDefense());
+				allyImage.setImage(selected.getImage());
 				selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				prevClicked = b;
 				System.out.println("prevClicked set");
@@ -121,6 +126,7 @@ public class MainController implements EventHandler<ActionEvent>
 								"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
 								"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
 								"Def.: " + selectedEnemy.getiDefense());
+				enemyImage.setImage(selectedEnemy.getImage());
 				//selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				//prevClicked = b;
 				//System.out.println("prevClicked set");
@@ -243,6 +249,7 @@ public class MainController implements EventHandler<ActionEvent>
 									"Mobility: " + selected.getiMobility() + "\n" + 
 									"Atk.: " + selected.getiAttack() + "\n" + 
 									"Def.: " + selected.getiDefense());
+					allyImage.setImage(selected.getImage());
 					selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					prevClicked = b;
 					
@@ -267,6 +274,7 @@ public class MainController implements EventHandler<ActionEvent>
 									"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
 									"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
 									"Def.: " + selectedEnemy.getiDefense());
+					enemyImage.setImage(selectedEnemy.getImage());
 					//selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					//prevClicked = b;
 					//System.out.println("prevClicked set");
