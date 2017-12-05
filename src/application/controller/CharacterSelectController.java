@@ -31,14 +31,19 @@ import units.UUndead;
 import units.Unit;
 
 /**
- * This class handles the character selection view. It allows for the player
- * to select characters to use in the game. It can also let the player
- * return to the first view.
+ * This class handles the character selection view. It allows for the player to
+ * select characters to use in the game. It can also let the player return to
+ * the first view.
+ * 
  * @author Classic Cannon
  *
  */
-public class CharacterSelectController implements EventHandler<ActionEvent> 
-{
+public class CharacterSelectController implements EventHandler<ActionEvent> {
+	/**
+	 * All Variables that follow, unless otherwise stated, are CheckBoxes for the
+	 * character selection
+	 */
+
 	@FXML
 	CheckBox alienCb;
 	@FXML
@@ -71,264 +76,246 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 	CheckBox undeadCb;
 	@FXML
 	ImageView alienpic;
-	
+
 	/**
 	 * ArrayList to hold player selected units
 	 */
 	public static ArrayList<Unit> charList = new ArrayList<Unit>();
-	
-	/** 
+
+	/**
 	 * Constructor
 	 */
-	public CharacterSelectController() 
-	{
+	public CharacterSelectController() {
 		super();
-		
-		//alienpic.setImage(picAlien);
+
+		// alienpic.setImage(picAlien);
 	}
-	
-	
+
 	@Override
 	/**
-	 * Handles all buttons and check box selections in the view.
-	 * This includes the load and back buttons as well as character selection
+	 * Handles all buttons and check box selections in the view. This includes the
+	 * load and back buttons as well as character selection
+	 * 
 	 * @param event
 	 */
-	public void handle(ActionEvent event) 
-	{
-		Button b = (Button)event.getSource();
+	public void handle(ActionEvent event) {
+		Button b = (Button) event.getSource();
 		String text = b.getText();
-		
+
 		int unitCount = 0;
-		
-		int[] charS ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};	
-		
+
+		int[] charS = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 		// sends game back to MainMenu.fxml
-		if (text.equals("BACK")) 
-		{
+		if (text.equals("BACK")) {
 			System.out.println("BACK!!");
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MainMenu.fxml"));
-				Scene scene = new Scene(root,1280,720);
-				//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				Scene scene = new Scene(root, 1280, 720);
+				// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				Main.stage.setScene(scene);
 				Main.stage.show();
-			} catch(Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		//Alien
+		// Alien
 		if (alienCb.isSelected()) {
 			unitCount++;
 			charS[0] = 1;
-			System.out.println("ALIEN"+unitCount);
-		}
-		else if (!alienCb.isSelected()) {
+			System.out.println("ALIEN" + unitCount);
+		} else if (!alienCb.isSelected()) {
 			charS[0] = 0;
 		}
-		
-		//Angel
+
+		// Angel
 		if (angelCb.isSelected()) {
 			unitCount++;
 			charS[1] = 1;
-			System.out.println("ANGEL"+unitCount);
-		}
-		else if (!angelCb.isSelected()) {
+			System.out.println("ANGEL" + unitCount);
+		} else if (!angelCb.isSelected()) {
 			charS[1] = 0;
 		}
-		
-		//Baby Dragon
+
+		// Baby Dragon
 		if (babyDragonCb.isSelected()) {
 			unitCount++;
-			charS[2]=1;
-			System.out.println("BABYDRAGON"+unitCount);
-		}
-		else if (!babyDragonCb.isSelected()) {
+			charS[2] = 1;
+			System.out.println("BABYDRAGON" + unitCount);
+		} else if (!babyDragonCb.isSelected()) {
 			charS[2] = 0;
 		}
-		
-		//Cake
+
+		// Cake
 		if (cakeCb.isSelected()) {
 			unitCount++;
-			charS[3]=1;
-			System.out.println("CAKE"+unitCount);
-		}
-		else if (!cakeCb.isSelected()) {
+			charS[3] = 1;
+			System.out.println("CAKE" + unitCount);
+		} else if (!cakeCb.isSelected()) {
 			charS[3] = 0;
 		}
-		
-		//Cat Burglar
+
+		// Cat Burglar
 		if (catBurglarCb.isSelected()) {
 			unitCount++;
-			charS[4]=1;
-			System.out.println("CATBURGLAR"+unitCount);
-		}
-		else if (!catBurglarCb.isSelected()) {
+			charS[4] = 1;
+			System.out.println("CATBURGLAR" + unitCount);
+		} else if (!catBurglarCb.isSelected()) {
 			charS[4] = 0;
 		}
-		
-		//Elf
+
+		// Elf
 		if (elfCb.isSelected()) {
 			unitCount++;
-			charS[5]=1;
-			System.out.println("ELF"+unitCount);
-		}
-		else if (!elfCb.isSelected()) {
+			charS[5] = 1;
+			System.out.println("ELF" + unitCount);
+		} else if (!elfCb.isSelected()) {
 			charS[5] = 0;
 		}
-		
-		//Ghost
+
+		// Ghost
 		if (ghostCb.isSelected()) {
 			unitCount++;
-			charS[6]=1;
-			System.out.println("GHOST"+unitCount);
-		}
-		else if (!ghostCb.isSelected()) {
+			charS[6] = 1;
+			System.out.println("GHOST" + unitCount);
+		} else if (!ghostCb.isSelected()) {
 			charS[6] = 0;
 		}
-		
-		//Knight
+
+		// Knight
 		if (knightCb.isSelected()) {
 			unitCount++;
-			charS[7]=1;
-			System.out.println("KNIGHT"+unitCount);
-		}
-		else if (!knightCb.isSelected()) {
+			charS[7] = 1;
+			System.out.println("KNIGHT" + unitCount);
+		} else if (!knightCb.isSelected()) {
 			charS[7] = 0;
 		}
-		
-		//Lunar Octopus..whatever that is
+
+		// Lunar Octopus..whatever that is
 		if (lunarOctopusCb.isSelected()) {
 			unitCount++;
-			charS[8]=1;
-			System.out.println("LUNAR OCTOPUS"+unitCount);
-		}
-		else if (!lunarOctopusCb.isSelected()) {
+			charS[8] = 1;
+			System.out.println("LUNAR OCTOPUS" + unitCount);
+		} else if (!lunarOctopusCb.isSelected()) {
 			charS[8] = 0;
 		}
-		
-		//Ninja
+
+		// Ninja
 		if (ninjaCb.isSelected()) {
 			unitCount++;
-			charS[9]=1;
-			System.out.println("NINJA"+unitCount);
-		}
-		else if (!ninjaCb.isSelected()) {
+			charS[9] = 1;
+			System.out.println("NINJA" + unitCount);
+		} else if (!ninjaCb.isSelected()) {
 			charS[9] = 0;
 		}
-		
-		//Orc
+
+		// Orc
 		if (orcCb.isSelected()) {
 			unitCount++;
-			charS[10]=1;
-			System.out.println("ORC"+unitCount);
-		}
-		else if (!orcCb.isSelected()) {
+			charS[10] = 1;
+			System.out.println("ORC" + unitCount);
+		} else if (!orcCb.isSelected()) {
 			charS[10] = 0;
 		}
-		
-		//Pirate
+
+		// Pirate
 		if (pirateCb.isSelected()) {
 			unitCount++;
-			charS[11]=1;
-			System.out.println("PIRATE"+unitCount);
-		}
-		else if (!pirateCb.isSelected()) {
+			charS[11] = 1;
+			System.out.println("PIRATE" + unitCount);
+		} else if (!pirateCb.isSelected()) {
 			charS[11] = 0;
 		}
-		
-		//Space Cowboy
+
+		// Space Cowboy
 		if (spaceCowboyCb.isSelected()) {
 			unitCount++;
-			charS[12]=1;
-			System.out.println("SPACECOWBOY"+unitCount);
-		}
-		else if (!spaceCowboyCb.isSelected()) {
+			charS[12] = 1;
+			System.out.println("SPACECOWBOY" + unitCount);
+		} else if (!spaceCowboyCb.isSelected()) {
 			charS[12] = 0;
 		}
-		
-		//Teddy Bear
+
+		// Teddy Bear
 		if (teddyBearCb.isSelected()) {
 			unitCount++;
-			charS[13]=1;
-			System.out.println("TEDDYBEAR"+unitCount);
-		}
-		else if (!teddyBearCb.isSelected()) {
+			charS[13] = 1;
+			System.out.println("TEDDYBEAR" + unitCount);
+		} else if (!teddyBearCb.isSelected()) {
 			charS[13] = 0;
 		}
-		//Undead
+		// Undead
 		if (undeadCb.isSelected()) {
 			unitCount++;
-			charS[14]=1;
-			System.out.println("UNDEAD"+unitCount);
-		}
-		else if (!undeadCb.isSelected()) {
+			charS[14] = 1;
+			System.out.println("UNDEAD" + unitCount);
+		} else if (!undeadCb.isSelected()) {
 			charS[14] = 0;
 		}
-		
-		
+
 		// starts game by loading MainGame.fxml
-		if (text.equals("START") && unitCount ==3) {
-			//This is probably super inefficient but idk. It reads through charS and determines what characters
-			//need to be created and added to arrayList of player selected characters
-			for (int i=0; i<15; i++) {
-				if(charS[0] == 1) {
+		if (text.equals("START") && unitCount == 3) {
+			// This is probably super inefficient but idk. It reads through charS and
+			// determines what characters
+			// need to be created and added to arrayList of player selected characters
+			for (int i = 0; i < 15; i++) {
+				if (charS[0] == 1) {
 					UAlien alien = new UAlien();
 					charList.add(alien);
 				}
-				if(charS[1] == 1) {
+				if (charS[1] == 1) {
 					UAngel angel = new UAngel();
 					charList.add(angel);
 				}
-				if(charS[2] == 1) {
+				if (charS[2] == 1) {
 					UBabyDragon babyDragon = new UBabyDragon();
 					charList.add(babyDragon);
 				}
-				if(charS[3] == 1) {
+				if (charS[3] == 1) {
 					UCake cake = new UCake();
 					charList.add(cake);
 				}
-				if(charS[4] == 1) {
+				if (charS[4] == 1) {
 					UCatBurglar catBurglar = new UCatBurglar();
 					charList.add(catBurglar);
 				}
-				if(charS[5] == 1) {
+				if (charS[5] == 1) {
 					UElf elf = new UElf();
 					charList.add(elf);
 				}
-				if(charS[6] == 1) {
+				if (charS[6] == 1) {
 					UGhost ghost = new UGhost();
 					charList.add(ghost);
 				}
-				if(charS[7] == 1) {
+				if (charS[7] == 1) {
 					UKnight knight = new UKnight();
 					charList.add(knight);
 				}
-				if(charS[8] == 1) {
+				if (charS[8] == 1) {
 					ULunarOctopus lunarOctopus = new ULunarOctopus();
 					charList.add(lunarOctopus);
 				}
-				if(charS[9] == 1) {
+				if (charS[9] == 1) {
 					UNinja ninja = new UNinja();
 					charList.add(ninja);
 				}
-				if(charS[10] == 1) {
+				if (charS[10] == 1) {
 					UOrc orc = new UOrc();
 					charList.add(orc);
 				}
-				if(charS[11] == 1) {
-					UPirate pirate= new UPirate();
+				if (charS[11] == 1) {
+					UPirate pirate = new UPirate();
 					charList.add(pirate);
 				}
-				if(charS[12] == 1) {
+				if (charS[12] == 1) {
 					USpaceCowboy spaceCowboy = new USpaceCowboy();
 					charList.add(spaceCowboy);
 				}
-				if(charS[13] == 1) {
-					UTeddybear teddyBear= new UTeddybear();
+				if (charS[13] == 1) {
+					UTeddybear teddyBear = new UTeddybear();
 					charList.add(teddyBear);
 				}
-				if(charS[14] == 1) {
+				if (charS[14] == 1) {
 					UUndead undead = new UUndead();
 					charList.add(undead);
 				}
@@ -336,19 +323,19 @@ public class CharacterSelectController implements EventHandler<ActionEvent>
 			}
 			System.out.println("\nSTART!!");
 			System.out.println(charList);
-			
-			//Loads main game
+
+			// Loads main game
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("../view/MainGame.fxml"));
-				Scene scene = new Scene(root,1280,720);
-				//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+				Scene scene = new Scene(root, 1280, 720);
+				// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				Main.stage.setScene(scene);
 				Main.stage.show();
-			} catch(Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		// Wont allow player to proceed unless 3 characters are selected
 		else if (text.equals("START") && (unitCount < 3 || unitCount > 3)) {
 			System.out.println("ONLY SELECT 3 UNITS");

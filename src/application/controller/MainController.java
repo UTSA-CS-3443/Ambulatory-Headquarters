@@ -19,12 +19,14 @@ import javafx.beans.binding.*;
 import javafx.collections.*;
 
 /**
+ * Main Controller for Ambulatory Headquarters. It handles movement, enemy and
+ * ally turns, notifications, ally and enemy stats, level continuation, level
+ * completion or failure, attacking, and processing of the map.
  * 
  * @author Classic Cannon
  *
  */
-public class MainController implements EventHandler<ActionEvent> 
-{
+public class MainController implements EventHandler<ActionEvent> {
 	@FXML
 	private Label turnCountLb;
 	@FXML
@@ -51,150 +53,162 @@ public class MainController implements EventHandler<ActionEvent>
 	public ImageView allyImage;
 	@FXML
 	public ImageView enemyImage;
-	
+
 	private Map map;
 	private boolean ready;
-	
+
 	Unit selected;
 	Unit selectedEnemy;
 	Location selectedLocation;
-	
-	public int winning=0;
+
+	/**
+	 * Number of units the player has in win zone. Increments with each ally
+	 * entering win zone
+	 */
+	public int winning = 0;
+
+	/**
+	 * Current level the player is on. Increments as player wins levels.
+	 */
 	public int currentLevel = 1;
+
+	/**
+	 * Turn counter. Increments on each turn
+	 */
 	public int turnCount = 0;
-	
+
 	/**
 	 * constructor
 	 */
-	public MainController() 
-	{
+	public MainController() {
 		super();
 		ready = false;
 		map = new Map();
-		
+
 	}
-	
+
 	/**
-	 * Sets ready to true when the ready button is clicked. Game is only playable when ready.
+	 * Sets ready to true when the ready button is clicked. Game is only playable
+	 * when ready.
+	 * 
 	 * @param event
 	 */
-	public void handleReady(ActionEvent event)
-	{
+	public void handleReady(ActionEvent event) {
 		ready = true;
 		readyBtn.setVisible(false);
 		processMap();
 	}
-	
+
 	/**
 	 * handles clicks and updates the views accordingly
 	 */
 	@Override
-	public void handle(ActionEvent event) 
-	{
-		
-		if(!ready)
-		{
+	public void handle(ActionEvent event) {
+
+		if (!ready) {
 			notification("Not ready");
 			return;
 		}
-			
-		Button b = (Button)event.getSource();
+
+		Button b = (Button) event.getSource();
 		String text = b.getText();
-		
-		if(selected == null)
-		{
-			if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
-			{
+
+		if (selected == null) {
+			if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null
+					&& map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly()) {
 				selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				allyNameLb.setText(selected.getUnitName());
-				allyLb.setText("HP: " + selected.getiCurrHitPoints() + "\n" + 
-								"Level: " + selected.getiLevel() + "\n" + 
-								"Mobility: " + selected.getiMobility() + "\n" + 
-								"Atk.: " + selected.getiAttack() + "\n" + 
-								"Def.: " + selected.getiDefense());
+				allyLb.setText("HP: " + selected.getiCurrHitPoints() + "\n" + "Level: " + selected.getiLevel() + "\n"
+						+ "Mobility: " + selected.getiMobility() + "\n" + "Atk.: " + selected.getiAttack() + "\n"
+						+ "Def.: " + selected.getiDefense());
 				allyImage.setImage(selected.getImage());
-				selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+				selectedLocation = new Location(map, mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				prevClicked = b;
 				System.out.println("prevClicked set");
 			}
-			if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
-			{
+			if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null
+					&& map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false) {
 				selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 				enemyNameLb.setText(selectedEnemy.getUnitName());
-				enemyLb.setText("HP: " + selectedEnemy.getiCurrHitPoints() + "\n" + 
-								"Level: " + selectedEnemy.getiLevel() + "\n" + 
-								"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
-								"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
-								"Def.: " + selectedEnemy.getiDefense());
+				enemyLb.setText("HP: " + selectedEnemy.getiCurrHitPoints() + "\n" + "Level: "
+						+ selectedEnemy.getiLevel() + "\n" + "Mobility: " + selectedEnemy.getiMobility() + "\n"
+						+ "Atk.: " + selectedEnemy.getiAttack() + "\n" + "Def.: " + selectedEnemy.getiDefense());
 				enemyImage.setImage(selectedEnemy.getImage());
-				//selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-				//prevClicked = b;
-				//System.out.println("prevClicked set");
+				// selectedLocation = new Location(map,mapPane.getRowIndex(b),
+				// mapPane.getColumnIndex(b));
+				// prevClicked = b;
+				// System.out.println("prevClicked set");
 			}
-		}
-		else
-		{
-			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 1)
-			{
+		} else {
+			if (map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b),
+					mapPane.getColumnIndex(b)) == 1) {
 				turnCount++;
 				turnCountLb.setText("Turn Count: " + turnCount);
 				isWon();
-				notification(selected.getUnitName() + " moved from " + 
-									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
-									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
-				System.out.println(selected.getUnitName() + " moved from " + 
-									selectedLocation.getRow()+", "+selectedLocation.getCol() + 
-									" to " + mapPane.getRowIndex(b) + ", " + mapPane.getColumnIndex(b));
+				notification(selected.getUnitName() + " moved from " + selectedLocation.getRow() + ", "
+						+ selectedLocation.getCol() + " to " + mapPane.getRowIndex(b) + ", "
+						+ mapPane.getColumnIndex(b));
+				System.out.println(selected.getUnitName() + " moved from " + selectedLocation.getRow() + ", "
+						+ selectedLocation.getCol() + " to " + mapPane.getRowIndex(b) + ", "
+						+ mapPane.getColumnIndex(b));
 				ememyTurn();
 				selected = null;
 				prevClicked.setText("");
 				prevClicked = null;
-				
+
 				// Counting units to confirm a win
 				// Denoting spaces to confirm a win for each level
 				if (currentLevel == 1) {
-					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15) 
-							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15))  {
+					if ((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14)
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 14)
+							|| (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15)) {
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
 						isWon();
 					}
 				}
-				
+
 				if (currentLevel == 2) {
-					if((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14) 
-							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14))  {
+					if ((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14)
+							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14)) {
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
 						isWon();
 					}
 				}
-				
+
 				if (currentLevel == 3) {
-					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) 
-							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15))  {
+					if ((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14)
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15)) {
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
 						isWon();
 					}
 				}
-				
+
 				if (currentLevel == 4) {
-					if((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14) 
-							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14))  {
+					if ((mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 0 && mapPane.getColumnIndex(b) == 14)
+							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 1 && mapPane.getColumnIndex(b) == 14)) {
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
 						isWon();
 					}
 				}
-				
+
 				if (currentLevel == 5) {
-					if((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15) || (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14) 
-							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15))  {
+					if ((mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 15)
+							|| (mapPane.getRowIndex(b) == 10 && mapPane.getColumnIndex(b) == 14)
+							|| (mapPane.getRowIndex(b) == 11 && mapPane.getColumnIndex(b) == 15)) {
 						System.out.println("YOU Entered a win space");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						winning++;
@@ -202,61 +216,61 @@ public class MainController implements EventHandler<ActionEvent>
 					}
 				}
 			}
-			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 3)
-			{
-				notification("Too far: "+selected.getUnitName() + " can only move " + selected.getiMobility() + " blocks");
+			if (map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b),
+					mapPane.getColumnIndex(b)) == 3) {
+				notification(
+						"Too far: " + selected.getUnitName() + " can only move " + selected.getiMobility() + " blocks");
 				selected = null;
 				prevClicked = null;
 			}
-			if(map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) == 2)
-			{
-				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
-				{
-					if(selectedLocation != null && (Math.abs(selectedLocation.getRow()-mapPane.getRowIndex(b)) + Math.abs(selectedLocation.getCol()-mapPane.getColumnIndex(b))) <= selected.getiATKRNG().get(0))
-					{
+			if (map.move(selectedLocation.getRow(), selectedLocation.getCol(), mapPane.getRowIndex(b),
+					mapPane.getColumnIndex(b)) == 2) {
+				if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null
+						&& map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false) {
+					if (selectedLocation != null && (Math.abs(selectedLocation.getRow() - mapPane.getRowIndex(b))
+							+ Math.abs(selectedLocation.getCol() - mapPane.getColumnIndex(b))) <= selected.getiATKRNG()
+									.get(0)) {
 						turnCount++;
 						turnCountLb.setText("Turn Count: " + turnCount);
 						isWon();
-						
-						if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName().equals("Wall"))
-						{
+
+						if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName().equals("Wall")) {
 							notification("Can't attack a wall");
-						}
-						else
-						{
-							notification(selected.getUnitName()+ " dealt "+Damage.doDamage(selected,map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))+" damage to "+map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
-							if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiCurrHitPoints() <= 0)
-							{
-								notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName() + " died");
+						} else {
+							notification(selected.getUnitName() + " dealt "
+									+ Damage.doDamage(selected,
+											map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)))
+									+ " damage to "
+									+ map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName());
+							if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiCurrHitPoints() <= 0) {
+								notification(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName()
+										+ " died");
 								map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 								processMap();
 							}
 							selected = null;
-							prevClicked = null;								
+							prevClicked = null;
 						}
-					
-					}
-					else
+
+					} else
 						notification("Too far cannot attack");
 
 				}
-				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly())
-				{
+				if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null
+						&& map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly()) {
 					selected = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					allyNameLb.setText(selected.getUnitName());
-					allyLb.setText("HP: " + selected.getiCurrHitPoints() + "\n" + 
-									"Level: " + selected.getiLevel() + "\n" + 
-									"Mobility: " + selected.getiMobility() + "\n" + 
-									"Atk.: " + selected.getiAttack() + "\n" + 
-									"Def.: " + selected.getiDefense());
+					allyLb.setText("HP: " + selected.getiCurrHitPoints() + "\n" + "Level: " + selected.getiLevel()
+							+ "\n" + "Mobility: " + selected.getiMobility() + "\n" + "Atk.: " + selected.getiAttack()
+							+ "\n" + "Def.: " + selected.getiDefense());
 					allyImage.setImage(selected.getImage());
-					selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
+					selectedLocation = new Location(map, mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					prevClicked = b;
-					
+
 					if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getiCurrHitPoints() <= 0) {
 						System.out.println("Ally Died");
 						String s = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).getUnitName();
-						notification(s+" Died");
+						notification(s + " Died");
 						map.remove(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 						processMap();
 						allyGameOver();
@@ -265,90 +279,86 @@ public class MainController implements EventHandler<ActionEvent>
 						//
 					}
 				}
-				if(map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null && map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false)
-				{
+				if (map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)) != null
+						&& map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b)).isbAlly() == false) {
 					selectedEnemy = map.get(mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
 					enemyNameLb.setText(selectedEnemy.getUnitName());
-					enemyLb.setText("HP: " + selectedEnemy.getiCurrHitPoints() + "\n" + 
-									"Level: " + selectedEnemy.getiLevel() + "\n" + 
-									"Mobility: " + selectedEnemy.getiMobility() + "\n" + 
-									"Atk.: " + selectedEnemy.getiAttack() + "\n" + 
-									"Def.: " + selectedEnemy.getiDefense());
+					enemyLb.setText("HP: " + selectedEnemy.getiCurrHitPoints() + "\n" + "Level: "
+							+ selectedEnemy.getiLevel() + "\n" + "Mobility: " + selectedEnemy.getiMobility() + "\n"
+							+ "Atk.: " + selectedEnemy.getiAttack() + "\n" + "Def.: " + selectedEnemy.getiDefense());
 					enemyImage.setImage(selectedEnemy.getImage());
-					//selectedLocation = new Location(map,mapPane.getRowIndex(b), mapPane.getColumnIndex(b));
-					//prevClicked = b;
-					//System.out.println("prevClicked set");
+					// selectedLocation = new Location(map,mapPane.getRowIndex(b),
+					// mapPane.getColumnIndex(b));
+					// prevClicked = b;
+					// System.out.println("prevClicked set");
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * updates the map graphics
 	 */
-	public void processMap()
-	{
+	public void processMap() {
 		ObservableList<Node> children = mapPane.getChildren();
 		Button b;
 		int currentIndex = 0;
-		for(int i = 0; i < map.getRow(); i++)
-		{
-			for(int j = 0; j < map.getCol(); j++)
-			{
-				b = (Button)children.get(currentIndex);
+		for (int i = 0; i < map.getRow(); i++) {
+			for (int j = 0; j < map.getCol(); j++) {
+				b = (Button) children.get(currentIndex);
 				b.setText("");
-				if(map.get(i, j) != null)
-				{
+				if (map.get(i, j) != null) {
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(map.get(i, j).getImage(), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(map.get(i, j).getImage(),
+							BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+							BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
-				}
-				else if(currentLevel == 1 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
-				{
+				} else if (currentLevel == 1 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15)
+						|| (i == 11 && j == 15))) {
 					Image image = new Image("file:WinTile.png");
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+							BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
-				}
-				else if(currentLevel == 2 && ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15)))
-				{
+				} else if (currentLevel == 2
+						&& ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15))) {
 					Image image = new Image("file:WinTile.png");
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+							BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
-				}
-				else if(currentLevel == 3 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
-				{
+				} else if (currentLevel == 3 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15)
+						|| (i == 11 && j == 15))) {
 					Image image = new Image("file:WinTile.png");
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+							BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
-				}
-				else if(currentLevel == 4 && ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15)))
-				{
+				} else if (currentLevel == 4
+						&& ((i == 0 && j == 14) || (i == 1 && j == 14) || (i == 0 && j == 15) || (i == 1 && j == 15))) {
 					Image image = new Image("file:WinTile.png");
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+							BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
-				}
-				else if(currentLevel == 5 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15) || (i == 11 && j == 15)))
-				{
+				} else if (currentLevel == 5 && ((i == 10 && j == 14) || (i == 11 && j == 14) || (i == 10 && j == 15)
+						|| (i == 11 && j == 15))) {
 					Image image = new Image("file:WinTile.png");
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+							BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
-				}
-				else
-				{
+				} else {
 					Image image = new Image("file:GrassTile.png");
 					b.setStyle("-fx-focus-color: transparent;");
-					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+					BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+							BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 					b.setFocusTraversable(false);
 					b.setBackground(new Background(backgroundImage));
 				}
@@ -356,20 +366,28 @@ public class MainController implements EventHandler<ActionEvent>
 			}
 		}
 	}
-	public void notification(String s)
-	{
-		notificationsLb.setText(s+"\n"+notificationsLb.getText());
-	}
-	
+
 	/**
-	 * Checks to see if the player has won the game. It keeps track of how many players have entered
-	 * a win zone. It is dependent on how many players are still alive. If player wins level, it proceeds to next level.
-	 * If player wins final level, it ends game. If player reaches 100 turns it results in game over
+	 * Helps handle notifications
+	 * 
+	 * @param s
+	 *            notification
+	 */
+	public void notification(String s) {
+		notificationsLb.setText(s + "\n" + notificationsLb.getText());
+	}
+
+	/**
+	 * Checks to see if the player has won the game. It keeps track of how many
+	 * players have entered a win zone. It is dependent on how many players are
+	 * still alive. If player wins level, it proceeds to next level. If player wins
+	 * final level, it ends game. If player reaches 100 turns it results in game
+	 * over
 	 */
 	public void isWon() {
-		int numberDead=0;
-		int numToWin=0;
-		for (int i=0; i<3; i++) {
+		int numberDead = 0;
+		int numToWin = 0;
+		for (int i = 0; i < 3; i++) {
 			if (CharacterSelectController.charList.get(i).getiCurrHitPoints() == 0)
 				numberDead++;
 		}
@@ -380,105 +398,103 @@ public class MainController implements EventHandler<ActionEvent>
 		else if (numberDead == 2)
 			numToWin = 1;
 		if (winning == numToWin) {
-			System.out.println("YOU WON THE LEVEL winning:" +winning+" numToWin: "+numToWin);
+			System.out.println("YOU WON THE LEVEL winning:" + winning + " numToWin: " + numToWin);
 			map.reset();
 			currentLevel++;
 			if (currentLevel >= 6) {
 				try {
 					// change over to a second view
-					Parent root = FXMLLoader.load(getClass().getResource("../view/endGame.fxml"));   // Load the FXML
-					Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
-					Main.stage.show();														   // Show the stage to the user
-				}catch(Exception e) {
+					Parent root = FXMLLoader.load(getClass().getResource("../view/endGame.fxml")); // Load the FXML
+					Main.stage.setScene(new Scene(root, 1280, 720)); // Add the scene to the stage
+					Main.stage.show(); // Show the stage to the user
+				} catch (Exception e) {
 					e.printStackTrace(); // TODO: app should do something more productive if errors occur...
 				}
-			}
-			else {
+			} else {
 				map.loadMap(currentLevel);
 				processMap();
-				winning=0;
+				winning = 0;
 				turnCount = 0;
 				turnCountLb.setText("Turn Count: " + turnCount);
 			}
-		}
-		else if (winning != numToWin && turnCount >= 100) {
+		} else if (winning != numToWin && turnCount >= 100) {
 			System.out.println("Game Over");
 			try {
 				// change over to a second view
-				Parent root = FXMLLoader.load(getClass().getResource("../view/GameOver.fxml"));   // Load the FXML
-				Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
-				Main.stage.show();														   // Show the stage to the user
-			}catch(Exception e) {
+				Parent root = FXMLLoader.load(getClass().getResource("../view/GameOver.fxml")); // Load the FXML
+				Main.stage.setScene(new Scene(root, 1280, 720)); // Add the scene to the stage
+				Main.stage.show(); // Show the stage to the user
+			} catch (Exception e) {
 				e.printStackTrace(); // TODO: app should do something more productive if errors occur...
 			}
 		}
 	}
-	
+
 	/**
-	 * Traverse through all the enemies. Enemies attack allies if possible, move otherwise
+	 * Traverse through all the enemies. Enemies attack allies if possible, move
+	 * otherwise
 	 */
-	public void ememyTurn()
-	{
-		for(int r = 0; r < map.getRow(); r++)
-		{
-			for(int c = 0; c < map.getCol(); c++)
-			{
+	public void ememyTurn() {
+		for (int r = 0; r < map.getRow(); r++) {
+			for (int c = 0; c < map.getCol(); c++) {
 				boolean attacked = false;
-				if(map.get(r, c) != null && map.get(r, c).getUnitName().contains("Enemy"))
-				{
+				if (map.get(r, c) != null && map.get(r, c).getUnitName().contains("Enemy")) {
 					boolean[][] moveable = map.moveable(map.getMatrix(), r, c, map.get(r, c).getiMobility());
 					ArrayList<Location> list = new ArrayList<Location>();
-					for(int i = map.firstTrue.getRow(); i <= map.lastTrue.getRow(); i++)
-					{
-						for(int j = map.firstTrue.getCol(); j <= map.lastTrue.getCol(); j++)
-						{
-							if(moveable[i][j])
-								list.add(new Location(map,i,j));
+					for (int i = map.firstTrue.getRow(); i <= map.lastTrue.getRow(); i++) {
+						for (int j = map.firstTrue.getCol(); j <= map.lastTrue.getCol(); j++) {
+							if (moveable[i][j])
+								list.add(new Location(map, i, j));
 						}
 					}
-					for(int x = 0; x < list.size(); x++)
-					{
-						if(map.get(list.get(x).getRow(), list.get(x).getCol()) != null && map.get(list.get(x).getRow(), list.get(x).getCol()).isbAlly())
-						{
-							int range = (Math.abs(r-list.get(x).getRow())+Math.abs(c-list.get(x).getCol()));
-							if(range <= map.get(r,c).getiATKRNG().get(0))
-							{
-								notification(map.get(r, c).getUnitName()+" attacks "+map.get(list.get(x).getRow(), list.get(x).getCol()).getUnitName()+" dealing " + Damage.doDamage(map.get(r, c), (map.get(list.get(x).getRow(), list.get(x).getCol())))+" damage");
+					for (int x = 0; x < list.size(); x++) {
+						if (map.get(list.get(x).getRow(), list.get(x).getCol()) != null
+								&& map.get(list.get(x).getRow(), list.get(x).getCol()).isbAlly()) {
+							int range = (Math.abs(r - list.get(x).getRow()) + Math.abs(c - list.get(x).getCol()));
+							if (range <= map.get(r, c).getiATKRNG().get(0)) {
+								notification(
+										map.get(r, c).getUnitName() + " attacks "
+												+ map.get(list.get(x).getRow(), list.get(x).getCol()).getUnitName()
+												+ " dealing "
+												+ Damage.doDamage(map.get(r, c),
+														(map.get(list.get(x).getRow(), list.get(x).getCol())))
+												+ " damage");
 								attacked = true;
 								break;
 							}
 						}
 					}
-					if(!attacked && list.size() > 0)
-					{
+					if (!attacked && list.size() > 0) {
 						Random rand = new Random();
 						int random = rand.nextInt(list.size());
 						map.move(r, c, list.get(random).getRow(), list.get(random).getCol());
-						//notification("Enemy moved from "+r+","+c+" to "+list.get(random).getRow()+","+list.get(random).getCol());
+						// notification("Enemy moved from "+r+","+c+" to
+						// "+list.get(random).getRow()+","+list.get(random).getCol());
 					}
 				}
 			}
 		}
 		processMap();
 	}
-	
+
 	/**
-	 * Checks to see how many allies are alive. If all 3 are dead, it results in game over
+	 * Checks to see how many allies are alive. If all 3 are dead, it results in
+	 * game over
 	 */
 	public void allyGameOver() {
-		int numberDead=0;
-		for (int i=0; i<3; i++) {
+		int numberDead = 0;
+		for (int i = 0; i < 3; i++) {
 			if (CharacterSelectController.charList.get(i).getiCurrHitPoints() == 0)
 				numberDead++;
 		}
-		if (numberDead >=3) {
+		if (numberDead >= 3) {
 			System.out.println("Game Over via ally death " + numberDead);
 			try {
 				// change over to a second view
-				Parent root = FXMLLoader.load(getClass().getResource("../view/GameOver.fxml"));   // Load the FXML
-				Main.stage.setScene(new Scene(root, 1280, 720));							   // Add the scene to the stage
-				Main.stage.show();														   // Show the stage to the user
-			}catch(Exception e) {
+				Parent root = FXMLLoader.load(getClass().getResource("../view/GameOver.fxml")); // Load the FXML
+				Main.stage.setScene(new Scene(root, 1280, 720)); // Add the scene to the stage
+				Main.stage.show(); // Show the stage to the user
+			} catch (Exception e) {
 				e.printStackTrace(); // TODO: app should do something more productive if errors occur...
 			}
 		}
