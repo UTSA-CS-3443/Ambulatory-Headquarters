@@ -23,7 +23,7 @@
             <Insets left="10.0" fx:id="x2" />
           </GridPane.margin>
         </CheckBox>
-        <CheckBox fx:id="babyDragonCb" alignment="CENTER_LEFT" contentDisplay="LEFT" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="129.0" text="Baby Dragon" wrapText="true" GridPane.columnIndex="2" GridPane.margin="$x2" />
+        <CheckBox fx:id="babyDragonCb" alignment="CENTER_LEFT" contentDisplay="LEFT" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="129.0" text="Baby  Dragon" wrapText="true" GridPane.columnIndex="2" GridPane.margin="$x2" />
         <CheckBox fx:id="cakeCb" alignment="CENTER_LEFT" contentDisplay="LEFT" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="87.0" text="Cake" wrapText="true" GridPane.columnIndex="3" GridPane.margin="$x2" />
         <CheckBox fx:id="alienCb" alignment="CENTER_LEFT" contentDisplay="LEFT" font="$x1" mnemonicParsing="false" prefHeight="80.0" prefWidth="129.0" text="Alien" wrapText="true" GridPane.margin="$x2" />
         <CheckBox fx:id="catBurglarCb" alignment="CENTER_LEFT" contentDisplay="LEFT" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="129.0" text="Cat Burglar" wrapText="true" GridPane.columnIndex="4" GridPane.margin="$x2" />
