@@ -9,10 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainMenuController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.MainMenuController">
   <children>
     <Pane prefHeight="720.0" prefWidth="1280.0">
       <children>
@@ -25,7 +26,7 @@
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffffe5" height="85.0" layoutX="429.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="458.0" />
         <Text layoutX="450.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
           <font>
-            <Font name="Aharoni Bold" size="36.0" />
+            <Font name="Agency FB" size="50.0" />
           </font>
         </Text>
         <Text layoutX="601.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" textAlignment="CENTER">
@@ -33,6 +34,7 @@
             <Font name="Agency FB" size="32.0" />
           </font>
         </Text>
+<<<<<<< HEAD
         <Button layoutX="603.0" layoutY="334.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="85.0" text="EASY">
                <font>
                   <Font name="System Bold" size="14.0" />

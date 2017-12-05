@@ -6,12 +6,15 @@
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CharacterSelectController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.CharacterSelectController">
   <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,8 +26,11 @@
       <children>
         <CheckBox alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
           <font>
-            <Font size="15.0" fx:id="x1" />
+            <Font name="Agency FB" size="20.0" fx:id="x1" />
           </font>
+          <GridPane.margin>
+            <Insets left="10.0" fx:id="x2" />
+          </GridPane.margin>
         </CheckBox>
         <CheckBox fx:id="angelCb" alignment="BOTTOM_CENTER" contentDisplay="TOP" font="$x1" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textOverrun="CLIP" translateX="5.0" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
         <CheckBox fx:id="babyDragonCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
@@ -205,10 +211,9 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ff" height="80.0" layoutX="415.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
-    <Text layoutX="460.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM SELECT">
+    <Text layoutX="537.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Select">
       <font>
-        <Font size="60.0" />
+        <Font name="Agency FB" size="50.0" />
       </font>
     </Text>
     <Button layoutX="98.0" layoutY="620.0" mnemonicParsing="false" onAction="#handle" prefHeight="50.0" prefWidth="100.0" text="BACK">
