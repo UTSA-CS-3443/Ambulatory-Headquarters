@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -8,28 +13,184 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CharacterSelectController">
   <children>
-    <GridPane gridLinesVisible="true" layoutX="397.0" layoutY="213.0" prefHeight="308.0" prefWidth="487.0">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="images/CharSelect.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ff" height="40.0" layoutX="415.0" layoutY="585.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+    <GridPane gridLinesVisible="true" layoutX="290.0" layoutY="130.0" opacity="0.9" pickOnBounds="false" prefHeight="420.0" prefWidth="700.0" style="-fx-background-color: #2197FF;">
       <children>
-        <CheckBox mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Alien" wrapText="true">
+        <CheckBox alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
           <font>
             <Font size="15.0" fx:id="x1" />
           </font>
         </CheckBox>
-        <CheckBox fx:id="angelCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Angel" wrapText="true" GridPane.columnIndex="1" />
-        <CheckBox fx:id="babyDragonCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Baby Dragon" wrapText="true" GridPane.columnIndex="2" />
-        <CheckBox fx:id="cakeCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Cake" wrapText="true" GridPane.columnIndex="3" />
-        <CheckBox fx:id="alienCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Alien" wrapText="true"/>
-        <CheckBox fx:id="catBurglarCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Cat Burglar" wrapText="true" GridPane.columnIndex="4" />
-        <CheckBox fx:id="elfCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Elf" wrapText="true" GridPane.rowIndex="1" />
-        <CheckBox fx:id="ghostCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Ghost" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <CheckBox fx:id="knightCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Knight" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <CheckBox fx:id="lunarOctopusCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Lunar Octopus" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-        <CheckBox fx:id="ninjaCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Ninja" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-        <CheckBox fx:id="orcCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Orc" wrapText="true" GridPane.rowIndex="2" />
-        <CheckBox fx:id="pirateCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Pirate" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <CheckBox fx:id="spaceCowboyCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Space Cowboy" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-        <CheckBox fx:id="teddyBearCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Teddybear" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-        <CheckBox fx:id="undeadCb" font="$x1" mnemonicParsing="false" prefHeight="96.0" prefWidth="96.0" text="Undead" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+        <CheckBox fx:id="angelCb" alignment="BOTTOM_CENTER" contentDisplay="TOP" font="$x1" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textOverrun="CLIP" translateX="5.0" translateY="-5.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="babyDragonCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="cakeCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="alienCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="catBurglarCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="elfCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="ghostCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="knightCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="lunarOctopusCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="ninjaCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="orcCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="pirateCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="spaceCowboyCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="teddyBearCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+        <CheckBox fx:id="undeadCb" alignment="BOTTOM_CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" prefHeight="21.0" prefWidth="21.0" textAlignment="CENTER" translateX="5.0" translateY="-5.0" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Angel2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Alien2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/BabyDragon2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Cake2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/CatBurglar2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Elf2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Ghost2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Knight2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Lunar Octopus2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Ninja2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Orc2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Pirate2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/SpaceCowboy2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Teddybear2.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="SRC_ATOP" fitHeight="60.0" fitWidth="5060.0" pickOnBounds="true" preserveRatio="true" x="60.0" y="60.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="images/Undead2.png" />
+               </image>
+            </ImageView>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Alien" translateY="10.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="TOP" GridPane.vgrow="NEVER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Angel" translateY="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Baby Dragon" translateY="10.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Cake" translateY="10.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Cat Burglar" translateY="10.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Elf" translateY="10.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Ghost" translateY="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Knight" translateY="10.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Lulnar Octopus" translateY="10.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Ninja" translateY="10.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Orc" translateY="10.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Pirate" translateY="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Space Cowboy" translateY="10.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Teddybear" translateY="10.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Undead" translateY="10.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -44,12 +205,24 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Text layoutX="460.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM SELECT">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ff" height="80.0" layoutX="415.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+    <Text layoutX="460.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM SELECT">
       <font>
         <Font size="60.0" />
       </font>
     </Text>
-    <Button layoutX="434.0" layoutY="547.0" mnemonicParsing="false" onAction="#handle" text="&lt;--Back" />
-  <Button fx:id="startBtn" layoutX="791.0" layoutY="547.0" mnemonicParsing="false" onAction="#handle" text="START!" />
+    <Button layoutX="98.0" layoutY="620.0" mnemonicParsing="false" onAction="#handle" prefHeight="50.0" prefWidth="100.0" text="BACK">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+  <Button fx:id="startBtn" layoutX="1082.0" layoutY="620.0" mnemonicParsing="false" onAction="#handle" prefHeight="50.0" prefWidth="100.0" text="START">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <Text layoutX="542.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select 3 characters" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
   </children>
 </AnchorPane>

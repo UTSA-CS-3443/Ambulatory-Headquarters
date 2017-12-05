@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -15,38 +16,44 @@
   <children>
     <Pane prefHeight="720.0" prefWidth="1280.0">
       <children>
+            <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="images/MainMenu.png" />
+               </image>
+            </ImageView>
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ffcc" height="304.0" layoutX="558.0" layoutY="283.0" stroke="BLACK" strokeType="INSIDE" width="176.0" />
-        <Text layoutX="431.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffffe5" height="85.0" layoutX="429.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="458.0" />
+        <Text layoutX="450.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ambulatory Headquarters">
           <font>
             <Font name="Aharoni Bold" size="36.0" />
           </font>
         </Text>
-        <Text layoutX="611.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty">
+        <Text layoutX="601.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty" textAlignment="CENTER">
           <font>
-            <Font name="Agency FB" size="25.0" />
+            <Font name="Agency FB" size="32.0" />
           </font>
         </Text>
-        <Button layoutX="615.0" layoutY="336.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EASY">
+        <Button layoutX="603.0" layoutY="334.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="85.0" text="EASY">
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
-        <Button layoutX="615.0" layoutY="386.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="MEDIUM">
+        <Button layoutX="603.0" layoutY="386.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="85.0" text="MEDIUM">
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
-        <Button layoutX="615.0" layoutY="435.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="HARD">
+        <Button layoutX="603.0" layoutY="435.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="85.0" text="HARD">
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
         <Button layoutX="657.0" layoutY="520.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="LOAD">
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
         <Button layoutX="574.0" layoutY="520.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="65.0" text="EXIT">
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ffe5" height="18.0" layoutX="427.0" layoutY="205.0" stroke="BLACK" strokeType="INSIDE" width="458.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ffe5" height="18.0" layoutX="429.0" layoutY="205.0" stroke="BLACK" strokeType="INSIDE" width="458.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ffe5" height="18.0" layoutX="429.0" layoutY="134.0" stroke="BLACK" strokeType="INSIDE" width="458.0" />
       </children>
     </Pane>
