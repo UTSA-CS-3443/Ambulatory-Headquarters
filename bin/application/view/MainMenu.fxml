@@ -34,7 +34,6 @@
             <Font name="Agency FB" size="32.0" />
           </font>
         </Text>
-<<<<<<< HEAD
         <Button layoutX="603.0" layoutY="334.0" mnemonicParsing="false" onAction="#handle" prefHeight="40.0" prefWidth="85.0" text="EASY">
                <font>
                   <Font name="System Bold" size="14.0" />

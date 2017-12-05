@@ -14,13 +14,14 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.CharacterSelectController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CharacterSelectController">
   <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="images/CharSelect.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ff" height="80.0" layoutX="408.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2197ff" height="40.0" layoutX="415.0" layoutY="585.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
     <GridPane gridLinesVisible="true" layoutX="290.0" layoutY="130.0" opacity="0.9" pickOnBounds="false" prefHeight="420.0" prefWidth="700.0" style="-fx-background-color: #2197FF;">
       <children>
@@ -211,9 +212,9 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Text layoutX="537.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Select">
+    <Text layoutX="517.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Select">
       <font>
-        <Font name="Agency FB" size="50.0" />
+        <Font name="Agency FB" size="64.0" />
       </font>
     </Text>
     <Button layoutX="98.0" layoutY="620.0" mnemonicParsing="false" onAction="#handle" prefHeight="50.0" prefWidth="100.0" text="BACK">
