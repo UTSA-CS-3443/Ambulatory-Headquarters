@@ -3,6 +3,11 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Bat enemy. Weakest enemy. Only enemy in currrent state of the game.
+ * 
+ * @author Alec
+ *
+ */
 public class UZEnemy0 extends Unit{
 	private Image image = new Image("file:Enemy1.png");
 	

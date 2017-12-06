@@ -3,6 +3,11 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Cake
+ * 
+ * @author Alec
+ *
+ */
 public class UCake extends Unit{
 	private Image image = new Image("file:Cake.png");
 	

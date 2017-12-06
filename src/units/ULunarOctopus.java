@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Lunar Octopus
+ * @author Alec
+ *
+ */
 public class ULunarOctopus extends Unit{
 	private Image image = new Image("file:LunarOctopus.png");
 

@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Pirate
+ * @author Alec
+ *
+ */
 public class UPirate extends Unit{
 	private Image image = new Image("file:Pirate.png");
 	

@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Teddybear
+ * @author Alec
+ *
+ */
 public class UTeddybear extends Unit{
 	private Image image = new Image("file:Teddybear.png");
 

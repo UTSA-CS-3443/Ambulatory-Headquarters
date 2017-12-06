@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Elf
+ * @author Alec
+ *
+ */
 public class UElf extends Unit{
 	private Image image = new Image("file:Elf.png");
 	

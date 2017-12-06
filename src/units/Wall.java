@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Small initialization for wall. We used this for mobility restriction by using unit detection
+ * @author Alec
+ *
+ */
 public class Wall extends Unit{
 	
 	private Image image = new Image("file:Wall.PNG");

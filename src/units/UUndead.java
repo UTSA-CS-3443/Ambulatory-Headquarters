@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Undead
+ * @author Alec
+ *
+ */
 public class UUndead extends Unit{
 	private Image image = new Image("file:Undead.png");
 

@@ -3,6 +3,11 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Ninja
+ * 
+ * @author Alec
+ *
+ */
 public class UNinja extends Unit{
 	private Image image = new Image("file:Ninja.png");
 	

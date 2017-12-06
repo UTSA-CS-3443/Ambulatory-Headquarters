@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Space Cowboy
+ * @author Alec
+ *
+ */
 public class USpaceCowboy extends Unit{
 	private Image image = new Image("file:SpaceCowboy.png");
 	

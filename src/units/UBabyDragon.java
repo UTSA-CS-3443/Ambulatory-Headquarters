@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Baby Dragon
+ * @author Alec
+ *
+ */
 public class UBabyDragon extends Unit{
 	private Image image = new Image("file:BabyDragon.png");
 	

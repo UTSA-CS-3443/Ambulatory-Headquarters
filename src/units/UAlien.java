@@ -5,8 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
+/**Holds all information for Alien
+ * 
+ * @author Alec
+ *
+ */
 public class UAlien extends Unit{
-		private Image image = new Image("file:Alien.png");
+	private Image image = new Image("file:Alien.png");
 	
 	private int iHitPointsBASE = 50;
 	private int iAttackBASE = 30;

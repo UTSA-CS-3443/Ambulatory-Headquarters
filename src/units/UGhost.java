@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Ghost
+ * @author Alec
+ *
+ */
 public class UGhost extends Unit{
 	private Image image = new Image("file:Ghost.png");
 	

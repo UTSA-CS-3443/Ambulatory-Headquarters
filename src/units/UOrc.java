@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Orc
+ * @author Alec
+ *
+ */
 public class UOrc extends Unit{
 	private Image image = new Image("file:Orc.png");
 	

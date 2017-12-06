@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Cat Burglar
+ * @author Alec
+ *
+ */
 public class UCatBurglar extends Unit{
 	private Image image = new Image("file:CatBurglar.png");
 	

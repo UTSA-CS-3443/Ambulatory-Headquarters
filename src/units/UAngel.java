@@ -3,6 +3,11 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Angel
+ * 
+ * @author Alec
+ *
+ */
 public class UAngel extends Unit{
 	private Image image = new Image("file:Angel.png");
 	

@@ -3,6 +3,10 @@ package units;
 import javafx.scene.image.Image;
 import map.Map;
 
+/**Holds all information for Knight
+ * @author Alec
+ *
+ */
 public class UKnight extends Unit{
 	private Image image = new Image("file:Knight.png");
 	
